@@ -2,7 +2,7 @@
 
 <img align="right" alt="Euler's picture" src="https://www.biography.com/.image/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NDg0MDU1NDE1MzI2MjIz/leonhard-euler-21342391-1-402.jpg">
 
-<div align="justify">**[Project Euler](https://projecteuler.net "Project Euler's Homepage")** é um bom site de desafios para programar onde as tarefas apresentadas são bons desafios para quem já possui uma base de programação e procura apreender um nova linguagem.</div>
+**[Project Euler](https://projecteuler.net "Project Euler's Homepage")**<div align="justify"> é um bom site de desafios para programar onde as tarefas apresentadas são bons desafios para quem já possui uma base de programação e procura apreender um nova linguagem.</div>
 
 ## Tarefas
 
@@ -27,7 +27,7 @@
 
 ## Referências
 
-<div align="justify">Além disso, todas as referências utilizadas também estarão igualmente listadas ao final de cada descrição. Seja ela desde uma página da [Wikipédia](https://www.wikipedia.org "Wikipedia's homepage") que eu utilizei para entender melhor o conceito por trás da tarefa, ou até mesmo a página de outras pessoas que já realizaram tais tarefas uma vez que para tarefas que requerem muito conhecimento matemático o problema não fica tão claro. Neste último caso vale agradecer ao **[MathBlog](http://www.mathblog.dk/category/solutions/project-euler/ "MathBlog's Project Euler page" )** pelo incrível conteúdo que conseguiu produzir muito bem explicado e carregado de referências. ~~Algum dia espero poder dizer o mesmo de mim.~~</div>
+<div align="justify">Além disso, todas as referências utilizadas também estarão igualmente listadas ao final de cada descrição. Seja ela desde uma página da </div>[Wikipédia](https://www.wikipedia.org "Wikipedia's homepage")<div align="justify"> que eu utilizei para entender melhor o conceito por trás da tarefa, ou até mesmo a página de outras pessoas que já realizaram tais tarefas uma vez que para tarefas que requerem muito conhecimento matemático o problema não fica tão claro. Neste último caso vale agradecer ao </div>**[MathBlog](http://www.mathblog.dk/category/solutions/project-euler/ "MathBlog's Project Euler page" )**<div align="justify"> pelo incrível conteúdo que conseguiu produzir muito bem explicado e carregado de referências.</div> ~~Algum dia espero poder dizer o mesmo de mim.~~
 
 ***
 
