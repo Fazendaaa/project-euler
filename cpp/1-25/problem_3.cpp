@@ -8,10 +8,15 @@
                             Answer: 6857
 */
 
-#include <iostream>
+#include "../project_euler.hpp"
 using namespace std;
 
 int main( int argc, char **argv ) {
+    int LIMIT = 13195;
+    vector<int> primesFactor = eratosthenesSieve( LIMIT );
+    
+    for( int i = 0; i < LIMIT; i++ )
+        cout << primesFactor[ i ] << endl;
 
     return 0;
 }
