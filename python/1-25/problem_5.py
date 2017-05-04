@@ -13,21 +13,21 @@
         *   http://www.mathblog.dk/project-euler-problem-5/
 """
 
+import math
 import sys
 sys.path.append('../')
 # pylint: disable=wrong-import-position,import-error
 import project_euler as pe
-import math
 
 def smallest_multiple(limit):
-    """Return  the  smallest  positive  number that is evenly divisible by given 
+    """Return  the  smallest  positive  number that is evenly divisible by given
     limit"""
     limit_log = math.log10(limit)
-    p = pe.erastosthenes_sieve(limit)
+    primes = pe.erastosthenes_sieve(limit)
     result = 1
 
-    for i in range(0, len(p)):
-        result *= pow(p[i], math.floor(limit_log/math.log10(p[i])))
+    for i in range(0, len(primes)):
+        result *= pow(primes[i], math.floor(limit_log/math.log10(primes[i])))
 
     return result
 

@@ -10,13 +10,14 @@
 """
 
 def three_digits_palindrome():
-    """Function that returns all the possibles aplindromes made from the product of two three-digit numbers"""
+    """Function that returns all the possibles aplindromes made from the product
+    of two three-digit numbers"""
     palindrome = []
 
-    for x in range(100, 999):
-        for y in  range(100, 999):
-            if str(x*y)[::-1] == str(x*y):
-                palindrome.append(x*y)
+    for index_i in range(100, 999):
+        for index_ii in  range(100, 999):
+            if str(index_i*index_ii)[::-1] == str(index_i*index_ii):
+                palindrome.append(index_i*index_ii)
 
     return sorted(palindrome)
 
