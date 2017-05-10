@@ -49,7 +49,7 @@ def largest_product_series( series, digits )
             break
         end
     end
-
+    
     return series[ index..index+digits-1 ]
 end
 

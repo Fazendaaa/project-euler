@@ -1,0 +1,30 @@
+"""
+                        Special Pythagorean triplet
+
+    A  Pythagorean  triplet  is  a  set of three natural numbers, a < b < c, for
+    which,
+                                a² + b² = c²
+
+    For example, 3² + 4² = 9 + 16 = 25 = 5².
+
+    There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+    Find the product abc.
+"""
+
+import functools as ft
+
+def special_pythagorean_triplet(number):
+    """Finds it the first Pythagorean triplet for which a + b + c = n."""
+    triplet = []
+    flag = True
+
+    for index_i in range(1, number):
+        for index_ii in range(1, index_i):
+            for index_iii in range(1,index_ii):
+                if (index_iii*index_ii)+(index_i*number) == (number**2)/2 and index_i + index_ii + index_iii == number:
+                    triplet.append(index_i, index_ii, index_iii)
+    
+
+    return triplet
+
+print(ft.reduce(lambda x, y: x+y, special_pythagorean_triplet(1000)))
