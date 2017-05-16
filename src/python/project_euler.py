@@ -56,3 +56,6 @@ def all_divisors(n):
         
     return divisors
                     
+def each_cons(array, limit):
+    """Given array, returns it all sets of each cons elements"""
+    return [array[i:i+limit] for i in range(len(array)-limit+1)]
