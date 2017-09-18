@@ -12,19 +12,20 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
-func erastothenesSieve(limit int) {
-	const max := limit + 1
-	numbers := []bool{max: true}
+func erastothenesSieve(limit int) int {
+	numbers := make([]bool, limit)
+	fmt.Println(numbers)
 
-	for i := 0; i < Sqrt(max); i++ {
+	for i := 0; i < int(math.Sqrt(float64(limit))); i++ {
 
 	}
 
-	return
+	return 1
 }
 
 func main() {
-	fmt.Println()
+	fmt.Println(erastothenesSieve(13))
 }
