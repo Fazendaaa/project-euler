@@ -34,7 +34,9 @@ def erastosthenes_sieve( limit )
     numbers[ 0 ] = numbers[ 1 ] =  false
 
     for i in 2..Math.sqrt( limit ).to_i do
-        (i**2..limit).step(i) do | j | numbers[ j ] = false end if numbers[ i ]
+        (i**2..limit).step(i) do | j |
+            numbers[ j ] = false
+        end
     end
 
     return numbers.each_index.select { | i | numbers[ i ] }

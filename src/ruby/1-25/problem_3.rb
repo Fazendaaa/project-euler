@@ -13,7 +13,7 @@
 require_relative '../project_euler'
 
 def largest_prime( max )
-    return prime_factors( max ).sort.pop
+    return prime_factors( max ).pop
 end
 
 puts largest_prime( 600851475143 );

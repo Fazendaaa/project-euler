@@ -12,20 +12,9 @@ package main
 
 import (
 	"fmt"
-	"math"
+	"golang/project_euler"
 )
 
-func erastothenesSieve(limit int) int {
-	numbers := make([]bool, limit)
-	fmt.Println(numbers)
-
-	for i := 0; i < int(math.Sqrt(float64(limit))); i++ {
-
-	}
-
-	return 1
-}
-
 func main() {
-	fmt.Println(erastothenesSieve(13))
+	fmt.Println(Prime)
 }
