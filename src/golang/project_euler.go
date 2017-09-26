@@ -5,6 +5,10 @@ import (
 	"math/big"
 )
 
+func Prime(limit int) int {
+	return limit
+}
+
 func ErastothenesSieve(limit int) []int {
 	numbers := make([]int, limit)
 	result := []int{1, 2, 3}

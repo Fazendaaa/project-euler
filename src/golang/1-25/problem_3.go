@@ -11,10 +11,10 @@
 package main
 
 import (
-	"fmt"
-	"golang/project_euler"
+    "fmt"
+    "golang/project_euler"
 )
 
 func main() {
-	fmt.Println(Prime)
+	fmt.Println(Prime(10))
 }
