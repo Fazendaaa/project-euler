@@ -1,14 +1,11 @@
-package project_euler
+package projectEuler
 
 import (
 	"math"
 	"math/big"
 )
 
-func Prime(limit int) int {
-	return limit
-}
-
+// ErastothenesSieve Nothing
 func ErastothenesSieve(limit int) []int {
 	numbers := make([]int, limit)
 	result := []int{1, 2, 3}
@@ -46,6 +43,7 @@ var (
 	ONE  = big.NewInt(1)
 )
 
+// PrimesDecompositon From Rosetta Code
 func PrimesDecompositon(n *big.Int) []*big.Int {
 	res := []*big.Int{}
 	mod, div := new(big.Int), new(big.Int)

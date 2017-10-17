@@ -11,10 +11,14 @@
 package main
 
 import (
-    "fmt"
-    "golang/project_euler"
+	"fmt"
+	"math/big"
+
+	"../projectEuler"
 )
 
 func main() {
-	fmt.Println(Prime(10))
+	var number int64 = 600851475143
+	var primes = projectEuler.PrimesDecompositon(big.NewInt(number))
+	fmt.Println(primes[len(primes)-1])
 }
