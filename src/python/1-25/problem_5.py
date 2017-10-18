@@ -26,8 +26,8 @@ def smallest_multiple(limit):
     primes = pe.erastosthenes_sieve(limit)
     result = 1
 
-    for i in range(0, len(primes)):
-        result *= pow(primes[i], math.floor(limit_log/math.log10(primes[i])))
+    for i in primes:
+        result *= pow(i, math.floor(limit_log/math.log10(i)))
 
     return result
 
