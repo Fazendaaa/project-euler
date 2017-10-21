@@ -18,7 +18,7 @@ import (
 	"fmt"
 )
 
-func fibonacciNumbers(limit int) int {
+func fibonacciNumbers(limit int, channel chan int) {
 	i := 1
 	fib := []int{1, 2}
 	nextFib := 1
@@ -39,9 +39,13 @@ func fibonacciNumbers(limit int) int {
 		}
 	}
 
-	return sum
+	channel <- sum
 }
 
 func main() {
-	fmt.Println(fibonacciNumbers(4000000))
+	channel := make(chan int, 1)
+
+	go fibonacciNumbers(4000000, channel)
+
+	fmt.Println(<-channel)
 }

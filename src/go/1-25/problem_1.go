@@ -14,7 +14,7 @@ import (
 	"fmt"
 )
 
-func sumOfMultiples(a int, b int, limit int) int {
+func sumOfMultiples(a int, b int, limit int, channel chan int) {
 	var sum int
 
 	for i := 0; i < limit; i++ {
@@ -23,9 +23,13 @@ func sumOfMultiples(a int, b int, limit int) int {
 		}
 	}
 
-	return sum
+	channel <- sum
 }
 
 func main() {
-	fmt.Println(sumOfMultiples(3, 5, 1000))
+	channel := make(chan int, 1)
+
+	go sumOfMultiples(3, 5, 1000, channel)
+
+	fmt.Println(<-channel)
 }

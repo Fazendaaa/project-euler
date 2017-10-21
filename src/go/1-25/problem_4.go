@@ -32,7 +32,7 @@ func isPalindrome(number int) bool {
 	return flag
 }
 
-func largestPalindrome(digits float64) int {
+func largestPalindrome(digits float64, channel chan int) {
 	var mult, max int
 
 	for i := 1; i < int(math.Pow(10, digits)); i++ {
@@ -45,10 +45,14 @@ func largestPalindrome(digits float64) int {
 		}
 	}
 
-	return max
+	channel <- max
 }
 
 func main() {
 	var maxDigits float64 = 3
-	fmt.Println(largestPalindrome(maxDigits))
+	channel := make(chan int, 1)
+
+	go largestPalindrome(maxDigits, channel)
+
+	fmt.Println(<-channel)
 }

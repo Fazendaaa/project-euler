@@ -22,7 +22,7 @@ package main
 import "fmt"
 import "math"
 
-func sumSquareDiff(limit float64) float64 {
+func sumSquareDiff(limit float64, channel chan int) {
 	var squareSum float64 = 0
 	var sumSquare float64 = 0
 	var i float64 = 0
@@ -35,10 +35,15 @@ func sumSquareDiff(limit float64) float64 {
 		}
 	}
 
-	return math.Pow(squareSum, exp) - sumSquare
+	channel <- int(math.Pow(squareSum, exp) - sumSquare)
 }
 
 func main() {
+	channel := make(chan int, 1)
 	var limit float64 = 100
-	fmt.Println(int(sumSquareDiff(limit)))
+
+	/*	This version with goroutines did not have any time pros against the other with out it	*/
+	go sumSquareDiff(limit, channel)
+
+	fmt.Println(<-channel)
 }
