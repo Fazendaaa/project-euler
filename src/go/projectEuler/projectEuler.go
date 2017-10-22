@@ -58,3 +58,22 @@ func PrimesDecompositon(n *big.Int) []*big.Int {
 	}
 	return res
 }
+
+// IsPrime Returns wether or not a given number is prime
+func IsPrime(number int) bool {
+	var flag = true
+	var i float64
+
+	if 2 <= number {
+		for i = 2; i <= math.Sqrt(float64(number)); i++ {
+			if 0 == number%int(i) {
+				flag = false
+				break
+			}
+		}
+	} else {
+		flag = false
+	}
+
+	return flag
+}

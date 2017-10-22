@@ -11,9 +11,33 @@
 package main
 
 import (
-	"fmt"
+    "fmt"
+    "../projectEuler"
 )
 
+/*  This  isn't  the  FASTEST way to do this, but this ensures me that given any
+    input, it will works
+*/
+func nthPrimeNumber(pos int) int {
+    var number = 2
+    var counter = 0
+    
+    for {
+        if projectEuler.IsPrime(number) {
+            counter += 1
+            
+            if counter == pos {
+                break
+            }
+        }
+        
+        number += 1
+    }
+
+    return number
+}
+
 func main() {
-	fmt.Println()
+    /*  This code had a tiny improvement using goroutines   */
+    go fmt.Println(nthPrimeNumber(104743))
 }
