@@ -9,6 +9,8 @@
 
     There exists exactly one Pythagorean triplet for which a + b + c = 1000.
     Find the product abc.
+
+                        Answer = 31875000
 """
 
 import functools as ft
@@ -22,9 +24,11 @@ def special_pythagorean_triplet(number):
         for index_ii in range(1, index_i):
             for index_iii in range(1,index_ii):
                 if (index_iii*index_ii)+(index_i*number) == (number**2)/2 and index_i + index_ii + index_iii == number:
-                    triplet.append(index_i, index_ii, index_iii)
+                    triplet.append(index_i)
+                    triplet.append(index_ii)
+                    triplet.append(index_iii)
     
 
     return triplet
 
-print(ft.reduce(lambda x, y: x+y, special_pythagorean_triplet(1000)))
+print(int(ft.reduce(lambda x, y: x*y, special_pythagorean_triplet(1000))))
