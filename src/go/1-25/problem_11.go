@@ -1,5 +1,5 @@
-"""
-                            Largest product in a grid
+/*
+Largest product in a grid
 
     In the 20×20 grid below, four numbers along a diagonal line have been marked
     in red.
@@ -33,56 +33,5 @@
     helped me out:
         *   http://stackoverflow.com/a/5878474/7092954
         *   http://stackoverflow.com/a/6313414/7092954
-"""
+*/
 
-import re
-import functools as ft
-import operator as op
-import numpy as np
-
-def each_cons(array, limit):
-    """Given array, returns it all sets of each cons elements"""
-    return [array[i:i+limit] for i in range(len(array)-limit+1)]
-
-def greatest_product_vector(vector, limit):
-    """Given vector, returns it the max multiplied value of given limit factor"""
-    results = []
-
-    for cons in each_cons(vector, limit):
-        results.append(ft.reduce(op.mul, cons, 1))
-
-    return max(results if [] != results else [0])
-
-def greatest_product_matrix(matrix, limit):
-    """Given matrix, returns it the max multiplied value of given limit factor
-     in all of the lines"""
-    results = []
-
-    for vector in matrix:
-        results.append(greatest_product_vector(vector, limit))
-
-    return max(results)
-
-def greatest_product_diagonals(matrix, limit):
-    """Given matrix, returns it the max multiplied value of given limit factor
-     in all of the diagonals"""
-    matrix = np.array(matrix)
-    diags = [matrix[::-1, :].diagonal(i) for i in range(-matrix.shape[0]+1, matrix.shape[1])]
-    diags.extend(matrix.diagonal(i) for i in range(matrix.shape[1]-1, -matrix.shape[0], -1))
-    diags = [n.tolist() for n in diags]
-
-    return greatest_product_matrix(diags, limit)
-
-def greatest_product(matrix, adjacent):
-    """Return all the adjacent numbers that have the greatest product"""
-    lines = greatest_product_matrix(matrix, adjacent)
-    columns = greatest_product_matrix(list(map(list, zip(*matrix))), adjacent)
-    diagonals = greatest_product_diagonals(matrix, adjacent)
-
-    return max(lines, columns, diagonals)
-
-with open('./input/problem_11.txt', 'r') as file:
-    MATRIX = []
-    for line in file:
-        MATRIX.append([int(x) for x in re.findall(r'\d+', line)])
-    print(greatest_product(MATRIX, 4))

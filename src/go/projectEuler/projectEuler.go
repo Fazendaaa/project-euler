@@ -47,15 +47,19 @@ var (
 func PrimesDecompositon(n *big.Int) []*big.Int {
 	res := []*big.Int{}
 	mod, div := new(big.Int), new(big.Int)
+
 	for i := big.NewInt(2); i.Cmp(n) != 1; {
 		div.DivMod(n, i, mod)
+
 		for mod.Cmp(ZERO) == 0 {
 			res = append(res, new(big.Int).Set(i))
 			n.Set(div)
 			div.DivMod(n, i, mod)
 		}
+
 		i.Add(i, ONE)
 	}
+
 	return res
 }
 
