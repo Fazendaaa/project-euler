@@ -26,6 +26,7 @@ Largest product in a grid
             01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
 
     The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
+
     What  is the greatest product of four adjacent numbers in the same direction
     ( up, down, left, right, or diagonally ) in the 20×20 grid?
 
@@ -35,3 +36,272 @@ Largest product in a grid
         *   http://stackoverflow.com/a/6313414/7092954
 */
 
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+	"strconv"
+	"strings"
+)
+
+func check(e error) {
+	if nil != e {
+		panic(e)
+	}
+}
+
+func maxVector(vector []int) (int, error) {
+	var max int
+	var message error
+
+	if nil != vector {
+		for _, v := range vector {
+			if v > max {
+				max = v
+			}
+		}
+
+		message = nil
+	} else {
+		message = nil
+	}
+
+	return max, message
+}
+
+func greatestSequential(vector []int, limit int) (int, error) {
+	var message error
+	var max, tmp int
+
+	if nil != vector && 0 < limit {
+		tmp = 1
+
+		for i := 0; i < len(vector)-limit; i++ {
+			for j := 0; j < limit; j++ {
+				tmp *= vector[j]
+			}
+
+			if tmp > max {
+				max = tmp
+			}
+
+			tmp = 1
+		}
+
+		message = nil
+	} else {
+		message = nil
+	}
+
+	return max, message
+}
+
+func greatestLines(matrix [][]int, limit int) (int, error) {
+	var rtnval, i int
+	var message, err error
+	var maxLines []int
+
+	if nil != matrix {
+		maxLines = make([]int, len(matrix))
+
+		for _, vector := range matrix {
+			tmp, err := greatestSequential(vector, limit)
+			check(err)
+
+			maxLines[i] = tmp
+			i++
+		}
+
+		rtnval, err = maxVector(maxLines)
+		check(err)
+
+		message = nil
+	} else {
+		rtnval = 0
+		message = nil
+	}
+
+	return rtnval, message
+}
+
+func invertibleMatrix(matrix [][]int) ([][]int, error) {
+	var message error
+	var nLines, nColumns, i, j int
+	var invertibled [][]int
+
+	if nil != matrix {
+		nLines = len(matrix)
+		nColumns = len(matrix[0])
+		invertibled = make([][]int, nColumns)
+
+		for k := 0; k < nColumns; k++ {
+			invertibled[k] = make([]int, nLines)
+		}
+
+		for _, line := range matrix {
+			for _, value := range line {
+				invertibled[i][j] = value
+				i++
+			}
+
+			i = 0
+			j++
+		}
+
+		message = nil
+	} else {
+		message = nil
+	}
+
+	return invertibled, message
+}
+
+func getDiagonals(matrix [][]int, line int) ([]int, error) {
+	var pos int
+	var message error
+	var vector []int
+
+	if nil != matrix && 0 <= line {
+		vector = make([]int, 0)
+
+		for i := 0; i < len(matrix); i++ {
+			pos = len(matrix) - line + i
+
+			if 0 < pos && pos < len(matrix) {
+				vector = append(vector, matrix[i][pos])
+			}
+		}
+
+		message = nil
+	} else {
+		message = nil
+	}
+
+	return vector, message
+}
+
+func greatestDiagonals(matrix [][]int, limit int) (int, error) {
+	var rtnval, nLines, nColumns, newNLines int
+	var matrixOfDiagonals [][]int
+	var message, err error
+
+	if nil != matrix {
+		nLines = len(matrix)
+		nColumns = len(matrix[0])
+		newNLines = nLines + nColumns - 1
+		matrixOfDiagonals = make([][]int, newNLines)
+
+		for i := 0; i < newNLines; i++ {
+			matrixOfDiagonals[i], err = getDiagonals(matrix, i)
+			check(err)
+		}
+
+		rtnval, err = greatestLines(matrixOfDiagonals, limit)
+		check(err)
+
+		message = nil
+	} else {
+		rtnval = 0
+		message = nil
+	}
+
+	return rtnval, message
+}
+
+func greatestProduct(matrix [][]int, limit int) (int, error) {
+	var rtnval, lines, columns, principalDiagonal, secondaryDiagonal int
+	var message error
+	var invertedMatrix [][]int
+	var result []int
+	var err error
+
+	if nil != matrix && 0 < limit {
+		invertedMatrix, err = invertibleMatrix(matrix)
+		check(err)
+
+		lines, err = greatestLines(matrix, limit)
+		check(err)
+
+		columns, err = greatestLines(invertedMatrix, limit)
+		check(err)
+
+		principalDiagonal, err = greatestDiagonals(matrix, limit)
+		check(err)
+
+		secondaryDiagonal, err = greatestDiagonals(invertedMatrix, limit)
+		check(err)
+
+		result = make([]int, 4)
+
+		result[0] = lines
+		result[1] = columns
+		result[2] = principalDiagonal
+		result[3] = secondaryDiagonal
+
+		rtnval, err = maxVector(result)
+		check(err)
+		message = nil
+	} else {
+		rtnval = 0
+		message = nil
+	}
+
+	return rtnval, message
+}
+
+func fileToMatrix(data []byte) ([][]int, error) {
+	var str, line []string
+	var matrix [][]int
+	var tmp []int
+	var i, j int
+	var messsage, err error
+
+	if nil != data {
+		str = strings.Split(string(data), "\n")
+		// Doing like this because wheter the input file contais an empty line at the end of the file this will count as
+		// a new array line
+		matrix = make([][]int, 0)
+
+		for _, vector := range str {
+			if 0 < len(vector) {
+				line = strings.Split(vector, " ")
+				tmp = make([]int, len(line))
+
+				for _, value := range line {
+					tmp[j], err = strconv.Atoi(value)
+					check(err)
+					j++
+				}
+
+				matrix = append(matrix, tmp)
+				j = 0
+				i++
+			}
+		}
+
+		messsage = nil
+	} else {
+		messsage = nil
+	}
+
+	return matrix, messsage
+}
+
+func main() {
+	var data []byte
+	var err error
+	var matrix [][]int
+	var result int
+
+	data, err = ioutil.ReadFile("./input/problem_11.txt")
+	check(err)
+
+	matrix, err = fileToMatrix(data)
+	check(err)
+
+	result, err = greatestProduct(matrix, 4)
+	check(err)
+
+	fmt.Println(result)
+}
