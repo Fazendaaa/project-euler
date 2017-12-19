@@ -30,73 +30,48 @@ Largest product in a grid
     What  is the greatest product of four adjacent numbers in the same direction
     ( up, down, left, right, or diagonally ) in the 20×20 grid?
 
-                        Answer: 70600674
-    helped me out:
-        *   http://stackoverflow.com/a/5878474/7092954
-        *   http://stackoverflow.com/a/6313414/7092954
+						Answer: 70600674
 */
 
 package main
 
 import (
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"strconv"
 	"strings"
+
+	"../projectEuler"
 )
 
-func check(e error) {
-	if nil != e {
-		panic(e)
-	}
-}
-
-func maxVector(vector []int) (int, error) {
-	var max int
-	var message error
-
-	if nil != vector {
-		for _, v := range vector {
-			if v > max {
-				max = v
-			}
-		}
-
-		message = nil
-	} else {
-		message = nil
-	}
-
-	return max, message
-}
-
+// greatestSequential given vector and limit, returns it the max multiplied sequence of numbers.
 func greatestSequential(vector []int, limit int) (int, error) {
 	var message error
 	var max, tmp int
 
 	if nil != vector && 0 < limit {
-		tmp = 1
+		for i := 0; i <= len(vector)-limit; i++ {
+			tmp = 1
 
-		for i := 0; i < len(vector)-limit; i++ {
-			for j := 0; j < limit; j++ {
+			for j := i; j < i+limit; j++ {
 				tmp *= vector[j]
 			}
 
 			if tmp > max {
 				max = tmp
 			}
-
-			tmp = 1
 		}
 
 		message = nil
 	} else {
-		message = nil
+		message = errors.New("greatestSequential - wrong function input")
 	}
 
 	return max, message
 }
 
+// greatestLines given matrix and limit, returns it the max of multiplied seuqence of all matrix lines.
 func greatestLines(matrix [][]int, limit int) (int, error) {
 	var rtnval, i int
 	var message, err error
@@ -107,41 +82,43 @@ func greatestLines(matrix [][]int, limit int) (int, error) {
 
 		for _, vector := range matrix {
 			tmp, err := greatestSequential(vector, limit)
-			check(err)
+			projectEuler.Check(err)
 
 			maxLines[i] = tmp
 			i++
 		}
 
-		rtnval, err = maxVector(maxLines)
-		check(err)
+		rtnval, err = projectEuler.MaxVector(maxLines)
+		projectEuler.Check(err)
 
 		message = nil
 	} else {
 		rtnval = 0
-		message = nil
+		message = errors.New("greatestLines - wrong function input")
 	}
 
 	return rtnval, message
 }
 
-func invertibleMatrix(matrix [][]int) ([][]int, error) {
+// transposeMatrix given matrix, returns it the transposed of that matrix.
+func transposeMatrix(matrix [][]int) ([][]int, error) {
 	var message error
 	var nLines, nColumns, i, j int
-	var invertibled [][]int
+	var transposed [][]int
 
 	if nil != matrix {
 		nLines = len(matrix)
 		nColumns = len(matrix[0])
-		invertibled = make([][]int, nColumns)
+		transposed = make([][]int, nColumns)
 
 		for k := 0; k < nColumns; k++ {
-			invertibled[k] = make([]int, nLines)
+			transposed[k] = make([]int, nLines)
 		}
 
 		for _, line := range matrix {
 			for _, value := range line {
-				invertibled[i][j] = value
+				// Line becomes column
+				transposed[i][j] = value
 				i++
 			}
 
@@ -151,111 +128,134 @@ func invertibleMatrix(matrix [][]int) ([][]int, error) {
 
 		message = nil
 	} else {
-		message = nil
+		message = errors.New("transposeMatrix - wrong function input")
 	}
 
-	return invertibled, message
+	return transposed, message
 }
 
-func getDiagonals(matrix [][]int, line int) ([]int, error) {
-	var pos int
+// getDiagonals given matrix and limit, returns it the max multiplied value of both diagonals -- principal and secondary.
+func getDiagonals(matrix [][]int, line int) ([]int, []int, error) {
+	var posPrincipal, posSecondary int
 	var message error
-	var vector []int
+	var principal, secondary []int
 
 	if nil != matrix && 0 <= line {
-		vector = make([]int, 0)
+		principal = make([]int, 0)
+		secondary = make([]int, 0)
 
 		for i := 0; i < len(matrix); i++ {
-			pos = len(matrix) - line + i
+			// Get the diagonal item position
+			posPrincipal = len(matrix) - line + i
+			posSecondary = line - i
 
-			if 0 < pos && pos < len(matrix) {
-				vector = append(vector, matrix[i][pos])
+			if 0 <= posPrincipal && posPrincipal < len(matrix) {
+				principal = append(principal, matrix[i][posPrincipal])
+			}
+
+			if 0 <= posSecondary && posSecondary < len(matrix) {
+				secondary = append(secondary, matrix[i][posSecondary])
 			}
 		}
 
 		message = nil
 	} else {
-		message = nil
+		message = errors.New("getDiagonals - wrong function input")
 	}
 
-	return vector, message
+	return principal, secondary, message
 }
 
+// greatestDiagonals given matrix and limit, returns it the max value of both multiplied diagonals -- principal and
+// secondary.
 func greatestDiagonals(matrix [][]int, limit int) (int, error) {
-	var rtnval, nLines, nColumns, newNLines int
-	var matrixOfDiagonals [][]int
+	var rtnval, principal, secondary, nLines, nColumns, nDiagonals int
+	var principalDiagonal, secondaryDiagonal [][]int
 	var message, err error
 
 	if nil != matrix {
 		nLines = len(matrix)
 		nColumns = len(matrix[0])
-		newNLines = nLines + nColumns - 1
-		matrixOfDiagonals = make([][]int, newNLines)
+		nDiagonals = nLines + nColumns - 1
+		principalDiagonal = make([][]int, nDiagonals)
+		secondaryDiagonal = make([][]int, nDiagonals)
 
-		for i := 0; i < newNLines; i++ {
-			matrixOfDiagonals[i], err = getDiagonals(matrix, i)
-			check(err)
+		for i := 0; i < nDiagonals; i++ {
+			principalDiagonal[i], secondaryDiagonal[i], err = getDiagonals(matrix, i)
+			projectEuler.Check(err)
 		}
 
-		rtnval, err = greatestLines(matrixOfDiagonals, limit)
-		check(err)
+		principal, err = greatestLines(principalDiagonal, limit)
+		projectEuler.Check(err)
+
+		secondary, err = greatestLines(secondaryDiagonal, limit)
+		projectEuler.Check(err)
+
+		if principal > secondary {
+			rtnval = principal
+		} else {
+			rtnval = secondary
+		}
 
 		message = nil
 	} else {
 		rtnval = 0
-		message = nil
+		message = errors.New("greatestDiagonals - wrong function input")
 	}
 
 	return rtnval, message
 }
 
+// greatestProdutc given matrix and limit, returns it the max mutiplied values of the given matrix.
 func greatestProduct(matrix [][]int, limit int) (int, error) {
-	var rtnval, lines, columns, principalDiagonal, secondaryDiagonal int
+	var rtnval, lines, columns, diagonal int
 	var message error
 	var invertedMatrix [][]int
 	var result []int
 	var err error
 
 	if nil != matrix && 0 < limit {
-		invertedMatrix, err = invertibleMatrix(matrix)
-		check(err)
+		invertedMatrix, err = transposeMatrix(matrix)
+		projectEuler.Check(err)
 
 		lines, err = greatestLines(matrix, limit)
-		check(err)
+		projectEuler.Check(err)
 
 		columns, err = greatestLines(invertedMatrix, limit)
-		check(err)
+		projectEuler.Check(err)
 
-		principalDiagonal, err = greatestDiagonals(matrix, limit)
-		check(err)
+		diagonal, err = greatestDiagonals(matrix, limit)
+		projectEuler.Check(err)
 
-		secondaryDiagonal, err = greatestDiagonals(invertedMatrix, limit)
-		check(err)
-
-		result = make([]int, 4)
+		result = make([]int, 3)
 
 		result[0] = lines
 		result[1] = columns
-		result[2] = principalDiagonal
-		result[3] = secondaryDiagonal
+		result[2] = diagonal
 
-		rtnval, err = maxVector(result)
-		check(err)
+		rtnval, err = projectEuler.MaxVector(result)
+		projectEuler.Check(err)
+
 		message = nil
 	} else {
 		rtnval = 0
-		message = nil
+		message = errors.New("greatestProduct - wrong function input")
 	}
 
 	return rtnval, message
 }
 
-func fileToMatrix(data []byte) ([][]int, error) {
+// fileToMatrix given filename, open it the file and read it the matrix inside it.
+func fileToMatrix(filename string) ([][]int, error) {
+	var data []byte
 	var str, line []string
 	var matrix [][]int
 	var tmp []int
 	var i, j int
-	var messsage, err error
+	var message, err error
+
+	data, err = ioutil.ReadFile(filename)
+	projectEuler.Check(err)
 
 	if nil != data {
 		str = strings.Split(string(data), "\n")
@@ -270,7 +270,7 @@ func fileToMatrix(data []byte) ([][]int, error) {
 
 				for _, value := range line {
 					tmp[j], err = strconv.Atoi(value)
-					check(err)
+					projectEuler.Check(err)
 					j++
 				}
 
@@ -280,28 +280,24 @@ func fileToMatrix(data []byte) ([][]int, error) {
 			}
 		}
 
-		messsage = nil
+		message = nil
 	} else {
-		messsage = nil
+		message = errors.New("fileToMatrix - wrong function input")
 	}
 
-	return matrix, messsage
+	return matrix, message
 }
 
 func main() {
-	var data []byte
 	var err error
 	var matrix [][]int
 	var result int
 
-	data, err = ioutil.ReadFile("./input/problem_11.txt")
-	check(err)
-
-	matrix, err = fileToMatrix(data)
-	check(err)
+	matrix, err = fileToMatrix("./input/problem_11.txt")
+	projectEuler.Check(err)
 
 	result, err = greatestProduct(matrix, 4)
-	check(err)
+	projectEuler.Check(err)
 
 	fmt.Println(result)
 }

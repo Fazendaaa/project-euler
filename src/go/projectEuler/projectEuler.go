@@ -5,7 +5,7 @@ import (
 	"math/big"
 )
 
-// ErastothenesSieve Nothing
+// ErastothenesSieve returns the prime decompositon.
 func ErastothenesSieve(limit int) []int {
 	numbers := make([]int, limit)
 	result := []int{1, 2, 3}
@@ -43,7 +43,7 @@ var (
 	ONE  = big.NewInt(1)
 )
 
-// PrimesDecompositon From Rosetta Code
+// PrimesDecompositon from Rosetta Code.
 func PrimesDecompositon(n *big.Int) []*big.Int {
 	res := []*big.Int{}
 	mod, div := new(big.Int), new(big.Int)
@@ -63,7 +63,7 @@ func PrimesDecompositon(n *big.Int) []*big.Int {
 	return res
 }
 
-// IsPrime Returns wether or not a given number is prime
+// IsPrime returns wether or not a given number is prime.
 func IsPrime(number int) bool {
 	var flag = true
 	var i float64
@@ -80,4 +80,51 @@ func IsPrime(number int) bool {
 	}
 
 	return flag
+}
+
+// Check verifies whether or not a function returns an error.
+func Check(e error) {
+	if nil != e {
+		panic(e)
+	}
+}
+
+// MaxVector returns the max int from a vector.
+func MaxVector(vector []int) (int, error) {
+	var max int
+	var message error
+
+	if nil != vector {
+		for _, v := range vector {
+			if v > max {
+				max = v
+			}
+		}
+
+		message = nil
+	} else {
+		message = nil
+	}
+
+	return max, message
+}
+
+// MinVector returns the min int from a vector.
+func MinVector(vector []int) (int, error) {
+	var min int
+	var message error
+
+	if nil != vector {
+		for _, v := range vector {
+			if v < min {
+				min = v
+			}
+		}
+
+		message = nil
+	} else {
+		message = nil
+	}
+
+	return min, message
 }
