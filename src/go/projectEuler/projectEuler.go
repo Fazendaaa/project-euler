@@ -1,6 +1,7 @@
 package projectEuler
 
 import (
+	"errors"
 	"math"
 	"math/big"
 )
@@ -127,4 +128,21 @@ func MinVector(vector []int) (int, error) {
 	}
 
 	return min, message
+}
+
+// FcatorDecomposition given number, returns it the factor decomposition of it.
+func FactorDecomposition(number int) ([]int, error) {
+	var rtnval int
+	var message error
+
+	if 0 != number {
+
+		rtnval = 0
+		message = nil
+	} else {
+		rtnval = 0
+		message = errors.New("FactorDecompostion - wrong input")
+	}
+
+	return rtnval, message
 }
