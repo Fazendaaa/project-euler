@@ -10,7 +10,7 @@
 
 isPrime :: Integral a => a -> Bool
 isPrime number
-    | 2 <= number = null [ x | x <- [2..multiplesLimit], (==) 0 $ mod x number ]
+    | 2 <= number = null [ x | x <- [2..multiplesLimit], (==) 0 $ mod number x ]
     | otherwise = False where
         multiplesLimit = (+) 1 $ truncate ((sqrt $ fromIntegral number):: Float)
 
