@@ -16,13 +16,11 @@
 
 --                          Answer: 25164150
 
-reduce :: (a -> a -> a) -> [a] -> a
-reduce _ (x:[]) = x
-reduce func (x:xs) = func x $ reduce func xs
+import Data.List
 
 main :: IO()
 main = do
     let limit = 100 :: Integer
-    let theSumSquare = reduce (+) $ map (^2) [1..limit]
-    let theSquareSum = (^2) $ reduce (+) [1..limit]
+    let theSumSquare = foldl' (+) 0 $ map (^2) [1..limit]
+    let theSquareSum = (^2) $ foldl' (+) 0 [1..limit]
     print $ (-) theSquareSum theSumSquare

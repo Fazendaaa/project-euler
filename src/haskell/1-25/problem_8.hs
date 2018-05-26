@@ -29,6 +29,7 @@
 
 --                          Answer: 23514624000
 
+import Data.List
 import Data.Char
 
 stringToNumbers :: String -> [Int]
@@ -37,13 +38,9 @@ stringToNumbers (x:xs)
     | (/=) '\n' x = (digitToInt x) : (stringToNumbers xs)
     | otherwise = (stringToNumbers xs)
 
-reduce :: (a -> a -> a) -> [a] -> a
-reduce _ (x:[]) = x
-reduce func (x:xs) = func x $ reduce func xs
-
 maxMult :: (Num a, Ord a) => Int -> [a] -> a
 maxMult _ (x:[]) = x
-maxMult n xs = max (reduce (*) (take n xs)) (maxMult n (drop 1 xs))
+maxMult n xs = max (foldl' (*) 1 (take n xs)) (maxMult n (drop 1 xs))
 
 main :: IO()
 main = do

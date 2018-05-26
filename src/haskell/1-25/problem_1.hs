@@ -7,9 +7,7 @@
 
 -- 						Answer: 233168
 
-reduce :: (a -> a -> a) -> [a] -> a
-reduce _ (x:[]) = x
-reduce func (x:xs) = func x $ reduce func xs
+import Data.List
 
 isDivisibleBy :: (Integral a) => a -> [a] -> Bool
 isDivisibleBy _ [] = False
@@ -20,4 +18,4 @@ multiplesOfBelow multiples limit = filter (\x -> isDivisibleBy x multiples) [1..
 
 main :: IO()
 main = do
-    print $ reduce (+) $ multiplesOfBelow [3, 5] 1000
+    print $ foldl' (+) 0 $ multiplesOfBelow [3, 5] 1000

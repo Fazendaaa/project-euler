@@ -10,9 +10,7 @@
 
 -- 							Answer: 4613732
 
-reduce :: (a -> a -> a) -> [a] -> a
-reduce _ (x:[]) = x
-reduce func (x:xs) = func x $ reduce func xs
+import Data.List
 
 fibonacci :: (Integral a) => a -> [a]
 fibonacci 1 = [1]
@@ -30,5 +28,5 @@ evenFibLimit limit = filter even $ takeFibWhile limit
 
 main :: IO()
 main = do
-    print $ reduce (+) $ evenFibLimit 4000000
+    print $ foldl' (+) 0 $ evenFibLimit 4000000
 
