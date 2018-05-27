@@ -1,38 +1,68 @@
 # Project Euler
 
-<img align="right" alt="Euler's picture" src="https://www.biography.com/.image/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NDg0MDU1NDE1MzI2MjIz/leonhard-euler-21342391-1-402.jpg">
+<div align="center">
+<br>
+<img src="./logo/logo.png" width=260 height=260/>
+<br>
+<br>
 
-**[Project Euler](https://projecteuler.net "Project Euler's Homepage")**<div align="justify"> é um bom site de desafios para programar onde as tarefas apresentadas são bons desafios para quem já possui uma base de programação e procura apreender um nova linguagem.</div>
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg?longCache=true&style=for-the-badge)](https://saythanks.io/to/Fazendaaa)
 
-## Tarefas
+[![English README](https://img.shields.io/badge/Language-EN-blue.svg?longCache=true&style=for-the-badge)](./README.md)
+[![Portuguese README](https://img.shields.io/badge/Linguagem-PT-green.svg?longCache=true&style=for-the-badge)](./docs/readme/README_PT.md)
 
-<div align="justify">Tomei a liberdade de copiar os enunciados e em alguns casos alterá-lo para maior clareza. Qualquer dúvida os enunciados podem ser conferidos na integra no site do projeto.</div>
+[![Haskell Badge](https://img.shields.io/badge/Ruby-%3C3-brightgreen.svg?longCache=true&style=for-the-badge)](https://www.ruby-lang.org)
+[![Haskell Badge](https://img.shields.io/badge/C++-%3C3-yellowgreen.svg?longCache=true&style=for-the-badge)](http://www.cplusplus.com)
+[![Haskell Badge](https://img.shields.io/badge/Julia-%3C3-yellow.svg?longCache=true&style=for-the-badge)](https://julialang.org/)
+[![Haskell Badge](https://img.shields.io/badge/Go-%3C3-orange.svg?longCache=true&style=for-the-badge)](https://golang.org/)
+[![Haskell Badge](https://img.shields.io/badge/Haskell-%3C3-ff69b4.svg?longCache=true&style=for-the-badge)](https://haskell-lang.org/)
+[![Haskell Badge](https://img.shields.io/badge/Python-%3C3-blue.svg?longCache=true&style=for-the-badge)](https://www.python.org/)
 
-<div align="justify">As atividades estarão com seu status de andamento bem explicito nos commits, como por exemplo:</div>
+</div>
 
+> **[Project Euler](https://projecteuler.net)** is a good site with challenging exercises for those who already have a solid computer science knowledge and are willing to take a step further.
 
-* [NOT SOLVED] = quando a tarefa está em desenvolvimento.
-* [SOLVED] = tarefa finalizada e estável.
+## Tasks
 
-<div align="justify">Todos os status serão seguidos por uma explicação referente a última alteração no código.</div>
+I gave myself the freedom to copy and paste the exercises descriptions, given it some proper modification to better suits my need to understand it. The task itself is has its number in the source file.
 
-<div align="justify">Todas as atividades foram implementadas nas linguagens que os diretórios representam.</div>
+All of the status of the file or even updates are explained in the Github's commits.
 
-* cpp = [C++](http://www.cplusplus.com)
-* ruby = [Ruby](https://www.ruby-lang.org)
+All tasks are implemented in the following languages, that the directories are represented by. Until now:
 
-### Organização
+* [Ruby](https://www.ruby-lang.org)
+* [C++](http://www.cplusplus.com)
+* [Julia](https://julialang.org/)
+* [Go](https://golang.org/)
+* [Haskell](https://haskell-lang.org/)
+* [Python](https://www.python.org/)
 
-<div align="justify">As tarefas estão organizadas em pastas de acordo as conquistas desbloqueadas, que são a cada 25 realizadas. Além disso, quando o exercício precisar de algum arquivo de texto com inputs ele se econtrará em uma pasta nomeada _input_ e o com o *.txt* nomeado referente ao exercício.</div>
+### Status
 
-## Referências
+Not all of the tasks are finished, some languages have more completed tasks than others. This a life time project of learning and self-improvement, in other words... "Cut me some slack".
 
-<div align="justify">Além disso, todas as referências utilizadas também estarão igualmente listadas ao final de cada descrição. Seja ela desde uma página da </div>[Wikipédia](https://www.wikipedia.org "Wikipedia's homepage")<div align="justify"> que eu utilizei para entender melhor o conceito por trás da tarefa, ou até mesmo a página de outras pessoas que já realizaram tais tarefas uma vez que para tarefas que requerem muito conhecimento matemático o problema não fica tão claro. Neste último caso vale agradecer ao </div>**[MathBlog](http://www.mathblog.dk/category/solutions/project-euler/ "MathBlog's Project Euler page" )**<div align="justify"> pelo incrível conteúdo que conseguiu produzir muito bem explicado e carregado de referências.</div> ~~Algum dia espero poder dizer o mesmo de mim.~~
+### Dependencies
 
-***
+The tasks are bundle together in folders given the unlocked achievements which are each of 25 tasks. Besides that when the exercise need some input of large amount of data, the needed input will be stored in a __.txt__ file in the _inputs_ folder.
 
-<div align="justify">Procuro sempre comentar os códigos, em Inglês, para que a leitura seja de maneira mais clara. Todavia, normalmente o faço depois que termino a tarefa.</div>
+## References
 
-***
+All of the references used in the exercise development are equally listed at the end of each description. From a webpage that I've used to better understand some computer concept behind it, a math one or even to help me see the real problem the task itself.
 
-<div align="justify">Qualquer dúvida só avisar</div>
+Some of the most used references:
+
+* [Wikipédia](https://www.wikipedia.org)
+* [MathBlog](http://www.mathblog.dk/category/solutions/project-euler/)
+* [StackOverflow](https://stackoverflow.com/)
+* [Mathematics](https://math.stackexchange.com/)
+* [Theorical Computer Science](https://cstheory.stackexchange.com/)
+
+## Code
+
+I always tried to comment the code, in my best English, to improve some code writing stepping up its clarity.
+
+In case that any doubt are raised, give me a heads up.
+
+## License
+
+Just see the [LICENSE](./LICENSE) file.
