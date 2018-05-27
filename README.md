@@ -11,12 +11,12 @@
 [![English README](https://img.shields.io/badge/Language-EN-blue.svg?longCache=true&style=for-the-badge)](./README.md)
 [![Portuguese README](https://img.shields.io/badge/Linguagem-PT-green.svg?longCache=true&style=for-the-badge)](./docs/readme/README_PT.md)
 
-[![Haskell Badge](https://img.shields.io/badge/Ruby-%3C3-brightgreen.svg?longCache=true&style=for-the-badge)](https://www.ruby-lang.org)
-[![Haskell Badge](https://img.shields.io/badge/C++-%3C3-yellowgreen.svg?longCache=true&style=for-the-badge)](http://www.cplusplus.com)
-[![Haskell Badge](https://img.shields.io/badge/Julia-%3C3-yellow.svg?longCache=true&style=for-the-badge)](https://julialang.org/)
-[![Haskell Badge](https://img.shields.io/badge/Go-%3C3-orange.svg?longCache=true&style=for-the-badge)](https://golang.org/)
-[![Haskell Badge](https://img.shields.io/badge/Haskell-%3C3-ff69b4.svg?longCache=true&style=for-the-badge)](https://haskell-lang.org/)
-[![Haskell Badge](https://img.shields.io/badge/Python-%3C3-blue.svg?longCache=true&style=for-the-badge)](https://www.python.org/)
+[![Ruby Badge](https://img.shields.io/badge/Ruby-66/627-brightgreen.svg?longCache=true&style=for-the-badge)](https://www.ruby-lang.org)
+[![C++ Badge](https://img.shields.io/badge/C++-3/627-yellowgreen.svg?longCache=true&style=for-the-badge)](http://www.cplusplus.com)
+[![Julia Badge](https://img.shields.io/badge/Julia-3/627-yellow.svg?longCache=true&style=for-the-badge)](https://julialang.org/)
+[![Go Badge](https://img.shields.io/badge/Go-12/627-orange.svg?longCache=true&style=for-the-badge)](https://golang.org/)
+[![Haskell Badge](https://img.shields.io/badge/Haskell-10/627-ff69b4.svg?longCache=true&style=for-the-badge)](https://haskell-lang.org/)
+[![Python Badge](https://img.shields.io/badge/Python-31/627-blue.svg?longCache=true&style=for-the-badge)](https://www.python.org/)
 
 </div>
 
