@@ -13,7 +13,7 @@
 [![C++ Badge](https://img.shields.io/badge/C++-3/627-yellowgreen.svg?longCache=true&style=for-the-badge)](../../src/cpp/)
 [![Julia Badge](https://img.shields.io/badge/Julia-3/627-yellow.svg?longCache=true&style=for-the-badge)](../../src/julia/)
 [![Go Badge](https://img.shields.io/badge/Go-12/627-orange.svg?longCache=true&style=for-the-badge)](../../src/go/)
-[![Haskell Badge](https://img.shields.io/badge/Haskell-10/627-ff69b4.svg?longCache=true&style=for-the-badge)](../../src/haskell/)
+[![Haskell Badge](https://img.shields.io/badge/Haskell-15/627-ff69b4.svg?longCache=true&style=for-the-badge)](../../src/haskell/)
 [![Python Badge](https://img.shields.io/badge/Python-31/627-blue.svg?longCache=true&style=for-the-badge)](../../src/python/)
 
 </div>
