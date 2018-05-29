@@ -26,3 +26,11 @@ module ProjectEuler where
         multiplesLimit = (+) 1 $ truncate ((sqrt $ fromIntegral limit):: Float)
         multiples = sortUniq [ mult | x <- [2..multiplesLimit], mult <- takeWhile (<= limit) [ ((*) x y) | y <- [2..limit] ]]
         primes = myDiff 2 multiples
+
+    -- Without sorting to be faster.
+    factors :: Int -> [Int]
+    factors number = [ add | n <- [1..factorLimit], isDivisible n, add <- allFactors n ] where
+        factorLimit = (truncate . sqrt . fromIntegral) number
+        isDivisible num = (==) 0 (mod number num)
+        allFactors num = if (>) dividend num then [num, dividend] else [num] where
+            dividend = div number num
