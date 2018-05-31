@@ -14,3 +14,7 @@ export const and = (arr: Array<boolean>): boolean => {
 export const or = (arr: Array<boolean>): boolean => {
     return arr.reduce((acc, cur) => (false === acc) ? cur : true, false);
 };
+
+export const isEven = (num: number): boolean => (0 === num % 2);
+
+export const isOdd = (num: number): boolean => (0 !== num % 2);
