@@ -9,6 +9,8 @@ export const range = ({ start, end, step }: {start: number; end: number; step?: 
     });
 };
 
+export const not = (value: boolean): boolean => !value;
+
 export const and = (arr: Array<boolean>): boolean => {
     return arr.reduce((acc, cur) => (true === acc) ? cur : false, true);
 };
@@ -67,4 +69,24 @@ export const isWordPalindrome = (str: string): boolean => {
 
 export const isNumberPalindrome = (num: number): boolean => {
     return isWordPalindrome(num.toString());
+};
+
+export const erastosthenesSieve = (num: number): Array<number> => {
+    const sieveLimit = Math.trunc(Math.sqrt(num)) + 1;
+    const multiples: Array<number> = [];
+    const removeMultiples = (value: number) => not(multiples.includes(value));
+
+    for (let iterator = 2; iterator < sieveLimit; iterator += 1) {
+        for (let multiply = 2; multiply < num; multiply += 1) {
+            const product = iterator * multiply;
+
+            if (product > num) {
+                break;
+            }
+
+            multiples.push(product);
+        }
+    }
+
+    return range({ start: 2, end: num }).filter(removeMultiples);
 };

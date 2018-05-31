@@ -17,7 +17,7 @@
 [![Go Badge](https://img.shields.io/badge/Go-12/627-orange.svg?longCache=true&style=for-the-badge)](./src/go/)
 [![Haskell Badge](https://img.shields.io/badge/Haskell-15/627-ff69b4.svg?longCache=true&style=for-the-badge)](./src/haskell/)
 [![Python Badge](https://img.shields.io/badge/Python-31/627-blue.svg?longCache=true&style=for-the-badge)](./src/python/)
-[![Node+TS Badge](https://img.shields.io/badge/Node+TS-1/627-bb86fc.svg?longCache=true&style=for-the-badge)](./src/node/)
+[![Node+TS Badge](https://img.shields.io/badge/Node+TS-5/627-bb86fc.svg?longCache=true&style=for-the-badge)](./src/node/)
 
 </div>
 
