@@ -18,3 +18,34 @@ export const or = (arr: Array<boolean>): boolean => {
 export const isEven = (num: number): boolean => (0 === num % 2);
 
 export const isOdd = (num: number): boolean => (0 !== num % 2);
+
+export const factors = (num: number): Array<number> => {
+    const factorLimit = Math.sqrt(num);
+    const factors = [];
+
+    for (let iterator = 1; iterator < factorLimit; iterator += 1) {
+        if (0 === (num % iterator)) {
+            const dividend = num / iterator;
+
+            if (dividend > iterator) {
+                factors.push(dividend, iterator);
+            } else {
+                factors.push(iterator);
+            }
+        }
+    }
+
+    return factors;
+};
+
+export const isPrime = (num: number): boolean => {
+    const primeLimit = Math.sqrt(num);
+
+    for (let iterator = 2; iterator < primeLimit; iterator += 1) {
+        if (0 === num % iterator) {
+            return false;
+        }
+    }
+
+    return true;
+}
