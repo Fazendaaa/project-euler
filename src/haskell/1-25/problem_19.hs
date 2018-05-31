@@ -14,10 +14,32 @@
 --         century unless it is divisible by 400.
 
 -- How many Sundays fell on the first of the month during the twentieth century
--- ( 1 Jan 1901 to 31 Dec 2000 )?
+-- (1 Jan 1901 to 31 Dec 2000)?
 
 --                             Answer: 171
 
+data Week = Sunday
+          | Monday
+          | Tuesday
+          | Wendnesday
+          | Thursday
+          | Friday
+          | Saturday
+          deriving (Eq, Ord, Show)
+data Month = Januray
+           | February
+           | March
+           | April
+           | May
+           | June
+           | July
+           | August
+           | September
+           | October
+           | November
+           | December
+           deriving (Eq, Ord, Show)
+
 main :: IO()
 main = do
-    print $ "hey"
+    print $ compare Monday Tuesday

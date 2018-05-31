@@ -1,7 +1,9 @@
 # Project Euler
 
 <div align="center">
+<br>
 <img src="../../logo/logo.png" width=260 height=260/>
+<br>
 <br>
 
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg?longCache=true&style=for-the-badge)](https://saythanks.io/to/Fazendaaa)
@@ -15,6 +17,7 @@
 [![Go Badge](https://img.shields.io/badge/Go-12/627-orange.svg?longCache=true&style=for-the-badge)](../../src/go/)
 [![Haskell Badge](https://img.shields.io/badge/Haskell-15/627-ff69b4.svg?longCache=true&style=for-the-badge)](../../src/haskell/)
 [![Python Badge](https://img.shields.io/badge/Python-31/627-blue.svg?longCache=true&style=for-the-badge)](../../src/python/)
+[![Node+TS Badge](https://img.shields.io/badge/Node+TS-1/627-bb86fc.svg?longCache=true&style=for-the-badge)](../../src/node/)
 
 </div>
 
@@ -33,6 +36,8 @@ Todas as atividades foram implementadas nas linguagens que os diretórios repres
 * [Go](https://golang.org/)
 * [Haskell](https://haskell-lang.org/)
 * [Python](https://www.python.org/)
+* [Node](https://nodejs.org/)
+    * [Typescript](http://typescriptlang.org/)
 
 ### Andamento
 Nem todas as tarefas estão finalizadas e mais em algumas linguagens do que em outras. Este é um projeto de aprendizado e considero um dos poucos que levarei para a vida
