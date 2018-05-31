@@ -4,7 +4,9 @@ export const range = ({ start, end, step }: {start: number; end: number; step?: 
     const length = (end + 1) - start;
     const stepping = (undefined != step) ? step : 1;
 
-    return Array.apply(null, { length }).map((cur: any, index: number) => index + 1);
+    return Array.apply(null, { length }).map((cur: any, index: number) => {
+        return index + start;
+    });
 };
 
 export const and = (arr: Array<boolean>): boolean => {
@@ -49,3 +51,20 @@ export const isPrime = (num: number): boolean => {
 
     return true;
 }
+
+export const isWordPalindrome = (str: string): boolean => {
+    for (let iterator = 0; iterator < (str.length / 2); iterator += 1) {
+        const first = str.charAt(iterator);
+        const last = str.charAt(str.length - (iterator + 1));
+
+        if (first !== last) {
+            return false;
+        }
+    }
+
+    return true;
+};
+
+export const isNumberPalindrome = (num: number): boolean => {
+    return isWordPalindrome(num.toString());
+};
