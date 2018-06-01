@@ -10,6 +10,7 @@
 
 // Helped me out:
 //     *   http://www.mathblog.dk/project-euler-problem-5/
+
 'use strict';
 
 import { erastosthenesSieve } from '../project_euler';

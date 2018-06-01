@@ -21,7 +21,7 @@
 
 </div>
 
-> **[Project Euler](https://projecteuler.net)** is a good site with challenging exercises for those who already have a solid computer science knowledge and are willing to take a step further.
+> **[Project Euler](https://projecteuler.net)** is a good website with challenging exercises for those who already have a solid computer science knowledge and are willing to take a step further.
 
 ## Tasks
 I gave myself the freedom to copy and paste the exercises descriptions, given it some proper modification to better suits my need to understand it. The task itself is has its number in the source file.
