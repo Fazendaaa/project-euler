@@ -12,21 +12,21 @@
 
 import Data.List
 
-fibonacci :: (Integral a) => a -> [a]
-fibonacci 1 = [1]
-fibonacci 2 = [1, 2]
-fibonacci nth = series where
-    previous = fibonacci (pred nth)
-    evenPrevious = previous !! (-) (length previous) 2
-    series = (++) previous ((:) ((+) (last previous) evenPrevious) [])
+-- Inifinite recursion.
+fibonacci :: Integral a => [a]
+fibonacci = 1 : scanl' (+) 1 fibonacci
+
+nthFibonacci :: Integral a => Int -> a
+nthFibonacci nth = (!!) fibonacci nth
 
 takeFibWhile :: (Integral a) => a -> [a]
-takeFibWhile takeLimit = takeWhile (< takeLimit) $ [last (fibonacci x) | x <- [1..]]
+takeFibWhile takeLimit = takeWhile (< takeLimit) [nthFibonacci x | x <- [1..]]
 
 evenFibLimit :: (Integral a) => a -> [a]
-evenFibLimit limit = filter even $ takeFibWhile limit
+evenFibLimit limit = (filter even . takeFibWhile) limit
 
 main :: IO()
 main = do
-    print $ foldl' (+) 0 $ evenFibLimit 4000000
+    let limit = 4000000
+    print $ (foldl' (+) 0 . evenFibLimit) limit
 

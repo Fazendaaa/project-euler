@@ -2,6 +2,12 @@ module ProjectEuler where
     import Data.List
     import Data.List.Unique
 
+    fibonacci :: Integral a => [a]
+    fibonacci = 1 : scanl' (+) 1 fibonacci
+
+    nthFibonacci :: Integral a => Int -> a
+    nthFibonacci nth = fibonacci !! nth
+
     stringToNumbers :: String -> [Int]
     stringToNumbers [] = []
     stringToNumbers (x:xs)
