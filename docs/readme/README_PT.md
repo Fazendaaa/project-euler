@@ -11,13 +11,23 @@
 [![English README](https://img.shields.io/badge/Language-EN-blue.svg?longCache=true&style=for-the-badge)](../../README.md)
 [![Portuguese README](https://img.shields.io/badge/Linguagem-PT-green.svg?longCache=true&style=for-the-badge)](./README_PT.md)
 
-[![Ruby Badge](https://img.shields.io/badge/Ruby-66/627-brightgreen.svg?longCache=true&style=for-the-badge)](../../src/ruby/)
+[![C Badge](https://img.shields.io/badge/C-0/627-FBC02D.svg?longCache=true&style=for-the-badge)](../../src/c/)
 [![C++ Badge](https://img.shields.io/badge/C++-3/627-yellowgreen.svg?longCache=true&style=for-the-badge)](../../src/cpp/)
-[![Julia Badge](https://img.shields.io/badge/Julia-3/627-yellow.svg?longCache=true&style=for-the-badge)](../../src/julia/)
+[![Cobol Badge](https://img.shields.io/badge/Cobol-0/627-00bcd4.svg?longCache=true&style=for-the-badge)](../../src/cobol/)
+[![Elixir Badge](https://img.shields.io/badge/Elixir-0/627-8d6e63.svg?longCache=true&style=for-the-badge)](../../src/elixir/)
+[![F# Badge](https://img.shields.io/badge/F_Sharp-0/627-8bc34a.svg?longCache=true&style=for-the-badge)](../../src/f_sharp/)
 [![Go Badge](https://img.shields.io/badge/Go-12/627-orange.svg?longCache=true&style=for-the-badge)](../../src/go/)
 [![Haskell Badge](https://img.shields.io/badge/Haskell-15/627-ff69b4.svg?longCache=true&style=for-the-badge)](../../src/haskell/)
-[![Python Badge](https://img.shields.io/badge/Python-31/627-blue.svg?longCache=true&style=for-the-badge)](../../src/python/)
+[![Java Badge](https://img.shields.io/badge/Java-0/627-78909c.svg?longCache=true&style=for-the-badge)](../../src/java/)
+[![Julia Badge](https://img.shields.io/badge/Julia-3/627-yellow.svg?longCache=true&style=for-the-badge)](../../src/julia/)
+[![Lisp Badge](https://img.shields.io/badge/Lisp-0/627-ad1457.svg?longCache=true&style=for-the-badge)](../../src/lisp/)
 [![Node+TS Badge](https://img.shields.io/badge/Node+TS-5/627-bb86fc.svg?longCache=true&style=for-the-badge)](../../src/node/)
+[![Python Badge](https://img.shields.io/badge/Python-31/627-blue.svg?longCache=true&style=for-the-badge)](../../src/python/)
+[![Perl Badge](https://img.shields.io/badge/Perl-0/627-6d4c41.svg?longCache=true&style=for-the-badge)](../../src/perl/)
+[![R Badge](https://img.shields.io/badge/R-0/627-5e35b1.svg?longCache=true&style=for-the-badge)](../../src/r/)
+[![Ruby Badge](https://img.shields.io/badge/Ruby-66/627-brightgreen.svg?longCache=true&style=for-the-badge)](../../src/ruby/)
+[![Rust Badge](https://img.shields.io/badge/Rust-0/627-4527a0.svg?longCache=true&style=for-the-badge)](../../src/rust/)
+[![Swift Badge](https://img.shields.io/badge/Swift-0/627-ff5252.svg?longCache=true&style=for-the-badge)](../../src/swift/)
 
 </div>
 
@@ -26,18 +36,29 @@
 ## Tarefas
 Tomei a liberdade de copiar os enunciados e em alguns casos alterá-lo para maior clareza. Qualquer dúvida os enunciados podem ser conferidos na integra no site do projeto, o número do problema é linkado no nome do arquivo.
 
+Coloquei também as linguagens que gostaria de aprender, a diferença delas para as outras é a falta de problemas implementados.
+
 Todos os status serão seguidos por uma explicação referente a última alteração no código.
 
 Todas as atividades foram implementadas nas linguagens que os diretórios representam. Até agora:
 
-* [Ruby](https://www.ruby-lang.org)
+* [C](https://www.iso.org/standard/57853.html)
 * [C++](http://www.cplusplus.com)
-* [Julia](https://julialang.org/)
+* [Cobol](https://open-cobol.sourceforge.io/)
+* [F#](https://fsharp.org/)
 * [Go](https://golang.org/)
 * [Haskell](https://haskell-lang.org/)
-* [Python](https://www.python.org/)
+* [Java](https://java.com/)
+* [Julia](https://julialang.org/)
+* [Lisp](http://lisp-lang.org/)
 * [Node](https://nodejs.org/)
     * [Typescript](http://typescriptlang.org/)
+* [Perl](https://www.perl.org/)
+* [Python](https://www.python.org/)
+* [R](https://www.r-project.org/)
+* [Ruby](https://www.ruby-lang.org)
+* [Rust](https://www.rust-lang.org/)
+* [Swift](https://swift.org/)
 
 ### Andamento
 Nem todas as tarefas estão finalizadas e mais em algumas linguagens do que em outras. Este é um projeto de aprendizado e considero um dos poucos que levarei para a vida
