@@ -14,7 +14,7 @@
 import { isEven, sum } from '../project_euler';
 
 const fibonacciLimit = (limit: number): Array<number> => {
-    const sequence: Array<number> = [1, 2];
+    const sequence = [1, 2];
     let nth = 3;
 
     while (nth < limit) {
