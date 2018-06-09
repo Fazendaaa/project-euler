@@ -15,13 +15,15 @@
 
 import { erastosthenesSieve } from '../project_euler';
 
+const smallestMultiple = (limit: number, acc: number, cur: number): number => {
+    const upTo = Math.trunc(Math.log10(limit) / Math.log10(cur));
+
+    return acc * Math.trunc(Math.pow(cur, upTo));
+};
+
 const limit = 20;
 const primes = erastosthenesSieve(limit);
-let result = 1;
-
-for (const prime of primes) {
-    const upTo = Math.trunc(Math.log10(limit) / Math.log10(prime));
-    result *= Math.trunc(Math.pow(prime, upTo));
-}
+const curriedSmallestMultiple = ((acc: number, cur: number) => smallestMultiple(limit, acc, cur));
+const result = primes.reduce(curriedSmallestMultiple, 1);
 
 console.log(result);

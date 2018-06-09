@@ -11,37 +11,23 @@
 // 							Answer: 4613732
 'use strict';
 
-import { isEven } from '../project_euler';
-
-const fibonacci = (nth: number): Array<number> => {
-    const fibs = [1, 2];
-
-    if (0 > nth) {
-        return [];
-    } if (1 === nth) {
-        return [1];
-    } if (2 === nth) {
-        return fibs;
-    }
-
-    for (let iterator = 2; iterator < nth; iterator += 1) {
-        fibs.push(fibs[iterator - 2] + fibs[iterator - 1]);
-    }
-
-    return fibs;
-};
+import { isEven, sum } from '../project_euler';
 
 const fibonacciLimit = (limit: number): Array<number> => {
-    let popped = 0;
-    let counter = 0;
+    const sequence: Array<number> = [1, 2];
+    let nth = 3;
 
-    do {
-        counter += 1;
-        popped = <number>fibonacci(counter).pop();
-    } while (popped < limit);
+    while (nth < limit) {
+        sequence.push(nth);
 
-    return fibonacci(counter - 1);
+        const penultimate = sequence[sequence.length - 1];
+        const antepenult = sequence[sequence.length - 2];
+
+        nth = penultimate + antepenult;
+    }
+
+    return sequence;
 };
 
 const limit = 4000000;
-console.log(fibonacciLimit(limit).filter(isEven).reduce((acc, cur) => acc + cur, 0));
+console.log(fibonacciLimit(limit).filter(isEven).reduce(sum, 0));

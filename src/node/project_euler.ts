@@ -90,3 +90,21 @@ export const erastosthenesSieve = (num: number): Array<number> => {
 
     return range({ start: 2, end: num }).filter(removeMultiples);
 };
+
+export const zipWith = <T>(func: Function, first: Array<T>, second: Array<T>): Array<T> => {
+    const result: Array<T> = [];
+    const iterator = range({
+        start: 0,
+        end: (first.length > second.length) ? first.length : second.length
+    });
+
+    for (const index of iterator) {
+        result.push(func(first[index], second[index]));
+    }
+
+    return result;
+};
+
+export const sum = (x: number, y: number): number => x + y;
+
+export const flatten = <T>(acc: Array<T>, cur: Array<T>): Array<T> => acc.concat(cur);

@@ -8,7 +8,7 @@
 // 						Answer: 233168
 'use strict';
 
-import { or, range } from '../project_euler';
+import { or, range, sum } from '../project_euler';
 
 const isMultiple = ({ value, numbers }: { value: number; numbers: Array<number> }): boolean => {
     return or(numbers.map(div => 0 === (value % div)));
@@ -19,4 +19,4 @@ const multiplesOf = ({ length, numbers }: { length: number; numbers: Array<numbe
 };
 
 const limit = 1000;
-console.log(multiplesOf({ length: (limit - 1), numbers: [3, 5] }).reduce((acc, cur) => acc + cur, 0));
+console.log(multiplesOf({ length: (limit - 1), numbers: [3, 5] }).reduce(sum, 0));
