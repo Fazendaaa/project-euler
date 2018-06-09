@@ -24,6 +24,5 @@ const smallestMultiple = (limit: number, acc: number, cur: number): number => {
 const limit = 20;
 const primes = erastosthenesSieve(limit);
 const curriedSmallestMultiple = ((acc: number, cur: number) => smallestMultiple(limit, acc, cur));
-const result = primes.reduce(curriedSmallestMultiple, 1);
 
-console.log(result);
+console.log(primes.reduce(curriedSmallestMultiple, 1));
