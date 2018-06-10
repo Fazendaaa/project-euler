@@ -18,13 +18,11 @@
 
 'use strict';
 
-import { range, sum } from '../project_euler';
+import { range, square, sum } from '../project_euler';
 
-const interval = range({
-    start: 1,
-    end: 100
-});
-const theSum = interval.map(elem => Math.pow(elem, 2)).reduce(sum, 0);
-const theSquare = Math.pow(interval.reduce(sum, 0), 2);
+const end = 100;
+const interval = range({ start: 1, end });
+const theSumSquare = interval.map(square).reduce(sum, 0);
+const theSquareSum = square(interval.reduce(sum, 0));
 
-console.log(theSquare - theSum);
+console.log(theSquareSum - theSumSquare);

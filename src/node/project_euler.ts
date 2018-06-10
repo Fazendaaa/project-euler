@@ -118,3 +118,5 @@ export const sum = (x: number, y: number): number => (x + y);
 export const mult = (x: number, y: number): number => (x * y);
 
 export const flatten = <T>(acc: Array<T>, cur: Array<T>): Array<T> => acc.concat(cur);
+
+export const square = (x: number) => Math.pow(x, 2);
