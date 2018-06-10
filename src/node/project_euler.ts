@@ -43,7 +43,15 @@ export const factors = (num: number): Array<number> => {
 };
 
 export const isPrime = (num: number): boolean => {
-    const primeLimit = Math.sqrt(num);
+    const primeLimit = Math.sqrt(num) + 1;
+
+    if (2 > num) {
+        return false;
+    }
+
+    if (2 === num) {
+        return true;
+    }
 
     for (let iterator = 2; iterator < primeLimit; iterator += 1) {
         if (0 === num % iterator) {
@@ -105,6 +113,8 @@ export const zipWith = <T>(func: Function, first: Array<T>, second: Array<T>): A
     return result;
 };
 
-export const sum = (x: number, y: number): number => x + y;
+export const sum = (x: number, y: number): number => (x + y);
+
+export const mult = (x: number, y: number): number => (x * y);
 
 export const flatten = <T>(acc: Array<T>, cur: Array<T>): Array<T> => acc.concat(cur);

@@ -21,7 +21,7 @@
 [![Java Badge](https://img.shields.io/badge/Java-0/627-78909c.svg?longCache=true&style=flat-square)](../../src/java/)
 [![Julia Badge](https://img.shields.io/badge/Julia-3/627-yellow.svg?longCache=true&style=flat-square)](../../src/julia/)
 [![Lisp Badge](https://img.shields.io/badge/Lisp-0/627-ad1457.svg?longCache=true&style=flat-square)](../../src/lisp/)
-[![Node+TS Badge](https://img.shields.io/badge/Node+TS-5/627-bb86fc.svg?longCache=true&style=flat-square)](../../src/node/)
+[![Node+TS Badge](https://img.shields.io/badge/Node+TS-8/627-bb86fc.svg?longCache=true&style=flat-square)](../../src/node/)
 [![Python Badge](https://img.shields.io/badge/Python-31/627-blue.svg?longCache=true&style=flat-square)](../../src/python/)
 [![Perl Badge](https://img.shields.io/badge/Perl-0/627-6d4c41.svg?longCache=true&style=flat-square)](../../src/perl/)
 [![R Badge](https://img.shields.io/badge/R-0/627-5e35b1.svg?longCache=true&style=flat-square)](../../src/r/)
