@@ -9,7 +9,7 @@
 
 'use strict';
 
-import { flatten, isNumberPalindrome, not, range } from '../project_euler';
+import { flatten, isNumberPalindrome, mapAndFilter, mapAndFlatten, range } from '../project_euler';
 
 const palindromeProduct = (digits: number): Array<number> => {
     const upTo = digits - 1;
@@ -18,9 +18,9 @@ const palindromeProduct = (digits: number): Array<number> => {
         end: Math.pow(10, (upTo + 1)) - 1
     });
 
-    return interval.map((first, index) =>
-        interval.slice(index).map(second => first * second).filter(isNumberPalindrome)
-    ).reduce(flatten, []);
+    return mapAndFlatten(((first: number, index: number) =>
+        mapAndFilter(((second: number) => first * second), isNumberPalindrome, interval.slice(index))
+    ), interval);
 };
 
 console.log(Math.max(...palindromeProduct(3)));

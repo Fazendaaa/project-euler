@@ -113,6 +113,24 @@ export const zipWith = <T>(func: Function, first: Array<T>, second: Array<T>): A
     return result;
 };
 
+export const mapAndFilter = <T>(map: Function, filter: Function, array: Array<T>): Array<T> => {
+    const newArray: Array<T> = [];
+
+    array.forEach(callbackFn => {
+        const mapped = map(callbackFn);
+
+        if (filter(mapped)) {
+            newArray.push(mapped);
+        }
+    });
+
+    return newArray;
+};
+
+export const mapAndFlatten = <T>(map: Function, array: Array<T>): Array<T> => {
+    return array.reduce((acc, cur, curIndex, curArr) => acc.concat(map(cur, curIndex, curArr)), []);
+};
+
 export const sum = (x: number, y: number): number => (x + y);
 
 export const mult = (x: number, y: number): number => (x * y);
