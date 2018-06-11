@@ -40,13 +40,11 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import { not, sum, zipWith } from '../project_euler';
 
-const maxBetweenTwo = (line: Array<number>): Array<number> => {
-    return line.map((value, index, array) => {
-        const next = index + 1;
+const maxBetweenTwo = (line: Array<number>): Array<number> => line.map((value, index, array) => {
+    const next = index + 1;
 
-        return next < array.length ? Math.max(value, array[next]) : value;
-    });
-};
+    return next < array.length ? Math.max(value, array[next]) : value;
+});
 
 const maxPathSum = (triangle: Array<Array<number>>): number => {
     const reversed = triangle.reverse();
