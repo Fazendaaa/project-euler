@@ -84,14 +84,11 @@ export const erastosthenesSieve = (num: number): Array<number> => {
     return primes;
 };
 
-export const zipWith = <T>(func: Function, first: Array<T>, second: Array<T>): Array<T> => {
+export const zipWith = <T>(func: (a: T, b: T) => T, first: Array<T>, second: Array<T>): Array<T> => {
     const result: Array<T> = [];
-    const iterator = range({
-        start: 0,
-        end: (first.length > second.length) ? first.length : second.length
-    });
+    const minimum = Math.min(first.length, second.length);
 
-    for (const index of iterator) {
+    for (let index = 0; index < minimum; index += 1) {
         result.push(func(first[index], second[index]));
     }
 
