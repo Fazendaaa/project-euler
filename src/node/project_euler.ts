@@ -135,3 +135,5 @@ export const and = (arr: Array<boolean>): boolean => arr.reduce((acc, cur) => (t
 export const isOdd = (num: number): boolean => (0 !== num % 2);
 
 export const isEven = (num: number): boolean => (0 === num % 2);
+
+export const factorial = (num: number): number => range({ end: num }).reduce(mult, 1);
