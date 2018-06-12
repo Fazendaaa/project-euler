@@ -44,6 +44,8 @@ Boolean insertOrdered (List * list, Data * data);
 
 Boolean sort (List * list);
 
+Data * reduce (const List * list, Data (* operation) (const Data * acc, const Data * cur), Data * initial);
+
 // -----------------------------------------------------------------------------
 
 #endif

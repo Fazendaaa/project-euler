@@ -11,10 +11,21 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "../lib/list/int/intlist.h"
+#include "../lib/list/int/listint.h"
 
 int main (int argc, char ** argv) {
-    printf("Hello, World.\n");
+    ListInt * list = allocListInt();
+
+    if (True == pushListInt (list, 3) && True == pushListInt (list, 5)) {
+        printf ("Pushed.\n");
+    } else {
+        printf ("Error.\n");
+    }
+
+    printf ("List length: %d.\n", list->length);
+    printf ("Hello, World, %ld.\n", (long int) &(list->tail->data));
+
+    freeListInt (&list);
 
     return 0;
 }

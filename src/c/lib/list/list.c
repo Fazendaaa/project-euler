@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 #include "list.h"
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -189,3 +190,22 @@ Boolean unshift (List * list, Data * data) {
 Boolean insertOrdered (List * list, Data * data);
 
 Boolean sort (List * list);
+
+static Data * __reduce (const List * list, Data (* operation) (const Data * acc, const Data * cur), Data * initial) {
+    ListElement * next = list->head;
+
+    while (isNotNull(next)) {
+        operation(initial, next);
+        next = next->next;
+    }
+
+    return initial;
+}
+
+Data * reduce (const List * list, Data (* operation) (const Data * acc, const Data * cur), Data * initial) {
+    if (isNull (list) || isNull(operation) || isNull(initial)) {
+        return NULL;
+    }
+
+    return __reduce(list, operation, initial);
+}
