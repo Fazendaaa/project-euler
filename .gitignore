@@ -1,2 +1,5 @@
+.vscode
 src/node/dist/*
 src/node/node_modules
+src/c/problem
+src/c/lib/*.o

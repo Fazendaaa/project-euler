@@ -11,44 +11,10 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "../project_euler.h"
-
-static unsigned long int * __multiplesOf (unsigned long int * numbers, unsigned long int limit) {
-    Interval options;
-
-    options.start = 0;
-    options.end = limit;
-    options.step = 1;
-
-    printf("Options\nStart: %d\tStep: %d\t\tEnd: %d\n", options.start, options.step, options.end);
-
-    return NULL;
-}
-
-static unsigned long int * multiplesOf (unsigned long int * numbers, unsigned long int limit) {
-    if (NULL == numbers || 0 > limit) {
-        return NULL;
-    }
-
-    return __multiplesOf(numbers, limit);
-}
+#include "../lib/list/int/intlist.h"
 
 int main (int argc, char ** argv) {
-    const unsigned long int limit = 10, length = 2;
-    unsigned long int result = 0;
-    unsigned long int *numbers = malloc(sizeof(long int) * length), *multiples = NULL;
-    
-    if (NULL != numbers) {
-        numbers[0] = 3;
-        numbers[0] = 5;
-
-        multiples = multiplesOf(numbers, limit);
-    } if (NULL != multiples) {
-        result = reduce(multiples, );
-
-        free(numbers);
-        free(multiples);
-    }
+    printf("Hello, World.\n");
 
     return 0;
 }
