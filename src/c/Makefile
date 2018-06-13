@@ -1,6 +1,6 @@
 all: clean library problem run
 
-library: data list listInt project_euler
+library: data list listInt rangeInt project_euler
 
 data:
 	@gcc -o lib/data.o -c lib/data/data.c -Wall -O3
@@ -10,6 +10,9 @@ list:
 
 listInt:
 	@gcc -o lib/listint.o -c lib/list/int/listint.c -Wall -O3
+
+rangeInt:
+	@gcc -o lib/rangeint.o -c lib/range/int/rangeint.c -Wall -O3
 
 project_euler:
 	@gcc -o lib/project_euler.o -c lib/project_euler/project_euler.c -Wall -O3

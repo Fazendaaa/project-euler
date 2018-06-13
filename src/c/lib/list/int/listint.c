@@ -30,45 +30,35 @@ Boolean freeListInt (ListInt ** list) {
     return freeList(list);
 }
 
-static Boolean __pushListInt (ListInt * list, const long int value) {
-    long int * toPush = malloc (sizeof (long int));
+Boolean pushListInt (ListInt * list, const long int value) {
+    long int * toPush = NULL;
+
+    if (isNull (list)) {
+        return False;
+    }
+
+    toPush = malloc (sizeof (long int));
 
     if (isNull (toPush)) {
         return False;
     }
 
     memcpy (toPush, &value, sizeof (long int));
-    
+
     return push (list, toPush);
 }
 
-Boolean pushListInt (ListInt * list, const long int value) {
-    if (isNull (list)) {
-        return False;
-    }
-
-    return __pushListInt(list, value);
-}
-
-static long int __reduceListInt (const ListInt * list, Data (* operation) (const Data * acc, const Data * cur), long int initial) {
+long int reduceListInt (const ListInt * list, Data * (* operation) (Data * acc, const Data * cur), long int initial) {
     long int * reduced = malloc (sizeof (long int));
-
-    if (isNull (reduced)) {
+    
+    if (isNull(list) || isNull(operation) || isNull (reduced)) {
         return 0;
     }
 
     memcpy (reduced, &initial, sizeof (long int));
-    reduce (list, operation, reduce);
+    reduce (list, operation, reduced);
 
     return * reduced;
-}
-
-long int reduceListInt (const ListInt * list, Data (* operation) (const Data * acc, const Data * cur), long int initial) {
-    if (isNull(list) || isNull(operation)) {
-        return 0;
-    }
-
-    return __reduceListInt (list, operation, initial);
 }
 
 ListInt * filterListInt (const ListInt * list, Comparisson (* match) (const long int x, const long int y));

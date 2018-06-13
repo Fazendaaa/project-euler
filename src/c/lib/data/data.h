@@ -14,11 +14,13 @@ typedef int Comparisson;
 #define Equal    0
 #define Greater  1
 
+typedef void Data;
+
 // -----------------------------------------------------------------------------
 
-Boolean isNull (const void * value);
+Boolean isNull (const Data * value);
 
-Boolean isNotNull (const void * value);
+Boolean isNotNull (const Data * value);
 
 Boolean not (const Boolean value);
 

@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <string.h>
 #include "list.h"
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -23,19 +22,23 @@ static Boolean addElement (List * list, Data * data, ListElement * prev, ListEle
 
     if (isNull (new)) {
         return False;
-    }
-
-    new->prev = prev;
-    new->next = next;
-
-    if (isNotNull (prev)) {
+    } if (isNotNull (prev)) {
         prev->next = new;
     } if (isNotNull (next)) {
         next->prev = new;
-    } if (0 == list->length) {
+    } 
+    
+    new->prev = prev;
+    new->next = next;
+    
+    if (0 == list->length) {
         list->head = new;
         list->tail = new;
-    }
+    } else if (isNull(prev)) {
+        list->head = new;
+    } else if (isNull(next)) {
+        list->tail = new;
+    } 
 
     list->length += 1;
 
@@ -191,21 +194,19 @@ Boolean insertOrdered (List * list, Data * data);
 
 Boolean sort (List * list);
 
-static Data * __reduce (const List * list, Data (* operation) (const Data * acc, const Data * cur), Data * initial) {
-    ListElement * next = list->head;
-
-    while (isNotNull(next)) {
-        operation(initial, next);
-        next = next->next;
-    }
-
-    return initial;
-}
-
-Data * reduce (const List * list, Data (* operation) (const Data * acc, const Data * cur), Data * initial) {
+Data * reduce (const List * list, Data * (* operation) (Data * acc, const Data * cur), Data * initial) {
+    ListElement * next = NULL;
+    
     if (isNull (list) || isNull(operation) || isNull(initial)) {
         return NULL;
     }
 
-    return __reduce(list, operation, initial);
+    next = list->head;
+
+    while (isNotNull(next)) {
+        operation(initial, next->data);
+        next = next->next;
+    }
+
+    return initial;
 }

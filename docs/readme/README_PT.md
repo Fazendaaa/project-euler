@@ -11,7 +11,7 @@
 [![English README](https://img.shields.io/badge/Language-EN-blue.svg?longCache=true&style=for-the-badge)](../../README.md)
 [![Portuguese README](https://img.shields.io/badge/Linguagem-PT-green.svg?longCache=true&style=for-the-badge)](./README_PT.md)
 
-[![C Badge](https://img.shields.io/badge/C-0/627-FBC02D.svg?longCache=true&style=flat-square)](../../src/c/)
+[![C Badge](https://img.shields.io/badge/C-1/627-34495E.svg?longCache=true&style=flat-square)](../../src/c/)
 [![C++ Badge](https://img.shields.io/badge/C++-3/627-yellowgreen.svg?longCache=true&style=flat-square)](../../src/cpp/)
 [![Cobol Badge](https://img.shields.io/badge/Cobol-0/627-00bcd4.svg?longCache=true&style=flat-square)](../../src/cobol/)
 [![Elixir Badge](https://img.shields.io/badge/Elixir-0/627-8d6e63.svg?longCache=true&style=flat-square)](../../src/elixir/)

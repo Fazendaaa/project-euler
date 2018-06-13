@@ -11,19 +11,35 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "../lib/data/data.h"
 #include "../lib/list/int/listint.h"
+#include "../lib/range/int/rangeint.h"
+
+Boolean isDivisibleBy (const long int value, const long int by) {
+    return (0 == value % by);
+}
+
+Boolean filter (const long int value) {
+    return isDivisibleBy (value, 3) || isDivisibleBy (value, 5);
+}
+
+Data * sumInt (Data * acc, const Data * cur) {
+    return (Data *) (castInt (acc) += castInt (cur));
+}
 
 int main (int argc, char ** argv) {
-    ListInt * list = allocListInt();
+    RangeInt range;
+    ListInt * list = NULL;
+    long int result = 0;
 
-    if (True == pushListInt (list, 3) && True == pushListInt (list, 5)) {
-        printf ("Pushed.\n");
-    } else {
-        printf ("Error.\n");
-    }
+    range.start = 1;
+    range.step = 1;
+    range.end = 1000;
 
-    printf ("List length: %d.\n", list->length);
-    printf ("Hello, World, %ld.\n", (long int) &(list->tail->data));
+    list = filterRangeInt (range, filter);
+    result = reduceListInt (list, sumInt, result);
+
+    printf ("%ld\n", result);
 
     freeListInt (&list);
 

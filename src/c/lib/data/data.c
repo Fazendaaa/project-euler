@@ -1,11 +1,11 @@
 #include <stdlib.h>
 #include "data.h"
 
-Boolean isNull (const void * value) {
+Boolean isNull (const Data * value) {
     return NULL == value;
 }
 
-Boolean isNotNull (const void * value) {
+Boolean isNotNull (const Data * value) {
     return NULL != value;
 }
 
