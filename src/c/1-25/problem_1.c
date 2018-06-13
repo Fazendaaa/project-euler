@@ -9,7 +9,6 @@
 							Answer: 233168
 */
 
-#include <stdlib.h>
 #include <stdio.h>
 #include "../lib/data/data.h"
 #include "../lib/list/int/listint.h"
@@ -34,11 +33,14 @@ int main (int argc, char ** argv) {
     range.end = 1000;
 
     list = filterRangeInt (range, divisible);
-    result = reduceListInt (list, sumInt, result);
 
-    printf ("%ld\n", result);
+    if (isNotNull (list)) {
+        result = reduceListInt (list, sumInt, result);
 
-    freeListInt (&list);
+        printf ("%ld\n", result);
+
+        freeListInt (&list);
+    }
 
     return 0;
 }

@@ -12,7 +12,6 @@
 								Answer: 4613732
 */
 
-#include <stdlib.h>
 #include <stdio.h>
 #include "../lib/data/data.h"
 #include "../lib/list/int/listint.h"
@@ -41,13 +40,17 @@ int main (int argc, char ** argv) {
     long int limit = 4000000, result = 0;
     ListInt * fib = fibonacciUntil (limit), * even = NULL;
 
-    even = filterListInt (fib, isIntEven);
-    result = reduceListInt (even, sumInt, result);
+    if (isNotNull (fib)) {
+        even = filterListInt (fib, isIntEven);
 
-    printf ("%ld\n", result);
+        freeListInt (&fib);
+    } if (isNotNull (even)) {
+        result = reduceListInt (even, sumInt, result);
 
-    freeListInt (&fib);
-    freeListInt (&even);
+        printf ("%ld\n", result);
+
+        freeListInt (&even);
+    }
 
     return 0;
 }
