@@ -39,11 +39,9 @@ static long int largestPalindromeProduct (long int digits) {
     if (isNotNull (products)) {
         max = maxListInt (products);
         freeListInt (&products);
-
-        return max;
     }
 
-    return -1;
+    return max;
 }
 
 int main (int argc, char ** argv) {
