@@ -1,6 +1,6 @@
 /*
                             Largest palindrome product
-
+ 
     A  palindromic  number reads the same both ways. The largest palindrome made
     from the product of two 2-digit numbers is 9009 = 91 × 99.
 
@@ -14,16 +14,15 @@
 #include "../lib/data/data.h"
 #include "../lib/list/int/listint.h"
 #include "../lib/range/int/rangeint.h"
+#include "../lib/set/int/setint.h"
 #include "../lib/project_euler/project_euler.h"
 
+long int zipMultInt (const long int a, const long int b) {
+    return a * b;
+}
+
 static ListInt * palindromesProducts (RangeInt range) {
-    ListInt * list = allocListInt();
-
-    if (isNotNull (list)) {
-        
-    }
-
-    return list;
+    return zipSetRangeIntWith (range, range, zipMultInt);
 }
 
 static long int largestPalindromeProduct (long int digits) {
@@ -48,7 +47,7 @@ static long int largestPalindromeProduct (long int digits) {
 }
 
 int main (int argc, char ** argv) {
-    long int digits = 2;
+    long int digits = 3;
 
     printf ("%ld\n", largestPalindromeProduct (digits));
 

@@ -10,6 +10,8 @@
 
 Data * sumInt (Data * acc, const Data * cur);
 
+Data * multInt (Data * acc, const Data * cur);
+
 Boolean isIntEven (const Data * value);
 
 Boolean isIntOdd (const Data * value);

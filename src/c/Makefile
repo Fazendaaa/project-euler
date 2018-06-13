@@ -1,6 +1,6 @@
 all: clean library problem run
 
-library: data list listInt rangeInt project_euler
+library: data list listInt rangeInt setInt project_euler
 
 data:
 	@gcc -o lib/data.o -c lib/data/data.c -Wall -O3
@@ -14,11 +14,14 @@ listInt:
 rangeInt:
 	@gcc -o lib/rangeint.o -c lib/range/int/rangeint.c -Wall -O3
 
+setInt:
+	@gcc -o lib/setint.o -c lib/set/int/setint.c -Wall -O3
+
 project_euler:
 	@gcc -o lib/project_euler.o -c lib/project_euler/project_euler.c -lm -Wall -O3
 
 problem:
-	@gcc -o problem 1-25/problem_2.c lib/*.o -lm -Wall -O3 
+	@gcc -o problem 1-25/problem_4.c lib/*.o -lm -Wall -O3 
 
 run:
 	@./problem

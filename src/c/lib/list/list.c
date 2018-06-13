@@ -32,12 +32,9 @@ static Boolean addElement (List * list, Data * data, ListElement * prev, ListEle
     new->prev = prev;
     new->next = next;
     
-    if (0 == list->length) {
+    if (isNull(prev)) {
         list->head = new;
-        list->tail = new;
-    } else if (isNull(prev)) {
-        list->head = new;
-    } else if (isNull(next)) {
+    } if (isNull(next)) {
         list->tail = new;
     } 
 

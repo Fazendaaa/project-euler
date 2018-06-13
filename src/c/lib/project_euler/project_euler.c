@@ -37,6 +37,10 @@ Data * sumInt (Data * acc, const Data * cur) {
     return (Data *) (castInt (acc) += castInt (cur));
 }
 
+Data * multInt (Data * acc, const Data * cur) {
+    return (Data *) (castInt (acc) *= castInt (cur));
+}
+
 Boolean isIntEven (const Data * value) {
     return 0 == (castInt (value) % 2);
 }
@@ -67,14 +71,15 @@ Boolean isIntPrime (const Data * value) {
 
 Boolean isIntPalindrome (const long int value) {
     char buffer [256];
-    long int length = 0, middle = 0;
+    long int length = 0, middle = 0, end = 0;
 
     sprintf (buffer, "%ld", value);
     length = strlen (buffer);
-    middle = ((long int) (length / 2)) + 1;
+    middle = ((long int) (length / 2));
+    end = length - 1;
 
     for (Index iterator = 0; iterator < middle; iterator += 1) {
-        if (buffer [iterator] != buffer [length - iterator]) {
+        if (buffer [iterator] != buffer [end - iterator]) {
             return False;
         }
     }

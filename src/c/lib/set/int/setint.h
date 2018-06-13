@@ -1,20 +1,15 @@
-#ifndef __RANGEINT_H__
-#define __RANGEINT_H__
+#ifndef __SETINT_H__
+#define __SETINT_H__
 
 #include "../../data/data.h"
 #include "../../list/int/listint.h"
+#include "../../range/int/rangeint.h"
 
 // ---------------------------------------------------------------------------------------------------------------------
 
-typedef struct rangeInt {
-    long int start, end, step;
-} RangeInt;
-
 // ---------------------------------------------------------------------------------------------------------------------
 
-ListInt * listRangeInt (RangeInt range);
-
-ListInt * filterRangeInt (RangeInt range, Boolean (* filter) (const long int value));
+ListInt * zipSetRangeIntWith (RangeInt first, RangeInt second, long int (* function) (const long int x, const long int y));
 
 // ---------------------------------------------------------------------------------------------------------------------
 
