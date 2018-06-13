@@ -15,32 +15,34 @@
 #include "../lib/range/int/rangeint.h"
 #include "../lib/project_euler/project_euler.h"
 
-Boolean isDivisibleBy (const long int value, const long int by) {
+static Boolean isDivisibleBy (const long int value, const long int by) {
     return (0 == value % by);
 }
 
-Boolean divisible (const long int value) {
+static Boolean divisible (const long int value) {
     return isDivisibleBy (value, 3) || isDivisibleBy (value, 5);
 }
 
-int main (int argc, char ** argv) {
+static ListInt * multiplesBellow (const long int limit) {
     RangeInt range;
-    ListInt * list = NULL;
-    long int result = 0;
 
     range.start = 1;
     range.step = 1;
-    range.end = 1000;
+    range.end = limit;
 
-    list = filterRangeInt (range, divisible);
+    return filterRangeInt (range, divisible);
+}
+
+int main (int argc, char ** argv) {
+    long int limit = 1000, result = 0;
+    ListInt * list = multiplesBellow (limit);
 
     if (isNotNull (list)) {
         result = reduceListInt (list, sumInt, result);
-
-        printf ("%ld\n", result);
-
         freeListInt (&list);
     }
+
+    printf ("%ld\n", result);
 
     return 0;
 }

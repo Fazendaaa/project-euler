@@ -1,5 +1,7 @@
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
+#include <stdio.h>
 #include "project_euler.h"
 #include "../range/int/rangeint.h"
 
@@ -56,6 +58,23 @@ Boolean isIntPrime (const Data * value) {
 
     for (Index iterator = 2; iterator < primeLimit; iterator += 1) {
         if (0 == castInt (value) % iterator) {
+            return False;
+        }
+    }
+
+    return True;
+}
+
+Boolean isIntPalindrome (const long int value) {
+    char buffer [256];
+    long int length = 0, middle = 0;
+
+    sprintf (buffer, "%ld", value);
+    length = strlen (buffer);
+    middle = ((long int) (length / 2)) + 1;
+
+    for (Index iterator = 0; iterator < middle; iterator += 1) {
+        if (buffer [iterator] != buffer [length - iterator]) {
             return False;
         }
     }

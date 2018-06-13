@@ -6,9 +6,15 @@
 // ---------------------------------------------------------------------------------------------------------------------
 
 ListInt * filterRangeInt (RangeInt range, Boolean (* filter) (const long int value)) {
-    ListInt * list = allocListInt();
+    ListInt * list = NULL;
 
-    if (isNull (list) || isNull (filter)) {
+    if (isNull (filter)) {
+        return NULL;        
+    } 
+
+    list = allocListInt();
+
+    if (isNull (list)) {
         return NULL;
     }
 
@@ -20,5 +26,7 @@ ListInt * filterRangeInt (RangeInt range, Boolean (* filter) (const long int val
 
     return list;
 }
+
+ListInt * mapRangeInt (RangeInt range, long int (* map) (const long int value));
 
 // ---------------------------------------------------------------------------------------------------------------------

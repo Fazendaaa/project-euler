@@ -17,7 +17,7 @@
 #include "../lib/list/int/listint.h"
 #include "../lib/project_euler/project_euler.h"
 
-ListInt * fibonacciUntil (unsigned long int limit) {
+static ListInt * fibonacciUntil (unsigned long int limit) {
     ListInt * list = allocListInt();
     long int value = 3;
     Index nth = 4;
@@ -36,21 +36,27 @@ ListInt * fibonacciUntil (unsigned long int limit) {
     return list;
 }
 
-int main (int argc, char ** argv) {
-    long int limit = 4000000, result = 0;
+static ListInt * evenFibonacciUntil (unsigned long int limit) {
     ListInt * fib = fibonacciUntil (limit), * even = NULL;
 
     if (isNotNull (fib)) {
         even = filterListInt (fib, isIntEven);
-
         freeListInt (&fib);
-    } if (isNotNull (even)) {
+    }
+
+    return even;
+}
+
+int main (int argc, char ** argv) {
+    long int limit = 4000000, result = 0;
+    ListInt * even = evenFibonacciUntil (limit);
+
+    if (isNotNull (even)) {
         result = reduceListInt (even, sumInt, result);
-
-        printf ("%ld\n", result);
-
         freeListInt (&even);
     }
+
+    printf ("%ld\n", result);
 
     return 0;
 }

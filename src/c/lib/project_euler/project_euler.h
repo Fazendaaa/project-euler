@@ -16,6 +16,8 @@ Boolean isIntOdd (const Data * value);
 
 Boolean isIntPrime (const Data * value);
 
+Boolean isIntPalindrome (const long int value);
+
 ListInt * factors (const long int limit);
 
 long int maxListInt (const ListInt * list);

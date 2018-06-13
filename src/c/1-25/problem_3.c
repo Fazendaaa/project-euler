@@ -11,19 +11,27 @@
 #include <stdio.h>
 #include "../lib/project_euler/project_euler.h"
 
-int main (int argc, char ** argv) {
-    long int number = 600851475143; 
+static ListInt * primeFactors (const long int number) {
     ListInt * fact = factors (number), * primes = NULL;
     
     if (isNotNull (fact)) {
         primes = filterListInt (fact, isIntPrime);
-
         freeListInt (&fact);
-    } if (isNotNull (primes)) {
-        printf ("%ld\n", maxListInt (primes));
+    }
 
+    return primes;
+}
+
+int main (int argc, char ** argv) {
+    long int number = 600851475143, max = 0; 
+    ListInt * primes = primeFactors (number);
+    
+    if (isNotNull (primes)) {
+        max = maxListInt (primes);
         freeListInt (&primes);
     }
+
+    printf ("%ld\n", max);
 
     return 0;
 }
