@@ -48,6 +48,10 @@ Boolean pushListInt (ListInt * list, const long int value) {
     return push (list, toPush);
 }
 
+long int postionListInt (ListInt * list, const Index pos) {
+    return castInt (postion (list, pos));
+}
+
 long int reduceListInt (const ListInt * list, Data * (* operation) (Data * acc, const Data * cur), long int initial) {
     long int * reduced = malloc (sizeof (long int));
     
@@ -61,7 +65,11 @@ long int reduceListInt (const ListInt * list, Data * (* operation) (Data * acc, 
     return * reduced;
 }
 
-ListInt * filterListInt (const ListInt * list, Comparisson (* match) (const long int x, const long int y));
+ListInt * filterListInt (const ListInt * list, Boolean (* match) (const Data * value)) {
+    ListInt * filtered = allocListInt();
+
+    return filter (list, match, filtered, sizeof (long int));
+}
 
 ListInt * zipWithListInt (const ListInt * first, const ListInt * second, long int (* operation) (long int x, long int y));
 

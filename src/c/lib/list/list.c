@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 #include "list.h"
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -115,6 +116,26 @@ static Boolean excludeElement (List* list, ListElement * element) {
     return list->destroy(fetchData (list, element));
 }
 
+static Data * lookDataFromEnd (List * list, Index pos) {
+    ListElement * element = list->tail;
+
+    for (Index iterator = list->length; iterator != pos; iterator -= 1) {
+        element = element->prev;
+    }
+
+    return element->data;
+}
+
+static Data * lookDataFromStart (List * list, Index pos) {
+    ListElement * element = list->head;
+
+    for (Index iterator = 0; iterator != pos; iterator += 1) {
+        element = element->next;
+    }
+
+    return element->data;
+}
+
 // ---------------------------------------------------------------------------------------------------------------------
 
 List * allocList (Boolean (* destroy) (Data * data), Comparisson (* match) (const Data * key1, const Data * key2)) {
@@ -166,6 +187,16 @@ Boolean exclude (List * list, Data * data) {
     return list->destroy(fetchElement (list, data));
 }
 
+Data * postion (List * list, Index pos) {    
+    if (isNull (list) || 0 >= pos || list->length < pos) {
+        return NULL;
+    } if (list->length / 2 <= pos) {
+        return lookDataFromEnd (list, pos);
+    }
+
+    return lookDataFromStart (list, pos);
+}
+
 Data * pop (List * list) {
     return fetchData (list, list->tail);
 }
@@ -209,4 +240,22 @@ Data * reduce (const List * list, Data * (* operation) (Data * acc, const Data *
     }
 
     return initial;
+}
+
+List * filter (const List * list, Boolean (* match) (const Data * value), List * filtered, size_t size) {
+    Data * toAdd = NULL;
+
+    if (isNull (list) || isNull (match) || isNull(filtered)) {
+        return NULL;
+    }
+
+    for (ListElement * element = list->head; isNotNull (element); element = element->next) {
+        if (match (element->data)) {
+            toAdd = malloc (size);
+            memcpy (toAdd, element->data, size);
+            push (filtered, toAdd);
+        }
+    }
+
+    return filtered;
 }

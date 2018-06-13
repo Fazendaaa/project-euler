@@ -14,17 +14,14 @@
 #include "../lib/data/data.h"
 #include "../lib/list/int/listint.h"
 #include "../lib/range/int/rangeint.h"
+#include "../lib/project_euler/project_euler.h"
 
 Boolean isDivisibleBy (const long int value, const long int by) {
     return (0 == value % by);
 }
 
-Boolean filter (const long int value) {
+Boolean divisible (const long int value) {
     return isDivisibleBy (value, 3) || isDivisibleBy (value, 5);
-}
-
-Data * sumInt (Data * acc, const Data * cur) {
-    return (Data *) (castInt (acc) += castInt (cur));
 }
 
 int main (int argc, char ** argv) {
@@ -36,7 +33,7 @@ int main (int argc, char ** argv) {
     range.step = 1;
     range.end = 1000;
 
-    list = filterRangeInt (range, filter);
+    list = filterRangeInt (range, divisible);
     result = reduceListInt (list, sumInt, result);
 
     printf ("%ld\n", result);

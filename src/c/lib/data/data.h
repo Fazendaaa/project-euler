@@ -18,6 +18,10 @@ typedef void Data;
 
 // -----------------------------------------------------------------------------
 
+#define castInt( data ) *((long int *) data)
+
+// -----------------------------------------------------------------------------
+
 Boolean isNull (const Data * value);
 
 Boolean isNotNull (const Data * value);

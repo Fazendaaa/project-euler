@@ -3,7 +3,7 @@
 
 #include "../data/data.h"
 
-// -----------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 
 typedef struct listElement {
     Data * data;
@@ -20,7 +20,7 @@ typedef struct list {
     Comparisson (* match) (const Data * key1, const Data * key2);
 } List;
 
-// -----------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 
 List * allocList (Boolean (* destroy) (Data * data), Comparisson (* match) (const Data * key1, const Data * key2));
 
@@ -29,6 +29,8 @@ Boolean freeList (List ** list);
 Boolean includes (List * list, Data * data);
 
 Boolean exclude (List * list, Data * data);
+
+Data * postion (List * list, Index pos);
 
 Data * pop (List * list);
 
@@ -44,6 +46,8 @@ Boolean sort (List * list);
 
 Data * reduce (const List * list, Data * (* operation) (Data * acc, const Data * cur), Data * initial);
 
-// -----------------------------------------------------------------------------
+List * filter (const List * list, Boolean (* match) (const Data * value), List * filtered, size_t size);
+
+// ---------------------------------------------------------------------------------------------------------------------
 
 #endif
