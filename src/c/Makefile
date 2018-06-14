@@ -1,6 +1,6 @@
 all: clean library problem run
 
-library: data list listInt rangeInt setInt project_euler
+library: data list listInt rangeInt setInt matrixInt project_euler
 
 data:
 	@gcc -o lib/data.o -c lib/data/data.c -Wall -O3
@@ -17,11 +17,14 @@ rangeInt:
 setInt:
 	@gcc -o lib/setint.o -c lib/set/int/setint.c -Wall -O3
 
+matrixInt:
+	@gcc -o lib/matrixint.o -c lib/matrix/int/matrixint.c -Wall -O3
+
 project_euler:
 	@gcc -o lib/project_euler.o -c lib/project_euler/project_euler.c -lm -Wall -O3
 
 problem:
-	@gcc -o problem 1-25/problem_7.c lib/*.o -lm -Wall -O3 
+	@gcc -o problem 1-25/problem_8.c lib/*.o -lm -Wall -O3 
 
 run:
 	@./problem

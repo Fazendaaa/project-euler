@@ -26,6 +26,8 @@ long int maxListInt (const ListInt * list);
 
 ListInt * eratosthenesSieve (const long int limit);
 
+ListInt * readMatrix (const char * path);
+
 // ---------------------------------------------------------------------------------------------------------------------
 
 #endif
