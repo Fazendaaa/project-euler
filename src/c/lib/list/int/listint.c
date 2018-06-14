@@ -5,9 +5,11 @@
 // ---------------------------------------------------------------------------------------------------------------------
 
 Comparisson match (const Data * a, const Data * b) {
-    if (a < b) {
+    long int result = castInt (a) - castInt (b);
+    
+    if (0 > result) {
         return Lesser;
-    } if (a > b) {
+    } if (0 < result) {
         return Greater;
     }
 

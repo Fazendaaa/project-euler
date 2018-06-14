@@ -16,6 +16,8 @@ ListInt * listRangeInt (RangeInt range);
 
 ListInt * filterRangeInt (RangeInt range, Boolean (* filter) (const long int value));
 
+ListInt * deleteListFromRangeInt (RangeInt range, ListInt * list);
+
 // ---------------------------------------------------------------------------------------------------------------------
 
 #endif

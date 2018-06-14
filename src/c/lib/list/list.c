@@ -93,13 +93,15 @@ static Data * fetchData (List * list, ListElement * element) {
     return data;
 }
 
-static ListElement * fetchElement (List* list, Data * data) {
+static ListElement * lookElement (List* list, Data * data) {
     ListElement * toCompare = list->head;
-    Comparisson result = list->match(data, toCompare->data);
 
-    while (isNotNull(toCompare) && not(result == Equal)) {
+    while (isNotNull(toCompare)) {
+        if (Equal == list->match(data, toCompare->data)) {
+            break;
+        }
+
         toCompare = toCompare->next;
-        result = list->match(data, toCompare->data);
     }
 
     return toCompare;
@@ -173,7 +175,7 @@ Boolean includes (List * list, Data * data) {
         return False;
     }
 
-    return isNotNull (fetchElement (list, data));
+    return isNotNull (lookElement (list, data));
 }
 
 Boolean exclude (List * list, Data * data) {
@@ -181,7 +183,7 @@ Boolean exclude (List * list, Data * data) {
         return False;
     }
 
-    return list->destroy(fetchElement (list, data));
+    return list->destroy(lookElement (list, data));
 }
 
 Data * postion (List * list, Index pos) {    

@@ -41,4 +41,26 @@ ListInt * filterRangeInt (RangeInt range, Boolean (* filter) (const long int val
 
 ListInt * mapRangeInt (RangeInt range, long int (* map) (const long int value));
 
+ListInt * deleteListFromRangeInt (RangeInt range, ListInt * list) {
+    List * new = NULL;
+
+    if (isNull (list)) {
+        return NULL;
+    }
+
+    new = allocListInt();
+
+    if (isNull (new)) {
+        return NULL;
+    }
+
+    for (long int index = range.start; index < range.end; index += range.step) {
+        if (not (includes (list, (Data *) &index))) {
+            pushListInt (new, index);
+        }
+    }
+
+    return new;
+}
+
 // ---------------------------------------------------------------------------------------------------------------------

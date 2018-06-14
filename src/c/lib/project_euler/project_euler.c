@@ -107,4 +107,44 @@ long int maxListInt (const ListInt * list) {
     return max;
 }
 
+// This could be improved by using hash.
+ListInt * eratosthenesSieve (const long int limit) {
+    RangeInt range;
+    const Index limitSqrt = sqrt (limit) + 1;
+    ListInt * multiples = NULL, * primes = NULL;
+    long int product = 0;
+
+    if (1 >= limit) {
+        return NULL;
+    }
+
+    multiples = allocListInt();
+
+    if (isNull (multiples)) {
+        return NULL;
+    }
+
+    for (Index first = 2; first < limitSqrt; first += 1) {
+        for (Index second = 2; second < limit; second += 1) {
+            product = first * second;
+
+            if (product > limit) {
+                break;
+            } 
+
+            pushListInt (multiples, product);
+        }
+    }
+
+    range.step = 1;
+    range.start = 2;
+    range.end = limit;
+
+
+    primes = deleteListFromRangeInt (range, multiples);
+    freeListInt (&multiples);    
+
+    return primes;
+}
+
 // ---------------------------------------------------------------------------------------------------------------------

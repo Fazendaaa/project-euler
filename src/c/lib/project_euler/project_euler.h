@@ -24,6 +24,8 @@ ListInt * factors (const long int limit);
 
 long int maxListInt (const ListInt * list);
 
+ListInt * eratosthenesSieve (const long int limit);
+
 // ---------------------------------------------------------------------------------------------------------------------
 
 #endif
