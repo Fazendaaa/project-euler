@@ -18,6 +18,8 @@ ListInt * filterRangeInt (RangeInt range, Boolean (* filter) (const long int val
 
 ListInt * deleteListFromRangeInt (RangeInt range, ListInt * list);
 
+long int reduceRangeInt (RangeInt range, long int (* function) (const long int acc, const long int cur), const long int init);
+
 // ---------------------------------------------------------------------------------------------------------------------
 
 #endif

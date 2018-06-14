@@ -21,7 +21,7 @@ project_euler:
 	@gcc -o lib/project_euler.o -c lib/project_euler/project_euler.c -lm -Wall -O3
 
 problem:
-	@gcc -o problem 1-25/problem_5.c lib/*.o -lm -Wall -O3 
+	@gcc -o problem 1-25/problem_6.c lib/*.o -lm -Wall -O3 
 
 run:
 	@./problem

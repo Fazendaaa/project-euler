@@ -63,4 +63,14 @@ ListInt * deleteListFromRangeInt (RangeInt range, ListInt * list) {
     return new;
 }
 
+long int reduceRangeInt (RangeInt range, long int (* function) (const long int acc, const long int cur), const long int init) {
+    long int value = init;
+
+    for (Index iterator = range.start; iterator < range.end; iterator += range.step) {
+        value = function (value, iterator);
+    }
+
+    return value;
+}
+
 // ---------------------------------------------------------------------------------------------------------------------
