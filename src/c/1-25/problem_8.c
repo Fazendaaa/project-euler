@@ -30,7 +30,12 @@
 */
 
 #include <stdio.h>
+#include "../lib/matrix/int/matrixint.h"
+#include "../lib/project_euler/project_euler.h"
 
 int main (int argc, char ** argv) {
+    char path = "./1-25/input/problem_8.txt";
+    MatrixInt * matrix = readMatrixInt (path);
+
     return 0;
 }

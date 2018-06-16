@@ -1,7 +1,7 @@
-#include <stdlib.h>
 #include <math.h>
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include "project_euler.h"
 #include "../range/int/rangeint.h"
 
@@ -145,6 +145,23 @@ ListInt * eratosthenesSieve (const long int limit) {
     freeListInt (&multiples);    
 
     return primes;
+}
+
+MatrixInt * readMatrixInt (const char * path) {
+    FILE * filePointer = fopen(path, "r");
+    MatrixInt * matrix = NULL;
+
+    if (isNull (filePointer)) {
+        return NULL;
+    }
+
+    matrix = allocMatrixInt ();
+
+    if (isNull (matrix)) {
+        return NULL;
+    }
+
+    return matrix;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------

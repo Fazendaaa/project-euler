@@ -3,6 +3,7 @@
 
 #include "../data/data.h"
 #include "../list/int/listint.h"
+#include "../matrix/int/matrixint.h"
 
 // ---------------------------------------------------------------------------------------------------------------------
 
@@ -26,7 +27,7 @@ long int maxListInt (const ListInt * list);
 
 ListInt * eratosthenesSieve (const long int limit);
 
-ListInt * readMatrix (const char * path);
+MatrixInt * readMatrixInt (const char * path);
 
 // ---------------------------------------------------------------------------------------------------------------------
 

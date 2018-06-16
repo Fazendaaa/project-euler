@@ -6,11 +6,16 @@
 // ---------------------------------------------------------------------------------------------------------------------
 
 Matrix * allocMatrix (void) {
-    return NULL;
+    Matrix * matrix = malloc (sizeof (Matrix));
+
+    if (isNotNull (matrix)) {
+        matrix->size = 0;
+        matrix->list = NULL;
+    }
+
+    return matrix;
 }
 
-Boolean freeMatrix (Matrix ** matrix) {
-    return False;
-}
+Boolean freeMatrix (Matrix ** matrix);
 
 // ---------------------------------------------------------------------------------------------------------------------
