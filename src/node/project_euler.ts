@@ -1,7 +1,9 @@
 'use strict';
 
 export const range = ({ start = 1, end, step = 1 }: {start?: number; end: number; step?: number}): Array<number> => {
-    return Array.apply(null, { length: (end + 1) - start }).map((cur: any, index: number) => index + start);
+    const length = ((end + 1) - start) / step;
+
+    return Array.apply(null, { length: length.toFixed(5) }).map((cur: any, index: number) => (index * step) + start);
 };
 
 export const factors = (num: number): Array<number> => {

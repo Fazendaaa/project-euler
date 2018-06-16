@@ -19,3 +19,17 @@
 //                             Answer: 171
 
 'use strict';
+
+import { range } from '../project_euler';
+
+const toDate = (value: number): Date => new Date(value);
+
+const firstSundays = (value: Date): boolean => (1 === value.getDate() && 0 === value.getDay());
+
+// Days to milliseconds.
+const day = 1000 * 60 * 60 * 24 * 1;
+const end = Date.UTC(2000, 12, 31, 0, 0, 0, 0);
+const start = Date.UTC(1901, 1, 1, 0, 0, 0, 0);
+const result = range({ start, end, step: day }).map(toDate).filter(firstSundays);
+
+console.log(result.length);

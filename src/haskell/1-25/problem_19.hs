@@ -18,28 +18,21 @@
 
 --                             Answer: 171
 
-data Week = Sunday
-          | Monday
-          | Tuesday
-          | Wendnesday
-          | Thursday
-          | Friday
-          | Saturday
-          deriving (Eq, Ord, Show)
-data Month = Januray
-           | February
-           | March
-           | April
-           | May
-           | June
-           | July
-           | August
-           | September
-           | October
-           | November
-           | December
-           deriving (Eq, Ord, Show)
+import Data.Time.Calendar (Day, addDays, fromGregorian, toGregorian)
+import Data.Time.Calendar.WeekDate (toWeekDate)
+
+sumFirstSundays :: Day -> Day -> Integer
+sumFirstSundays start end = go start end 0 where
+    go begin finished _
+        | begin > finished = 0
+    go begin finished count = count + result where
+        (_, _, weekDay) = toWeekDate begin
+        (_, _, day) = toGregorian begin
+        next = go (addDays 1 begin) finished count
+        result = if (7 == weekDay && 1 == day) then 1 + next else next
 
 main :: IO()
 main = do
-    print $ compare Monday Tuesday
+    let start = fromGregorian 1901 1 1
+    let end = fromGregorian 2000 21 31
+    print $ sumFirstSundays start end
