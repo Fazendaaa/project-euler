@@ -1,9 +1,39 @@
 'use strict';
 
-export const range = ({ start = 1, end, step = 1 }: {start?: number; end: number; step?: number}): Array<number> => {
+import { Range } from './index';
+
+export const range = ({ end, start = 1, step = 1 }: Range): Array<number> => {
     const length = ((end + 1) - start) / step;
 
     return Array.apply(null, { length: length.toFixed(5) }).map((cur: any, index: number) => (index * step) + start);
+};
+
+export const rangeDifference = ({ end, start = 1, step = 1 }: Range, remove: Array<number>): Array<number> => {
+    const interval = range({ end, start, step });
+    const toBeRemoved = remove.sort();
+    const difference = [];
+    let second = 0;
+    let oldIndex = 0;
+
+    for (let first = 0; first < interval.length; first += 1) {
+        for (second = oldIndex; second < toBeRemoved.length; second += 1) {
+            if (interval[first] < toBeRemoved[second]) {
+                difference.push(interval[first]);
+                first += 1;
+                second -= 1;
+            } else {
+                oldIndex = second + 1;
+
+                break;
+            }
+        }
+
+        if (toBeRemoved.length === second) {
+            difference.push(interval[first]);
+        }
+    }
+
+    return difference;
 };
 
 export const factors = (num: number): Array<number> => {
