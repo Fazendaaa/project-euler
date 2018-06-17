@@ -17,7 +17,7 @@
 #include "../lib/set/int/setint.h"
 #include "../lib/project_euler/project_euler.h"
 
-long int zipMultInt (const long int a, const long int b) {
+static long int zipMultInt (const long int a, const long int b) {
     return a * b;
 }
 
