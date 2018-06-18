@@ -1,6 +1,6 @@
 module ProjectEuler where
     import Data.List
-    import Data.List.Unique
+    import Data.Char
 
     fibonacci :: Integral a => [a]
     fibonacci = 1 : scanl' (+) 1 fibonacci
@@ -21,6 +21,14 @@ module ProjectEuler where
         | otherwise = False where
             multiplesLimit = (+) 1 $ truncate ((sqrt $ fromIntegral number):: Float)
 
+    uniquefy :: (Eq a) => [a] -> [a]
+    uniquefy (x:xs) = foldr (\cur acc -> if cur /= (acc !! 0) then cur : acc else acc) [x] xs
+
+    sortUnique :: (Eq a, Ord a) => [a] -> [a]
+    sortUnique xs = result where
+        sorted = sort xs
+        result = uniquefy sorted
+
     myDiff :: Integral a => a -> [a] -> [a]
     myDiff _ [] = []
     myDiff n (x:xs)
@@ -30,7 +38,7 @@ module ProjectEuler where
     erasthotenesSieve :: Integral a => a -> [a]
     erasthotenesSieve limit = primes where
         multiplesLimit = (+) 1 $ truncate ((sqrt $ fromIntegral limit):: Float)
-        multiples = sortUniq [ mult | x <- [2..multiplesLimit], mult <- takeWhile (<= limit) [ ((*) x y) | y <- [2..limit] ]]
+        multiples = sortUnique [ mult | x <- [2..multiplesLimit], mult <- takeWhile (<= limit) [ ((*) x y) | y <- [2..limit] ]]
         primes = myDiff 2 multiples
 
     -- Without sorting to be faster.

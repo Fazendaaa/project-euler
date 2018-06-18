@@ -22,32 +22,23 @@
 
 'use strict';
 
-import { factors, range, rangeDifference, sum } from '../project_euler';
+import { factors, not, range, sum, unique, zipSetWith } from '../project_euler';
 
-const abundant = (limit: number): Array<number> => range({ end: limit }).filter(value => {
-    return value < (factors(value).reduce(sum, 0) - value);
-});
+const isAbundant = (value: number): boolean => value < factors(value).reduce(sum, 0) - value;
 
-const abundantSum = (limit: number): Array<number> => {
-    const areAbundant = abundant(limit);
-    const sumOfAbundant = [];
+const allAbundant = (limit: number): Array<number> => range({ end: limit }).filter(isAbundant);
 
-    for (const first of areAbundant) {
-        for (const second of areAbundant) {
-            const sum = first + second;
+const sumOfAbundant = (limit: number): Array<number> => {
+    const areAbundant = allAbundant(limit);
 
-            if (sum > limit) {
-                break;
-            }
-
-            sumOfAbundant.push(sum);
-        }
-    }
-
-    return sumOfAbundant;
+    return unique(zipSetWith(sum, areAbundant, areAbundant)).filter(value => value < limit);
 };
 
-const nonAbundant = (limit: number): Array<number> => rangeDifference({ end: limit }, abundantSum(limit));
+const nonAbundant = (limit: number): Array<number> => {
+    const result = sumOfAbundant(limit);
+
+    return range({ end: <number> result.pop() - 1 }).filter(value => not(result.includes(value)));
+}
 
 const limit = 28123;
 

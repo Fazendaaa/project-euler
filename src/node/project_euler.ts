@@ -8,47 +8,19 @@ export const range = ({ end, start = 1, step = 1 }: Range): Array<number> => {
     return Array.apply(null, { length: length.toFixed(5) }).map((cur: any, index: number) => (index * step) + start);
 };
 
-export const rangeDifference = ({ end, start = 1, step = 1 }: Range, remove: Array<number>): Array<number> => {
-    const interval = range({ end, start, step });
-    const toBeRemoved = remove.sort();
-    const difference = [];
-    let second = 0;
-    let oldIndex = 0;
-
-    for (let first = 0; first < interval.length; first += 1) {
-        for (second = oldIndex; second < toBeRemoved.length; second += 1) {
-            if (interval[first] < toBeRemoved[second]) {
-                difference.push(interval[first]);
-                first += 1;
-                second -= 1;
-            } else {
-                oldIndex = second + 1;
-
-                break;
-            }
-        }
-
-        if (toBeRemoved.length === second) {
-            difference.push(interval[first]);
-        }
-    }
-
-    return difference;
-};
-
 export const factors = (num: number): Array<number> => {
-    const factorLimit = Math.sqrt(num);
+    const factorLimit = Math.floor(Math.sqrt(num)) + 1;
     const factors = [];
 
-    for (let iterator = 1; iterator < factorLimit; iterator += 1) {
-        if (0 === (num % iterator)) {
-            const dividend = num / iterator;
+    for (let index = 1; index < factorLimit; index += 1) {
+        if (0 === (num % index)) {
+            const dividend = num / index;
 
-            if (dividend > iterator) {
-                factors.push(dividend, iterator);
-            } else {
-                factors.push(iterator);
+            if (dividend !== index) {
+                factors.push(dividend);
             }
+
+            factors.push(index);
         }
     }
 
@@ -127,6 +99,18 @@ export const zipWith = <T>(func: (a: T, b: T) => T, first: Array<T>, second: Arr
     return result;
 };
 
+export const zipSetWith = <T>(func: (a: T, b: T) => T, first: Array<T>, second: Array<T>): Array<T> => {
+    const result: Array<T> = [];
+
+    for (let indexA = 0; indexA < first.length; indexA += 1) {
+        for (let indexB = indexA; indexB < second.length; indexB += 1) {
+            result.push(func(first[indexA], second[indexB]));
+        }
+    }
+
+    return result;
+};
+
 export const mapAndFilter = <T>(map: Function, filter: Function, array: Array<T>): Array<T> => {
     const newArray: Array<T> = [];
 
@@ -144,6 +128,8 @@ export const mapAndFilter = <T>(map: Function, filter: Function, array: Array<T>
 export const mapAndFlatten = <T>(map: Function, array: Array<T>): Array<T> => {
     return array.reduce((acc, cur, curIndex, curArr) => acc.concat(map(cur, curIndex, curArr)), []);
 };
+
+export const unique = <T>(input: Array<T>): Array<T> => [...new Set(input)];
 
 export const sum = (x: number, y: number): number => (x + y);
 
