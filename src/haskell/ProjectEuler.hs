@@ -48,3 +48,6 @@ module ProjectEuler where
         isDivisible num = (==) 0 (mod number num)
         allFactors num = if (>) dividend num then [num, dividend] else [num] where
             dividend = div number num
+
+    toDigits :: Int -> [Int]
+    toDigits number = (map digitToInt . show) number
