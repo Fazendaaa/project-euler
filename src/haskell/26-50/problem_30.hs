@@ -17,7 +17,7 @@
 -- obs: since the problem for me is the upper bound I looked for help:
 --     *   http://www.mathblog.dk/project-euler-30-sum-numbers-that-can-be-written-as-the-sum-fifth-powers-digits/
 
---                          Answer:
+--                          Answer: 443839
 
 import Data.Char
 

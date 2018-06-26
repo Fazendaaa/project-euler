@@ -49,5 +49,17 @@ module ProjectEuler where
         allFactors num = if (>) dividend num then [num, dividend] else [num] where
             dividend = div number num
 
-    toDigits :: Int -> [Int]
+    toDigits :: (Integral a, Show a) => a -> [Int]
     toDigits number = (map digitToInt . show) number
+
+    factorial :: Integral a => a -> a
+    factorial number = foldr (*) 1 [2..number]
+
+    mult :: Integral a => [a] -> a
+    mult xs = foldr (*) 1 xs
+
+    rotate :: Int -> [a] -> [a]
+    rotate n xs = take (length xs) (drop n (cycle xs))
+
+    joinNumbers :: (Num a, Read a, Show a) => [a] -> a
+    joinNumbers xs = (read . foldl' (\acc cur -> (++) cur acc) [] . map show) xs

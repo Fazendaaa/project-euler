@@ -17,7 +17,7 @@
 [![Elixir Badge](https://img.shields.io/badge/Elixir-0/627-8d6e63.svg?longCache=true&style=flat-square)](./src/elixir/)
 [![F# Badge](https://img.shields.io/badge/F_Sharp-0/627-8bc34a.svg?longCache=true&style=flat-square)](./src/f_sharp/)
 [![Go Badge](https://img.shields.io/badge/Go-12/627-orange.svg?longCache=true&style=flat-square)](./src/go/)
-[![Haskell Badge](https://img.shields.io/badge/Haskell-30/627-ff69b4.svg?longCache=true&style=flat-square)](./src/haskell/)
+[![Haskell Badge](https://img.shields.io/badge/Haskell-35/627-ff69b4.svg?longCache=true&style=flat-square)](./src/haskell/)
 [![Java Badge](https://img.shields.io/badge/Java-0/627-78909c.svg?longCache=true&style=flat-square)](./src/java/)
 [![Julia Badge](https://img.shields.io/badge/Julia-3/627-yellow.svg?longCache=true&style=flat-square)](./src/julia/)
 [![Lisp Badge](https://img.shields.io/badge/Lisp-0/627-ad1457.svg?longCache=true&style=flat-square)](./src/lisp/)
