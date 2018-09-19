@@ -1,0 +1,14 @@
+Package: projectEuler
+Title: Some of my implementations of Project Euler problems
+Version:0.0.0
+Encoding: UTF-8
+Suggests:
+    testthat
+Authors@R: person("Fazenda", email="lucas.carotta@outlook.com",
+    role = c("aut", "cre"))
+Description: This package is a implementation with testing of Project Euler
+    problems.
+Depends: R (>= 3.1.0)
+License: MIT
+LazyData: true
+RoxygenNote: 6.1.0

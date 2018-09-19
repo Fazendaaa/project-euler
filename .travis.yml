@@ -1,0 +1,9 @@
+language: r
+
+cache: packages
+
+before_install:
+  cd src/r
+
+install:
+  R -e 'devtools::install_deps(dep = T)'
