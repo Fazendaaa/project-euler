@@ -1,9 +1,12 @@
 language: r
 
+sudo: false 
+
 cache: packages
 
 before_install:
   cd src/r
 
 install:
+  R -e 'install::packages("devtools")'
   R -e 'devtools::install_deps(dep = T)'
