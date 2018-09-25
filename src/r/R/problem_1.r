@@ -28,6 +28,7 @@ multiples <- function (limit) {
 
 #' Sum of multiples of 3 or 5
 #' 
+#' @export
 #' @describeIn multiples \code{myFunc} just sum the values.
 #' @section Waning:
 #' This is a unneeded function, it's only purpose is to make code easier to
