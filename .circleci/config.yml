@@ -1,13 +1,23 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/src/r/
     docker:
-      - image: debian:stretch
+      - image: appsilon/ci-base:1.0
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - deps1-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
+            - deps1-{{ .Branch }}
+            - deps1-
       - run:
-          name: Greeting
-          command: echo Hello, world.
-      - run:
-          name: Print the Current Time
-          command: date
+          command: |
+            R -e 'devtools::install_deps(dependencies = TRUE)'
+      - save_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
+          paths:
+            - "/usr/local/lib/R/site-library"
+      - store_artifacts:
+          path: man/
+          destination: man
