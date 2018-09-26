@@ -5,9 +5,9 @@ jobs:
       - image: appsilon/ci-base:1.0
     steps:
       - checkout
-      -run:
-        command: |
-          cd ./src/r/
+      - run:
+          command: |
+            cd ./src/r/
       - restore_cache:
           keys:
             - deps1-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
