@@ -20,7 +20,7 @@ max_jobs:
 
 before_build:
   ps:
-  - cd ./src/r/
+    cd ./src/r/
 
 build_script:
   - travis-tool.sh install_deps
