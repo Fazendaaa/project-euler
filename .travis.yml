@@ -11,3 +11,4 @@ install:
 
 after_success:
   R -e 'covr::codecov()'
+  R -e 'covr::coveralls()'
