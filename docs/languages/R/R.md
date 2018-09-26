@@ -20,3 +20,5 @@
 </div>
 
 > Project Euler R implementations
+
+At the root folder of this project, follow [this](https://github.com/krlmlr/r-appveyor) config steps.
