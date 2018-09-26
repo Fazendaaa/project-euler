@@ -11,23 +11,6 @@
 [![English README](https://img.shields.io/badge/Language-EN-blue.svg?longCache=true&style=for-the-badge)](./README.md)
 [![Portuguese README](https://img.shields.io/badge/Linguagem-PT-green.svg?longCache=true&style=for-the-badge)](./docs/readme/README_PT.md)
 
-[![C Badge](https://img.shields.io/badge/C-7/627-34495E.svg?longCache=true&style=flat-square)](./src/c/)
-[![C++ Badge](https://img.shields.io/badge/C++-3/627-yellowgreen.svg?longCache=true&style=flat-square)](./src/cpp/)
-[![Cobol Badge](https://img.shields.io/badge/Cobol-0/627-00bcd4.svg?longCache=true&style=flat-square)](./src/cobol/)
-[![Elixir Badge](https://img.shields.io/badge/Elixir-0/627-8d6e63.svg?longCache=true&style=flat-square)](./src/elixir/)
-[![F# Badge](https://img.shields.io/badge/F_Sharp-0/627-8bc34a.svg?longCache=true&style=flat-square)](./src/f_sharp/)
-[![Go Badge](https://img.shields.io/badge/Go-12/627-orange.svg?longCache=true&style=flat-square)](./src/go/)
-[![Haskell Badge](https://img.shields.io/badge/Haskell-35/627-ff69b4.svg?longCache=true&style=flat-square)](./src/haskell/)
-[![Java Badge](https://img.shields.io/badge/Java-0/627-78909c.svg?longCache=true&style=flat-square)](./src/java/)
-[![Julia Badge](https://img.shields.io/badge/Julia-3/627-yellow.svg?longCache=true&style=flat-square)](./src/julia/)
-[![Lisp Badge](https://img.shields.io/badge/Lisp-0/627-ad1457.svg?longCache=true&style=flat-square)](./src/lisp/)
-[![Node+TS Badge](https://img.shields.io/badge/Node+TS-25/627-bb86fc.svg?longCache=true&style=flat-square)](./src/node/)
-[![Python Badge](https://img.shields.io/badge/Python-31/627-blue.svg?longCache=true&style=flat-square)](./src/python/)
-[![Perl Badge](https://img.shields.io/badge/Perl-0/627-6d4c41.svg?longCache=true&style=flat-square)](./src/python/)
-[![Ruby Badge](https://img.shields.io/badge/Ruby-66/627-brightgreen.svg?longCache=true&style=flat-square)](./src/ruby/)
-[![Rust Badge](https://img.shields.io/badge/Rust-0/627-4527a0.svg?longCache=true&style=flat-square)](./src/rust/)
-[![Swift Badge](https://img.shields.io/badge/Swift-0/627-ff5252.svg?longCache=true&style=flat-square)](./src/swift/)
-
 </div>
 
 > **[Project Euler](https://projecteuler.net)** is a good website with challenging exercises for those who already have a solid computer science knowledge and are willing to take a step further.
