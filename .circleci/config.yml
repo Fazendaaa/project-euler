@@ -8,10 +8,6 @@ jobs:
       - run:
           command: |
             cd ./src/r/
-            echo $PWD
-            ls
-      - run:
-          command: |
             R -e 'devtools::install_deps(dependencies = TRUE)'
       - store_artifacts:
           path: man/
