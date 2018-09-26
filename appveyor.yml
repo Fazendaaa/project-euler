@@ -15,12 +15,10 @@ cache:
 
 # Adapt as necessary starting from here
 
-max_jobs:
-  1
-
 before_build:
   ps:
-    cd .\src\r\
+    cd src
+    cd r
 
 build_script:
   - travis-tool.sh install_deps
