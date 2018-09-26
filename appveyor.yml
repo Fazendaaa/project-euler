@@ -16,9 +16,8 @@ cache:
 # Adapt as necessary starting from here
 
 before_build:
-  ps:
-    - cd src
-    - cd r
+  - ps: cd src
+  - ps: cd r
 
 build_script:
   - travis-tool.sh install_deps
