@@ -8,4 +8,6 @@ before_install:
 install:
   R -e 'install.packages(c("devtools", "covr"))'
   R -e 'devtools::install_deps(dep = T)'
+
+after_success:
   R -e 'covr::codecov()'
