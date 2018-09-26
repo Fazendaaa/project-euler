@@ -43,6 +43,4 @@ multiples <- function (limit) {
 #' myFunc("a")
 #' myFunc([...])
 #' }
-myFunc <- function (limit) {
-    return(sum(multiples(limit)))
-}
+myFunc <- function (limit) sum(multiples(limit))

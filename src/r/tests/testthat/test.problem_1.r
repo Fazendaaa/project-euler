@@ -1,5 +1,3 @@
-library("covr")
-library("testthat")
 context("Testing problem 1")
 
 test_that("Given example", {
@@ -16,5 +14,4 @@ test_that("Wanted value", {
     expect_equal(myFunc(input), output)
 })
 
-report()
 # TODO(Fazenda): write new tests
