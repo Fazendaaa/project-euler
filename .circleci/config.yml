@@ -9,6 +9,7 @@ jobs:
           command: |
             cd ./src/r/
             R -e 'devtools::install_deps(dependencies = TRUE)'
+            R -e 'devtools::test()'
       - store_artifacts:
           path: man/
           destination: man
