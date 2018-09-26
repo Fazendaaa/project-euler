@@ -23,7 +23,7 @@ build_script:
 
 before_test:
   ps:
-    cd ./src/r/
+    cd .\src\r\
 
 test_script:
   - travis-tool.sh run_tests
