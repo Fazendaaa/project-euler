@@ -18,12 +18,12 @@ cache:
 max_jobs:
   1
 
-build_script:
-  - travis-tool.sh install_deps
-
-before_test:
+before_build:
   ps:
     cd .\src\r\
+
+build_script:
+  - travis-tool.sh install_deps
 
 test_script:
   - travis-tool.sh run_tests
