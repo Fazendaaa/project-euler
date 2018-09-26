@@ -38,6 +38,7 @@ multiples(1000) # [ 3, 5, 6, 9, 10, ..., 999 ]
 myFunc(10) # 23
 myFunc(1000) # 233168
 \dontrun{
+myFunc(1.2)
 myFunc("a")
 myFunc([...])
 }

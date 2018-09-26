@@ -24,7 +24,6 @@
 [![Node+TS Badge](https://img.shields.io/badge/Node+TS-25/627-bb86fc.svg?longCache=true&style=flat-square)](./src/node/)
 [![Python Badge](https://img.shields.io/badge/Python-31/627-blue.svg?longCache=true&style=flat-square)](./src/python/)
 [![Perl Badge](https://img.shields.io/badge/Perl-0/627-6d4c41.svg?longCache=true&style=flat-square)](./src/python/)
-[![R Badge](https://img.shields.io/badge/R-0/627-5e35b1.svg?longCache=true&style=flat-square)](./src/r/)
 [![Ruby Badge](https://img.shields.io/badge/Ruby-66/627-brightgreen.svg?longCache=true&style=flat-square)](./src/ruby/)
 [![Rust Badge](https://img.shields.io/badge/Rust-0/627-4527a0.svg?longCache=true&style=flat-square)](./src/rust/)
 [![Swift Badge](https://img.shields.io/badge/Swift-0/627-ff5252.svg?longCache=true&style=flat-square)](./src/swift/)
