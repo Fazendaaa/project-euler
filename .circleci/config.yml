@@ -1,11 +1,12 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/src/r/
     docker:
       - image: appsilon/ci-base:1.0
     steps:
       - checkout
+      -run:
+        cd ./src/r/
       - restore_cache:
           keys:
             - deps1-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
