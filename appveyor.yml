@@ -20,7 +20,7 @@ before_build:
   - ps: cd r
 
 build_script:
-  - ps: R.exe -e "install.pacakges(\"devtools\")"
+  - ps: R.exe -e "install.packages('devtools', repos='https://vps.fmvz.usp.br/CRAN/')"
 
 test_script:
   - ps: R.exe -e "devtools::test()" 
