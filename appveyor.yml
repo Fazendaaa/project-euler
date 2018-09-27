@@ -20,10 +20,10 @@ before_build:
   - ps: cd r
 
 build_script:
-  - ps: R -e "install.pacakges("devtools")"
+  - ps: R.exe -e "install.pacakges("devtools")"
 
 test_script:
-  - ps: R -e "devtools::test()" 
+  - ps: R.exe -e "devtools::test()" 
 
 on_failure:
   - 7z a failure.zip *.Rcheck\*
