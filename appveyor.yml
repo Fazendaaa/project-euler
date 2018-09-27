@@ -15,12 +15,12 @@ cache:
 
 # Adapt as necessary starting from here
 
-before_build:
-  - ps: cd src
-  - ps: cd r
-
 build_script:
   - travis-tool.sh install_deps
+
+before_test:
+  - ps: cd src
+  - ps: cd r
 
 test_script:
   - travis-tool.sh run_tests
