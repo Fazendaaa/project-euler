@@ -23,8 +23,7 @@ before_test:
   - ps: cd r
 
 test_script:
-  - ps: |
-    R -e "devtools::test()"
+  - ps: R -e "devtools::test()"
 
 on_failure:
   - 7z a failure.zip *.Rcheck\*
