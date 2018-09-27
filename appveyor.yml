@@ -20,7 +20,7 @@ before_build:
   - ps: cd r
 
 build_script:
-  - travis-tool.sh install_deps
+  - ps: R -e "install.pacakges("devtools")"
 
 test_script:
   - ps: R -e "devtools::test()" 
