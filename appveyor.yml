@@ -23,7 +23,8 @@ before_test:
   - ps: cd r
 
 test_script:
-  - ..\..\travis-tool.sh run_tests
+  - ps: |
+    R -e "devtools::test()"
 
 on_failure:
   - 7z a failure.zip *.Rcheck\*
