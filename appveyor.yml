@@ -15,15 +15,15 @@ cache:
 
 # Adapt as necessary starting from here
 
-build_script:
-  - travis-tool.sh install_deps
-
-before_test:
+before_build:
   - ps: cd src
   - ps: cd r
 
+build_script:
+  - travis-tool.sh install_deps
+
 test_script:
-  - ps: R -e "devtools::test()"
+  - ps: R -e "devtools::test()" 
 
 on_failure:
   - 7z a failure.zip *.Rcheck\*
