@@ -15,12 +15,12 @@ cache:
 
 # Adapt as necessary starting from here
 
-before_build:
-  - ps: cd src
-  - ps: cd r
-
 build_script:
   - ps: R.exe -e "install.packages('devtools', repos='https://vps.fmvz.usp.br/CRAN/')"
+
+before_test:
+  - ps: cd src
+  - ps: cd r
 
 test_script:
   - ps: R.exe -e "devtools::test()" 
