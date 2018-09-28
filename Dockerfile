@@ -9,5 +9,3 @@ RUN R -e "install.packages(c(\"devtools\", \"roxygen2\", \"covr\", \"shiny\", \"
 RUN adduser docker sudo
 
 USER docker
-
-ENTRYPOINT [ "sh" ]

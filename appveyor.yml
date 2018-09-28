@@ -10,7 +10,4 @@ before_test:
   - sh: cd r
 
 test_script:
-  - sh: |
-        docker run -t fazenda/r-testing -eo pipefail
-        cd ./src/r/
-        R -e 'devtools::test()'
+  - sh: docker run -t fazenda/r-testing /bin/sh -c "R -e 'devtools::test()'"
