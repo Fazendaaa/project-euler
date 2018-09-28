@@ -13,4 +13,4 @@ before_test:
 build: off
 
 test_script:
-  - sh: docker run R -e "devtools::test()" 
+  - sh: docker run -t fazenda/r-testing Rscript --vanilla -e "devtools::test()" 
