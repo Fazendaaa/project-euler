@@ -5,3 +5,9 @@ RUN apt-get update  \
     && rm -rf /var/lib/apt/lists/*
 
 RUN R -e "install.packages(c(\"devtools\", \"roxygen2\", \"covr\", \"shiny\", \"DT\"), dependencies=TRUE)"
+
+RUN adduser docker sudo
+
+USER docker
+
+ENTRYPOINT [ "sh", "-c" ]
