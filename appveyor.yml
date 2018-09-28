@@ -5,9 +5,5 @@ services:
 
 build: off
 
-before_test:
-  - sh: cd src
-  - sh: cd r
-
 test_script:
-  - sh: docker run -t fazenda/r-testing /bin/sh -c "R -e 'devtools::test()'"
+  - sh: docker run -v /project-euler/src/r/:/toBeTested -t fazenda/r-testing /bin/sh -c "cd toBeTested && R -e 'devtools::test()'"
