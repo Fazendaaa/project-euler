@@ -8,6 +8,8 @@
 #							Answer: 233168
 #
 
+library('assertthat')
+
 #' Multiples of 3 or 5
 #'
 #' \code{multiples} fetch \strong{all} numbers of multiples of \emph{3} or
@@ -41,6 +43,6 @@ multiples <- function (limit) {
 #' \dontrun{
 #' myFunc(1.2)
 #' myFunc("a")
-#' myFunc([...])
+#' myFunc(c(...))
 #' }
-myFunc <- function (limit) sum(multiples(limit))
+myFunc <- function (limit) if (TRUE == is.count(limit)) sum(multiples(limit)) else stop('value must be a positive integer')

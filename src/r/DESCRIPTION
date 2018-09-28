@@ -2,6 +2,8 @@ Package: projectEuler
 Title: Some of my implementations of Project Euler problems
 Version:0.0.0
 Encoding: UTF-8
+Imports:
+    assertthat
 Suggests:
     testthat, covr, shiny, DT
 Authors@R: person("Fazenda", email="lucas.carotta@outlook.com",
