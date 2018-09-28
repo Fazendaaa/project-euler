@@ -10,4 +10,4 @@ before_test:
   - sh: cd r
 
 test_script:
-  - sh: docker run -t fazenda/r-testing R "-e "devtools::test()"" 
+  - sh: docker run -t fazenda/r-testing R "-e devtools::test()" 
