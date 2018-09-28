@@ -3,14 +3,11 @@ image: ubuntu
 services:
 - docker
 
-before_build:
-  - sh: docker pull fazenda/r-testing
+build: off
 
 before_test:
   - sh: cd src
   - sh: cd r
-
-build: off
 
 test_script:
   - sh: docker run -t fazenda/r-testing Rscript --vanilla -e "devtools::test()" 
