@@ -17,7 +17,7 @@ library('assertthat')
 #'
 #' @keywords internal
 #' @seealso \url{https://projecteuler.net/problem=1} for more info about it.
-#' @param limit A postive integer.
+#' @param limit A positive integer.
 #' @return A vector.
 #' @examples
 #' multiples(10) # [ 3, 5, 6, 9 ]
@@ -45,4 +45,10 @@ multiples <- function (limit) {
 #' myFunc("a")
 #' myFunc(c(...))
 #' }
-myFunc <- function (limit) if (TRUE == is.count(limit)) sum(multiples(limit)) else stop('value must be a positive integer')
+myFunc <- function (limit) {
+    if (TRUE == is.finite(limit) && TRUE == is.count(limit)) {
+        return (sum(multiples(limit)))
+    }
+    
+    stop('value must be a positive integer')
+}

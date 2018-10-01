@@ -10,7 +10,7 @@ multiples(limit)
 myFunc(limit)
 }
 \arguments{
-\item{limit}{A postive integer.}
+\item{limit}{A positive integer.}
 }
 \value{
 A vector.
@@ -40,7 +40,7 @@ myFunc(1000) # 233168
 \dontrun{
 myFunc(1.2)
 myFunc("a")
-myFunc([...])
+myFunc(c(...))
 }
 }
 \seealso{
