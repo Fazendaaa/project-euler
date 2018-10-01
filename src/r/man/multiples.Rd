@@ -2,12 +2,12 @@
 % Please edit documentation in R/problem_1.r
 \name{multiples}
 \alias{multiples}
-\alias{myFunc}
+\alias{problem1}
 \title{Multiples of 3 or 5}
 \usage{
 multiples(limit)
 
-myFunc(limit)
+problem1(limit)
 }
 \arguments{
 \item{limit}{A positive integer.}
@@ -23,7 +23,7 @@ The total of the sum.
 }
 \section{Functions}{
 \itemize{
-\item \code{myFunc}: \code{myFunc} just sum the values.
+\item \code{problem1}: \code{problem1} just sum the values.
 }}
 
 \section{Waning}{
@@ -35,12 +35,12 @@ learn how to test and document it.
 \examples{
 multiples(10) # [ 3, 5, 6, 9 ]
 multiples(1000) # [ 3, 5, 6, 9, 10, ..., 999 ]
-myFunc(10) # 23
-myFunc(1000) # 233168
+problem1(10) # 23
+problem1(1000) # 233168
 \dontrun{
-myFunc(1.2)
-myFunc("a")
-myFunc(c(...))
+    problem1(1.2)
+    problem1("a")
+    problem1(c(...))
 }
 }
 \seealso{

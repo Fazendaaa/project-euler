@@ -23,7 +23,7 @@ library('assertthat')
 #' multiples(10) # [ 3, 5, 6, 9 ]
 #' multiples(1000) # [ 3, 5, 6, 9, 10, ..., 999 ]
 multiples <- function (limit) {
-    values <- seq(1:(limit - 1))
+    values <- (1:(limit - 1))
 
     return(subset(values, 0 == values %% 3 | 0 == values %% 5))
 }
@@ -31,21 +31,21 @@ multiples <- function (limit) {
 #' Sum of multiples of 3 or 5
 #' 
 #' @export
-#' @describeIn multiples \code{myFunc} just sum the values.
+#' @describeIn multiples \code{problem1} just sum the values.
 #' @section Waning:
 #' This is a unneeded function, it's only purpose is to make code easier to
 #' learn how to test and document it.
 #' @inheritParams multiples
 #' @return The total of the sum.
 #' @examples
-#' myFunc(10) # 23
-#' myFunc(1000) # 233168
+#' problem1(10) # 23
+#' problem1(1000) # 233168
 #' \dontrun{
-#' myFunc(1.2)
-#' myFunc("a")
-#' myFunc(c(...))
+#'     problem1(1.2)
+#'     problem1("a")
+#'     problem1(c(...))
 #' }
-myFunc <- function (limit) {
+problem1 <- function (limit) {
     if (TRUE == is.finite(limit) && TRUE == is.count(limit)) {
         return (sum(multiples(limit)))
     }
