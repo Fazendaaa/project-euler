@@ -5,8 +5,5 @@ services:
 
 build: off
 
-before_test:
-  - sh: pwd
-
 test_script:
   - sh: docker run -v /home/appveyor/projects/project-euler/src/r/:/toBeTested -t fazenda/r-testing /bin/sh -c "cd toBeTested && R -e 'devtools::test()'"
