@@ -14,6 +14,8 @@ problem2(limit)
 }
 \value{
 a positive integer.
+
+The total of the even Fibonnacci numbers.
 }
 \description{
 \code{fibonnacci} gives the Fibonnacci number of given position.
@@ -29,7 +31,8 @@ fibonnacci(2) # 2
 fibonnacci(3) # 3
 fibonnacci(4) # 5
 problem2(1) # 1
-problem2(10) # 1
+problem2(10) # 10
+problem2(40000000) # 4613732
 \dontrun{
     problem2(1.2)
     problem2('a')

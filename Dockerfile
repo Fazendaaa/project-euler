@@ -8,8 +8,8 @@ RUN R -e "install.packages(c(\"DT\",\
                              \"covr\",\
                              \"shiny\",\
                              \"lintr\",\
-                             \"devtools\",\
                              \"pkgdown\",\
+                             \"devtools\",\
                              \"roxygen2\",\
                              \"goodpractice\",\
                              \"hunspell\"), dependencies=TRUE)"
