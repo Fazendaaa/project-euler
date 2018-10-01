@@ -1,1 +1,3 @@
 source: src/r/docs/
+
+theme: jekyll-theme-cayman
