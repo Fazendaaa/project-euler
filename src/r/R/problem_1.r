@@ -8,7 +8,7 @@
 #							Answer: 233168
 #
 
-library('assertthat')
+library("assertthat")
 
 #' Multiples of 3 or 5
 #'
@@ -49,6 +49,6 @@ problem1 <- function (limit) {
     if (TRUE == is.finite(limit) && TRUE == is.count(limit)) {
         return (sum(multiples(limit)))
     }
-    
-    stop('value must be a positive integer')
+
+    stop("value must be a positive integer")
 }

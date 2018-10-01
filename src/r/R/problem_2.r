@@ -10,7 +10,7 @@
 #
 #								Answer: 4613732
 
-#library('assertthat')
+library("assertthat")
 
 #' Fibonnacci number
 #'
@@ -44,20 +44,17 @@ fibonnacci <- function(limit) if (1 >= limit) 1 else fibonnacci(limit - 1) + fib
 #'}
 problem2 <- function(limit) {
     if (FALSE == is.finite(limit) || FALSE == is.count(limit)) {
-        stop('value must be a positive integer')
+        stop("value must be a positive integer")
     }
 
     total <- 0
+    value <- 0
     position <- 0
-    numbers <- vector('double')
 
-    repeat {
+    while (value <= limit) {
         position <- position + 1
         value <- fibonnacci(position)
 
-        if (value >= limit) {
-            break
-        }
 
         if (0 == value %% 2) {
             total <- total + value
