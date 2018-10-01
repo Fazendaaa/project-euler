@@ -5,6 +5,8 @@ jobs:
       - image: fazenda/r-testing
     steps:
       - checkout
+      - setup_remote_docker: 
+         docker_layer_caching: true 
       - run:
           command: |
             cd ./src/r/
