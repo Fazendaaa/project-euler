@@ -8,8 +8,6 @@
 #							Answer: 233168
 #
 
-library("assertthat")
-
 #' Multiples of 3 or 5
 #'
 #' \code{multiples} fetch \strong{all} numbers of multiples of \emph{3} or
@@ -36,6 +34,7 @@ multiples <- function (limit) {
 #' This is a unneeded function, it's only purpose is to make code easier to
 #' learn how to test and document it.
 #' @inheritParams multiples
+#' @importFrom assertthat is.count
 #' @return The total of the sum.
 #' @examples
 #' problem1(10) # 23

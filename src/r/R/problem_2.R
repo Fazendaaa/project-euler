@@ -10,8 +10,6 @@
 #
 #								Answer: 4613732
 
-library("assertthat")
-
 #' Fibonnacci number
 #'
 #' \code{fibonnacci} gives the Fibonnacci number of given position.
@@ -32,6 +30,7 @@ fibonnacci <- function(limit) if (1 >= limit) 1 else fibonnacci(limit - 1) + fib
 #' @seealso \url{https://projecteuler.net/problem=2} for more info about it.
 #' @describeIn fibonnacci \code{problem2} just filter the even Fibonnacci sequence then sum it.
 #' @inheritParams fibonnacci.
+#' @importFrom assertthat is.count
 #' @return The total of the even Fibonnacci numbers.
 #' @examples 
 #' problem2(1) # 1

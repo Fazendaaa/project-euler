@@ -11,6 +11,7 @@ RUN R -e "install.packages(c(\"DT\",\
                              \"pkgdown\",\
                              \"devtools\",\
                              \"roxygen2\",\
+                             \"assertthat\",\
                              \"goodpractice\",\
                              \"hunspell\"), dependencies=TRUE)"
 

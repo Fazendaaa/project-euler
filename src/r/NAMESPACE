@@ -2,3 +2,4 @@
 
 export(problem1)
 export(problem2)
+importFrom(assertthat,is.count)
