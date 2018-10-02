@@ -1,16 +1,13 @@
-language: r
+sudo: required
 
-cache: packages
+services:
+  - docker
 
-before_install:
-  cd src/r
+before_test:
+  pwd
 
-r_github_packages:
-  - r-lib/covr
-
-install:
-  R -e 'install.packages(c("devtools", "covr", "shiny", "DT"))'
-  R -e 'devtools::install_deps(dep = T)'
+script:
+  docker run -v /home/appveyor/projects/project-euler/src/r/:/toBeTested -t fazenda/r-testing /bin/sh -c "cd toBeTested && R -e 'devtools::test()'"
 
 after_success:
   R -e 'covr::codecov()'
