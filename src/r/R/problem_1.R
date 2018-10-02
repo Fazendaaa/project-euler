@@ -14,12 +14,13 @@
 #' \emph{5} up until given limit.
 #'
 #' @keywords internal
+#' @alises multiples
 #' @seealso \url{https://projecteuler.net/problem=1} for more info about it.
 #' @param limit A positive integer.
 #' @return A vector.
 #' @examples
-#' multiples(10) # [ 3, 5, 6, 9 ]
-#' multiples(1000) # [ 3, 5, 6, 9, 10, ..., 999 ]
+#' multiples(10)
+#' multiples(1000)
 multiples <- function (limit) {
     values <- (1:(limit - 1))
 
@@ -29,6 +30,7 @@ multiples <- function (limit) {
 #' Sum of multiples of 3 or 5
 #' 
 #' @export
+#' @alises multiples sum
 #' @describeIn multiples \code{problem1} just sum the values.
 #' @section Waning:
 #' This is a unneeded function, it's only purpose is to make code easier to
@@ -37,13 +39,8 @@ multiples <- function (limit) {
 #' @importFrom assertthat is.count
 #' @return The total of the sum.
 #' @examples
-#' problem1(10) # 23
-#' problem1(1000) # 233168
-#' \dontrun{
-#'     problem1(1.2)
-#'     problem1("a")
-#'     problem1(c(...))
-#' }
+#' problem1(10)
+#' problem1(1000)
 problem1 <- function (limit) {
     if (TRUE == is.finite(limit) && TRUE == is.count(limit)) {
         return (sum(multiples(limit)))

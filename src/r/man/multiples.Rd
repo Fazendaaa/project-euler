@@ -33,15 +33,10 @@ learn how to test and document it.
 }
 
 \examples{
-multiples(10) # [ 3, 5, 6, 9 ]
-multiples(1000) # [ 3, 5, 6, 9, 10, ..., 999 ]
-problem1(10) # 23
-problem1(1000) # 233168
-\dontrun{
-    problem1(1.2)
-    problem1("a")
-    problem1(c(...))
-}
+multiples(10)
+multiples(1000)
+problem1(10)
+problem1(1000)
 }
 \seealso{
 \url{https://projecteuler.net/problem=1} for more info about it.

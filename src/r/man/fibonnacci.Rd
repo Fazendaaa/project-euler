@@ -3,6 +3,8 @@
 \name{fibonnacci}
 \alias{fibonnacci}
 \alias{problem2}
+\alias{even}
+\alias{sum}
 \title{Fibonnacci number}
 \usage{
 fibonnacci(limit)
@@ -26,18 +28,12 @@ The total of the even Fibonnacci numbers.
 }}
 
 \examples{
-fibonnacci(1) # 1
-fibonnacci(2) # 2
-fibonnacci(3) # 3
-fibonnacci(4) # 5
-problem2(1) # 1
-problem2(10) # 10
-problem2(40000000) # 4613732
-\dontrun{
-    problem2(1.2)
-    problem2('a')
-    problem2(c(...))
-}
+fibonnacci(1)
+fibonnacci(20)
+fibonnacci(300)
+problem2(1)
+problem2(10)
+problem2(40000000)
 }
 \seealso{
 \url{https://projecteuler.net/problem=2} for more info about it.

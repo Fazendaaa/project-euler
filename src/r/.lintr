@@ -3,5 +3,4 @@ linters: with_defaults(
     object_usage_linter = NULL,
     absolute_path_linter = NULL,
     unneeded_concatenation_linter = NULL,
-    open_curly_linter(allow_single_line = TRUE),
-    line_length_linter = line_length_linter(140))
+    open_curly_linter(allow_single_line = TRUE))
