@@ -22,7 +22,12 @@
 #' fibonnacci(1)
 #' fibonnacci(20)
 #' fibonnacci(300)
-fibonnacci <- function(limit) if (1 >= limit) 1 else fibonnacci(limit - 1) + fibonnacci(limit - 2)
+fibonnacci <- function(limit) {
+    if (1 >= limit)
+        return (1);
+
+    return (fibonnacci(limit - 1) + fibonnacci(limit - 2))
+}
 
 #' Sum of even Fibonacci numbers
 #'
