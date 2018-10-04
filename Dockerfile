@@ -17,6 +17,7 @@ RUN R -e "install.packages(c(\"DT\",\
                              \"covr\",\
                              \"shiny\",\
                              \"lintr\",\
+                             \"magick\",\
                              \"pkgdown\",\
                              \"devtools\",\
                              \"roxygen2\",\
