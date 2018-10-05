@@ -4,40 +4,22 @@
 \alias{fibonnacci}
 \alias{Fibonnacci}
 \alias{position}
-\alias{problem2}
-\alias{even}
-\alias{sum}
 \title{Fibonnacci number}
 \usage{
 fibonnacci(limit)
-
-problem2(limit)
 }
 \arguments{
 \item{limit}{A positive integer.}
 }
 \value{
 a positive integer.
-
-The total of the even Fibonnacci numbers.
 }
 \description{
 Gives the Fibonnacci number of given position.
 }
-\section{Functions}{
-\itemize{
-\item \code{problem2}: \code{problem2} just filter the even Fibonnacci sequence then sum it.
-}}
-
 \examples{
 fibonnacci(1)
 fibonnacci(20)
 fibonnacci(300)
-problem2(1)
-problem2(10)
-problem2(40000000)
-}
-\seealso{
-\url{https://projecteuler.net/problem=2} for more info about it.
 }
 \keyword{internal}

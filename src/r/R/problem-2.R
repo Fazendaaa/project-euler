@@ -32,12 +32,14 @@ fibonnacci <- function(limit) {
 
 #' Sum of even Fibonacci numbers
 #'
+#' Just filter the even numbers in the Fibonnacci sequence then sum it.
+#'
 #' @aliases even sum
 #' @seealso \url{https://projecteuler.net/problem=2} for more info about it.
-#' @describeIn fibonnacci \code{problem2} just filter the even Fibonnacci sequence then sum it.
-#' @inheritParams fibonnacci.
+#' @describeIn fibonnacci
+#' @inheritParams fibonnacci
 #' @importFrom assertthat is.count
-#' @return The total of the even Fibonnacci numbers.
+#' @return A total of the sum.
 #' @examples 
 #' problem2(1)
 #' problem2(10)
