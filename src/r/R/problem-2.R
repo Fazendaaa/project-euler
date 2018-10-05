@@ -12,27 +12,27 @@
 
 #' Fibonnacci number
 #'
-#' \code{fibonnacci} gives the Fibonnacci number of given position.
+#' Gives the Fibonnacci number of given position.
 #'
-#' @keywords internal
-#' @aliases fibonnacci
+#' @aliases Fibonnacci position
 #' @param limit A positive integer.
 #' @return a positive integer.
 #' @examples
 #' fibonnacci(1)
 #' fibonnacci(20)
 #' fibonnacci(300)
+#' @keywords internal
 fibonnacci <- function(limit) {
-    if (1 >= limit)
+    if (1 >= limit) {
         return (1);
+    }
 
     return (fibonnacci(limit - 1) + fibonnacci(limit - 2))
 }
 
 #' Sum of even Fibonacci numbers
 #'
-#' @export
-#' @aliases fibonnacci even sum
+#' @aliases even sum
 #' @seealso \url{https://projecteuler.net/problem=2} for more info about it.
 #' @describeIn fibonnacci \code{problem2} just filter the even Fibonnacci sequence then sum it.
 #' @inheritParams fibonnacci.
@@ -42,6 +42,7 @@ fibonnacci <- function(limit) {
 #' problem2(1)
 #' problem2(10)
 #' problem2(40000000)
+#' @export
 problem2 <- function(limit) {
     if (FALSE == is.finite(limit) || FALSE == is.count(limit)) {
         stop("value must be a positive integer")

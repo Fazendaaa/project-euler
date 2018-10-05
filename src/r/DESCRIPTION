@@ -1,16 +1,17 @@
 Package: projectEuler
 Title: Some of my implementations of Project Euler problems
-Version:0.0.0
+Version: 0.0.0
 Encoding: UTF-8
 Imports:
     assertthat
 Suggests:
-    testthat, covr, shiny, DT, lintr, goodpractice
+    testthat, covr, shiny, DT, knitr, lintr, goodpractice
 Authors@R: person("Fazenda", email="lucas.carotta@outlook.com",
     role = c("aut", "cre"))
 Description: This package is a implementation with testing of Project Euler
     problems.
 Depends: R (>= 3.1.0)
-License: MIT
+License: MIT + file LICENSE
 LazyData: true
 RoxygenNote: 6.1.0
+VignetteBuilder: knitr

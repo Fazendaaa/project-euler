@@ -13,7 +13,6 @@
 #' \code{multiples} fetch \strong{all} numbers of multiples of \emph{3} or
 #' \emph{5} up until given limit.
 #'
-#' @keywords internal
 #' @alises multiples
 #' @seealso \url{https://projecteuler.net/problem=1} for more info about it.
 #' @param limit A positive integer.
@@ -21,6 +20,7 @@
 #' @examples
 #' multiples(10)
 #' multiples(1000)
+#' @keywords internal
 multiples <- function (limit) {
     values <- (1:(limit - 1))
 
@@ -29,7 +29,6 @@ multiples <- function (limit) {
 
 #' Sum of multiples of 3 or 5
 #' 
-#' @export
 #' @alises multiples sum
 #' @describeIn multiples \code{problem1} just sum the values.
 #' @section Waning:
@@ -41,6 +40,7 @@ multiples <- function (limit) {
 #' @examples
 #' problem1(10)
 #' problem1(1000)
+#' @export
 problem1 <- function (limit) {
     if (TRUE == is.finite(limit) && TRUE == is.count(limit)) {
         return (sum(multiples(limit)))
