@@ -36,7 +36,6 @@ fibonnacci <- function(limit) {
 #'
 #' @aliases even sum
 #' @seealso \url{https://projecteuler.net/problem=2} for more info about it.
-#' @describeIn fibonnacci
 #' @inheritParams fibonnacci
 #' @importFrom assertthat is.count
 #' @return A total of the sum.

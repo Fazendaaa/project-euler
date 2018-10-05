@@ -17,6 +17,4 @@
 #' problem3(13195)
 #' problem3(600851475143)
 #' @export
-problem3 <- function(input) {
-    return (29)
-}
+problem3 <- function(input) max(Filter(isPrime, factors(input)))
