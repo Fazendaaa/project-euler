@@ -18,7 +18,9 @@ a positive integer.
 Gives the Fibonnacci number of given position.
 }
 \examples{
+\dontrun{
 fibonnacci(1)
 fibonnacci(20)
+}
 }
 \keyword{internal}

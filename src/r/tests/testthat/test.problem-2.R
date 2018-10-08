@@ -1,7 +1,5 @@
 context("Testing problem 2")
 
-skip("Woking on projectEuler.R")
-
 test_that("Given example", {
     input <- 10
     output <- 10

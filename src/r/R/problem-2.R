@@ -18,8 +18,10 @@
 #' @param limit A positive integer.
 #' @return a positive integer.
 #' @examples
+#' \dontrun{
 #' fibonnacci(1)
 #' fibonnacci(20)
+#' }
 #' @keywords internal
 fibonnacci <- function(limit) {
     if (1 >= limit) {

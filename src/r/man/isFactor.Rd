@@ -4,12 +4,12 @@
 \alias{isFactor}
 \title{isFactor}
 \usage{
-isFactor(acc, value, given)
+isFactor(acc, cur, given)
 }
 \arguments{
 \item{acc}{Vector with accumulated values so far}
 
-\item{value}{Number to be checked}
+\item{cur}{Number to be checked}
 
 \item{given}{Number that value is or not its factor}
 }
@@ -20,7 +20,9 @@ A vector of numbers that are factors or an empty vector
 Verifies whether or not a value is a factor of another one.
 }
 \examples{
+\dontrun{
 isFactor(c(), 2, 10)
 isFactor(c(2), 5, 10)
+}
 }
 \keyword{internal}

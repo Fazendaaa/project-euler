@@ -6,10 +6,10 @@
 \alias{numbers}
 \title{isPrime}
 \usage{
-isPrime(input)
+isPrime(value)
 }
 \arguments{
-\item{input}{A integer.}
+\item{value}{A integer.}
 }
 \value{
 Boolean.

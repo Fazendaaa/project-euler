@@ -9,8 +9,10 @@
 #' @param given Number that value is or not its factor
 #' @return A vector of numbers that are factors or an empty vector
 #' @examples
+#' \dontrun{
 #' isFactor(c(), 2, 10)
 #' isFactor(c(2), 5, 10)
+#' }
 #' @keywords internal
 isFactor <- function(acc, cur, given) {
     if (0 == given %% cur) {

@@ -33,8 +33,10 @@ learn how to test and document it.
 }
 
 \examples{
+\dontrun{
 multiples(10)
 multiples(1000)
+}
 problem1(10)
 problem1(1000)
 }

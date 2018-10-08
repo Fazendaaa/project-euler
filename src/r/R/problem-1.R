@@ -18,8 +18,10 @@
 #' @param limit A positive integer.
 #' @return A vector.
 #' @examples
+#' \dontrun{
 #' multiples(10)
 #' multiples(1000)
+#' }
 #' @keywords internal
 multiples <- function (limit) {
     values <- (1:(limit - 1))

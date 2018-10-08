@@ -5,10 +5,10 @@
 \alias{largest}
 \title{Largest prime factor}
 \usage{
-problem3(input)
+problem3(value)
 }
 \arguments{
-\item{input}{A integer.}
+\item{value}{A integer.}
 }
 \value{
 A number
