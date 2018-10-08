@@ -20,7 +20,6 @@
 #' @examples
 #' fibonnacci(1)
 #' fibonnacci(20)
-#' fibonnacci(300)
 #' @keywords internal
 fibonnacci <- function(limit) {
     if (1 >= limit) {
@@ -42,7 +41,6 @@ fibonnacci <- function(limit) {
 #' @examples 
 #' problem2(1)
 #' problem2(10)
-#' problem2(40000000)
 #' @export
 problem2 <- function(limit) {
     if (FALSE == is.finite(limit) || FALSE == is.count(limit)) {

@@ -5,13 +5,13 @@
 \alias{factor}
 \title{Factors}
 \usage{
-factors(input)
+factors(given)
 }
 \arguments{
-\item{input}{A integer.}
+\item{given}{A integer.}
 }
 \value{
-A list of numbers.
+A vector of numbers.
 }
 \description{
 Takes a number and then returns all of its factors.
@@ -19,5 +19,4 @@ Takes a number and then returns all of its factors.
 \examples{
 factors(1)
 factors(123)
-factors(213713)
 }

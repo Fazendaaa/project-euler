@@ -18,7 +18,6 @@ Boolean.
 Checks whether or not a number is prime.
 }
 \examples{
-isPrime(1)
 isPrime(2)
 isPrime(4)
 }

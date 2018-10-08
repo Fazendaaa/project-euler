@@ -10,11 +10,10 @@
 #'
 #' @aliases largest
 #' @seealso \url{https://projecteuler.net/problem=3} for more info about it. 
-#' @param input A integer.
+#' @param value A integer.
 #' @return A number
 #' @examples
 #' problem3(1)
 #' problem3(13195)
-#' problem3(600851475143)
 #' @export
-problem3 <- function(input) max(Filter(isPrime, factors(input)))
+problem3 <- function(value) max(Filter(isPrime, factors(value)))

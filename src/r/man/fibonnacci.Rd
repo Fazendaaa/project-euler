@@ -20,6 +20,5 @@ Gives the Fibonnacci number of given position.
 \examples{
 fibonnacci(1)
 fibonnacci(20)
-fibonnacci(300)
 }
 \keyword{internal}

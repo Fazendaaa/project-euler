@@ -19,7 +19,6 @@ Largest prime factor
 \examples{
 problem3(1)
 problem3(13195)
-problem3(600851475143)
 }
 \seealso{
 \url{https://projecteuler.net/problem=3} for more info about it.

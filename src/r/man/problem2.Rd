@@ -20,7 +20,6 @@ Just filter the even numbers in the Fibonnacci sequence then sum it.
 \examples{
 problem2(1)
 problem2(10)
-problem2(40000000)
 }
 \seealso{
 \url{https://projecteuler.net/problem=2} for more info about it.
