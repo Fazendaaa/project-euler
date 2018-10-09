@@ -13,7 +13,6 @@
 #' \code{multiples} fetch \strong{all} numbers of multiples of \emph{3} or
 #' \emph{5} up until given limit.
 #'
-#' @alises multiples
 #' @seealso \url{https://projecteuler.net/problem=1} for more info about it.
 #' @param limit A positive integer.
 #' @return A vector.
@@ -31,7 +30,6 @@ multiples <- function (limit) {
 
 #' Sum of multiples of 3 or 5
 #' 
-#' @alises multiples sum
 #' @describeIn multiples \code{problem1} just sum the values.
 #' @section Waning:
 #' This is a unneeded function, it's only purpose is to make code easier to

@@ -9,6 +9,9 @@ isPalindrome(value)
 \arguments{
 \item{value}{Number to be verified}
 }
+\value{
+Comparison result
+}
 \description{
 Checks whether or not is a palindrome
 }

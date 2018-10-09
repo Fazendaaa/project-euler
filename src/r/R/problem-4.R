@@ -12,7 +12,7 @@
 #' Checks whether or not is a palindrome
 #'
 #' @param value Number to be verified
-#' @returns Comparison result
+#' @return Comparison result
 #' @examples
 #' \dontrun{
 #' isPalindrome(1)
