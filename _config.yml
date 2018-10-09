@@ -1,5 +1,2 @@
-source: /src/r/docs
+source: src/r/docs
 exclude: [ README.md ]
-include:
-  - "_*_.html"
-  - "_*_.*.html"
