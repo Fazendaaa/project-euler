@@ -15,3 +15,5 @@ License: MIT + file LICENSE
 LazyData: true
 RoxygenNote: 6.1.0
 VignetteBuilder: knitr
+URL: https://github.com/Fazendaaa/project-euler
+BugReports: https://github.com/Fazendaaa/project-euler/issues

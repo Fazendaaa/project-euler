@@ -1,4 +1,4 @@
-source: /src/r/docs
+source: /src/r/docs/index.html
 include:
   - "_*_.html"
   - "_*_.*.html"
