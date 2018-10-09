@@ -2,8 +2,6 @@
 % Please edit documentation in R/projectEuler.R
 \name{isPrime}
 \alias{isPrime}
-\alias{prime}
-\alias{numbers}
 \title{isPrime}
 \usage{
 isPrime(value)

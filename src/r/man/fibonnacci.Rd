@@ -2,8 +2,6 @@
 % Please edit documentation in R/problem-2.R
 \name{fibonnacci}
 \alias{fibonnacci}
-\alias{Fibonnacci}
-\alias{position}
 \title{Fibonnacci number}
 \usage{
 fibonnacci(limit)

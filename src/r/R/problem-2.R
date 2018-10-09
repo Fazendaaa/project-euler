@@ -14,7 +14,6 @@
 #'
 #' Gives the Fibonnacci number of given position.
 #'
-#' @aliases Fibonnacci position
 #' @param limit A positive integer.
 #' @return a positive integer.
 #' @examples
@@ -25,7 +24,7 @@
 #' @keywords internal
 fibonnacci <- function(limit) {
     if (1 >= limit) {
-        return (1);
+        return (1)
     }
 
     return (fibonnacci(limit - 1) + fibonnacci(limit - 2))
@@ -35,7 +34,6 @@ fibonnacci <- function(limit) {
 #'
 #' Just filter the even numbers in the Fibonnacci sequence then sum it.
 #'
-#' @aliases even sum
 #' @seealso \url{https://projecteuler.net/problem=2} for more info about it.
 #' @inheritParams fibonnacci
 #' @importFrom assertthat is.count

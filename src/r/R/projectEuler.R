@@ -32,7 +32,6 @@ isFactor <- function(acc, cur, given) {
 #'
 #' Takes a number and then returns all of its factors.
 #'
-#' @aliases factor
 #' @param given A integer.
 #' @return A vector of numbers.
 #' @examples
@@ -49,7 +48,6 @@ factors <- function(given) {
 #'
 #' Checks whether or not a number is prime.
 #'
-#' @aliases prime numbers
 #' @param value A integer.
 #' @return Boolean.
 #' @examples

@@ -2,7 +2,6 @@
 % Please edit documentation in R/projectEuler.R
 \name{factors}
 \alias{factors}
-\alias{factor}
 \title{Factors}
 \usage{
 factors(given)

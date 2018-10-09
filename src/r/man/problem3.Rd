@@ -2,7 +2,6 @@
 % Please edit documentation in R/problem-3.R
 \name{problem3}
 \alias{problem3}
-\alias{largest}
 \title{Largest prime factor}
 \usage{
 problem3(value)

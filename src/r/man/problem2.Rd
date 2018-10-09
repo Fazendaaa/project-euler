@@ -2,8 +2,6 @@
 % Please edit documentation in R/problem-2.R
 \name{problem2}
 \alias{problem2}
-\alias{even}
-\alias{sum}
 \title{Sum of even Fibonacci numbers}
 \usage{
 problem2(limit)

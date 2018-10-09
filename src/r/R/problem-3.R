@@ -8,7 +8,6 @@
 
 #' Largest prime factor
 #'
-#' @aliases largest
 #' @seealso \url{https://projecteuler.net/problem=3} for more info about it. 
 #' @param value A integer.
 #' @return A number

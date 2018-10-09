@@ -5,4 +5,4 @@ services:
 
 script:
   docker run -v /home/travis/build/Fazendaaa/project-euler/src/r/:/toBeTested -t fazenda/r-testing /bin/sh -c \
-  "cd toBeTested && R -e 'devtools::test();covr::codecov();covr::coveralls()'"
+  "cd toBeTested && R -e 'devtools::check()'"
