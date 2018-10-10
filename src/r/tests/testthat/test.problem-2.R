@@ -49,8 +49,6 @@ test_that("Passing a Inf object", {
     expect_error(problem2(input), output)
 })
 
-skip("Works, but isn't performatic")
-
 test_that("Wanted value", {
     input <- 4000000
     output <- 4613732

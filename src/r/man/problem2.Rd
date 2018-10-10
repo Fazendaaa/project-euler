@@ -6,14 +6,11 @@
 \usage{
 problem2(limit)
 }
-\arguments{
-\item{limit}{A positive integer.}
-}
 \value{
 A total of the sum.
 }
 \description{
-Just filter the even numbers in the Fibonnacci sequence then sum it.
+Just filter the even numbers in the Fibonacci sequence then sum it.
 }
 \examples{
 problem2(1)

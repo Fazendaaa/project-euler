@@ -3,7 +3,8 @@ Title: Some of my implementations of Project Euler problems
 Version: 0.0.0
 Encoding: UTF-8
 Imports:
-    assertthat
+    assertthat,
+    Rcpp
 Suggests:
     testthat, covr, shiny, DT, knitr, lintr, goodpractice
 Authors@R: person("Fazenda", email="lucas.carotta@outlook.com",
@@ -17,3 +18,4 @@ RoxygenNote: 6.1.0
 VignetteBuilder: knitr
 URL: https://github.com/Fazendaaa/project-euler
 BugReports: https://github.com/Fazendaaa/project-euler/issues
+LinkingTo: Rcpp

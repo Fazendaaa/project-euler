@@ -9,33 +9,24 @@
 #	exceed four million, find the sum of the even-valued terms.
 #
 #								Answer: 4613732
+#' @useDynLib projectEuler
+#' @importFrom Rcpp sourceCpp
+NULL
 
-#' Fibonnacci number
-#'
-#' Gives the Fibonnacci number of given position.
-#'
-#' @param limit A positive integer.
-#' @return a positive integer.
-#' @examples
-#' \dontrun{
-#' fibonnacci(1)
-#' fibonnacci(20)
-#' }
-#' @keywords internal
-fibonnacci <- function(limit) {
-    if (1 >= limit) {
-        return (1)
-    }
+recursiveEvenFibonacci <- function(position, limit, total) {
+    value <- fibonacci(position)
+    #cat("\nPosition: ", position, "\tFibonacci: ", value, "\n")
+    newTotal <- if (0 == value %% 2) total + value else total
 
-    return (fibonnacci(limit - 1) + fibonnacci(limit - 2))
+    return (if (value <= limit) recursiveEvenFibonacci (position + 1, limit, newTotal) else (total))
 }
 
 #' Sum of even Fibonacci numbers
 #'
-#' Just filter the even numbers in the Fibonnacci sequence then sum it.
+#' Just filter the even numbers in the Fibonacci sequence then sum it.
 #'
 #' @seealso \url{https://projecteuler.net/problem=2} for more info about it.
-#' @inheritParams fibonnacci
+#' @inheritParams fibonacci
 #' @importFrom assertthat is.count
 #' @return A total of the sum.
 #' @examples 
@@ -47,19 +38,5 @@ problem2 <- function(limit) {
         stop("value must be a positive integer")
     }
 
-    total <- 0
-    value <- 0
-    position <- 0
-
-    while (value <= limit) {
-        position <- position + 1
-        value <- fibonnacci(position)
-
-
-        if (0 == value %% 2) {
-            total <- total + value
-        }
-    }
-
-    return (total)
+    return (recursiveEvenFibonacci(1, limit, 0))
 }
