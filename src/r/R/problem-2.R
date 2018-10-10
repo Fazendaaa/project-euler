@@ -13,14 +13,6 @@
 #' @importFrom Rcpp sourceCpp
 NULL
 
-recursiveEvenFibonacci <- function(position, limit, total) {
-    value <- fibonacci(position)
-    #cat("\nPosition: ", position, "\tFibonacci: ", value, "\n")
-    newTotal <- if (0 == value %% 2) total + value else total
-
-    return (if (value <= limit) recursiveEvenFibonacci (position + 1, limit, newTotal) else (total))
-}
-
 #' Sum of even Fibonacci numbers
 #'
 #' Just filter the even numbers in the Fibonacci sequence then sum it.

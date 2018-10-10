@@ -5,20 +5,22 @@
 
 using namespace Rcpp;
 
-// fibonacci
-double fibonacci(double position);
-RcppExport SEXP _projectEuler_fibonacci(SEXP positionSEXP) {
+// recursiveEvenFibonacci
+double recursiveEvenFibonacci(double position, double limit, double total);
+RcppExport SEXP _projectEuler_recursiveEvenFibonacci(SEXP positionSEXP, SEXP limitSEXP, SEXP totalSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< double >::type position(positionSEXP);
-    rcpp_result_gen = Rcpp::wrap(fibonacci(position));
+    Rcpp::traits::input_parameter< double >::type limit(limitSEXP);
+    Rcpp::traits::input_parameter< double >::type total(totalSEXP);
+    rcpp_result_gen = Rcpp::wrap(recursiveEvenFibonacci(position, limit, total));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_projectEuler_fibonacci", (DL_FUNC) &_projectEuler_fibonacci, 1},
+    {"_projectEuler_recursiveEvenFibonacci", (DL_FUNC) &_projectEuler_recursiveEvenFibonacci, 3},
     {NULL, NULL, 0}
 };
 
