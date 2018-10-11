@@ -11,3 +11,22 @@ recursiveEvenFibonacci <- function(position, limit, total) {
     .Call('_projectEuler_recursiveEvenFibonacci', PACKAGE = 'projectEuler', position, limit, total)
 }
 
+#' Max PalindromeWhether or not is a palindrome
+#'
+#' The  largest  palindrome  from  comparison  from  a  given  palindrome and a
+#' sequence to be verified
+#'
+#' @param old Max palindrome so far
+#' @param from Lower limit to check data
+#' @param limit Upper limit to check data
+#' @return The largest palindrome
+#' @examples
+#' \dontrun{
+#' maxPalindrome(1, 2, 9)
+#' maxPalindrome(29, 79, 99)
+#' maxPalindrome(126, 345, 999)
+#' }
+maxPalindrome <- function(old, from, limit) {
+    .Call('_projectEuler_maxPalindrome', PACKAGE = 'projectEuler', old, from, limit)
+}
+

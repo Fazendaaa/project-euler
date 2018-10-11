@@ -6,6 +6,9 @@
 \usage{
 problem2(limit)
 }
+\arguments{
+\item{limit}{Fibonacci value limit}
+}
 \value{
 A total of the sum.
 }

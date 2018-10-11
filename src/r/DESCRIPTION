@@ -6,9 +6,18 @@ Imports:
     assertthat,
     Rcpp
 Suggests:
-    testthat, covr, shiny, DT, knitr, lintr, goodpractice
-Authors@R: person("Fazenda", email="lucas.carotta@outlook.com",
-    role = c("aut", "cre"))
+    testthat,
+    covr,
+    shiny,
+    DT,
+    knitr,
+    lintr,
+    goodpractice
+Authors@R: person(
+        "Fazenda",
+        email="lucas.carotta@outlook.com",
+        role = c("aut", "cre")
+    )
 Description: This package is a implementation with testing of Project Euler
     problems.
 Depends: R (>= 3.1.0)

@@ -18,7 +18,7 @@ NULL
 #' Just filter the even numbers in the Fibonacci sequence then sum it.
 #'
 #' @seealso \url{https://projecteuler.net/problem=2} for more info about it.
-#' @inheritParams fibonacci
+#' @param limit Fibonacci value limit
 #' @importFrom assertthat is.count
 #' @return A total of the sum.
 #' @examples 

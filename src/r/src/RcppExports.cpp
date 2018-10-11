@@ -18,9 +18,23 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// maxPalindrome
+double maxPalindrome(const double old, const double from, const double limit);
+RcppExport SEXP _projectEuler_maxPalindrome(SEXP oldSEXP, SEXP fromSEXP, SEXP limitSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const double >::type old(oldSEXP);
+    Rcpp::traits::input_parameter< const double >::type from(fromSEXP);
+    Rcpp::traits::input_parameter< const double >::type limit(limitSEXP);
+    rcpp_result_gen = Rcpp::wrap(maxPalindrome(old, from, limit));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_projectEuler_recursiveEvenFibonacci", (DL_FUNC) &_projectEuler_recursiveEvenFibonacci, 3},
+    {"_projectEuler_maxPalindrome", (DL_FUNC) &_projectEuler_maxPalindrome, 3},
     {NULL, NULL, 0}
 };
 
