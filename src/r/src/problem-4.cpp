@@ -1,4 +1,5 @@
 #include <Rcpp.h>
+#include <cmath>
 #include <string>
 #include <sstream>
 #include <algorithm>
@@ -7,7 +8,7 @@ using namespace Rcpp;
 // Is Palindrome
 //
 // Checks whether or not is a palindrome
-static bool isPalindrome (const double value) {
+static bool isPalindrome (const int value) {
     std::string converted = std::to_string(value);
     const int limit = converted.length() - 1;
     const int middle = std::floor(limit / 2);
