@@ -14,6 +14,7 @@ A vector of numbers.
 }
 \description{
 Takes a number and then returns all of its factors.
+of
 }
 \examples{
 factors(1)

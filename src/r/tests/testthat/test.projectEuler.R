@@ -78,3 +78,10 @@ test_that("Input equals to 150", {
 
     expect_equal(isPrime(input), output)
 })
+
+context("Testing erastosthenesSieve")
+skip("")
+
+test_that("Foo bar",  {
+    expect_equal(erastosthenesSieve(0), c(0))
+})

@@ -7,8 +7,6 @@ test_that("Given example", {
     expect_equal(problem4(input), output)
 })
 
-skip("Testing")
-
 test_that("Wanted value", {
     input <- 3
     output <- 906609

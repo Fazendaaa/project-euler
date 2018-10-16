@@ -30,3 +30,7 @@ maxPalindrome <- function(old, from, limit) {
     .Call('_projectEuler_maxPalindrome', PACKAGE = 'projectEuler', old, from, limit)
 }
 
+erastosthenesSieve <- function(limit) {
+    .Call('_projectEuler_erastosthenesSieve', PACKAGE = 'projectEuler', limit)
+}
+

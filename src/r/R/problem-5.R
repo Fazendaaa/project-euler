@@ -1,0 +1,29 @@
+#                            Smallest multiple
+#
+#  2520  is the smallest number that can be divided by each of the numbers from
+#  1 to 10 without any remainder.
+#
+#  What  is the smallest positive number that is evenly divisible by all of the
+#  numbers from 1 to 20?
+#
+#                          Answer: 232792560
+#
+#  Helped me out:
+#     *   http://www.mathblog.dk/project-euler-problem-5/
+#
+
+#'
+#'
+#'
+#'
+#'
+#'
+#'
+#'
+#' @seealso \url{https://projecteuler.net/problem=5} for more info about it
+#' @seeAlso \url{http://www.mathblog.dk/project-euler-problem-5/} helped me out
+#' to better understand this problem
+#' @export
+problem5 <- function(x) {
+
+}
