@@ -3,4 +3,5 @@ R -e "devtools::document()"
 R -e "devtools::check()"
 R -e "covr::package_coverage()"
 R -e "options(warn=-1);goodpractice::gp('projectEuler')"
+R -e "pkgdown::build_site()"
 cd ../../

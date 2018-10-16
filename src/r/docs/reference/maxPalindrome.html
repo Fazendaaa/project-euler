@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>isFactor — isFactor • projectEuler</title>
+<title>Max PalindromeWhether or not is a palindrome — maxPalindrome • projectEuler</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -36,9 +36,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="isFactor — isFactor" />
+<meta property="og:title" content="Max PalindromeWhether or not is a palindrome — maxPalindrome" />
 
-<meta property="og:description" content="Verifies whether or not a value is a factor of another one." />
+<meta property="og:description" content="The  largest  palindrome  from  comparison  from  a  given  palindrome and a
+sequence to be verified" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -121,45 +122,47 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>isFactor</h1>
-    <small class="dont-index">Source: <a href='https://github.com/Fazendaaa/project-euler/blob/master/R/projectEuler.R'><code>R/projectEuler.R</code></a></small>
-    <div class="hidden name"><code>isFactor.Rd</code></div>
+    <h1>Max PalindromeWhether or not is a palindrome</h1>
+    <small class="dont-index">Source: <a href='https://github.com/Fazendaaa/project-euler/blob/master/R/RcppExports.R'><code>R/RcppExports.R</code></a></small>
+    <div class="hidden name"><code>maxPalindrome.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Verifies whether or not a value is a factor of another one.</p>
+    <p>The  largest  palindrome  from  comparison  from  a  given  palindrome and a
+sequence to be verified</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>isFactor</span>(<span class='no'>acc</span>, <span class='no'>cur</span>, <span class='no'>given</span>)</pre>
+    <pre class="usage"><span class='fu'>maxPalindrome</span>(<span class='no'>old</span>, <span class='no'>from</span>, <span class='no'>limit</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>acc</th>
-      <td><p>Vector with accumulated values so far</p></td>
+      <th>old</th>
+      <td><p>Max palindrome so far</p></td>
     </tr>
     <tr>
-      <th>cur</th>
-      <td><p>Number to be checked</p></td>
+      <th>from</th>
+      <td><p>Lower limit to check data</p></td>
     </tr>
     <tr>
-      <th>given</th>
-      <td><p>Number that value is or not its factor</p></td>
+      <th>limit</th>
+      <td><p>Upper limit to check data</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A vector of numbers that are factors or an empty vector</p>
+    <p>The largest palindrome</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>isFactor</span>(<span class='fu'>c</span>(), <span class='fl'>2</span>, <span class='fl'>10</span>)
-<span class='fu'>isFactor</span>(<span class='fu'>c</span>(<span class='fl'>2</span>), <span class='fl'>5</span>, <span class='fl'>10</span>)
+<span class='fu'>maxPalindrome</span>(<span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>9</span>)
+<span class='fu'>maxPalindrome</span>(<span class='fl'>29</span>, <span class='fl'>79</span>, <span class='fl'>99</span>)
+<span class='fu'>maxPalindrome</span>(<span class='fl'>126</span>, <span class='fl'>345</span>, <span class='fl'>999</span>)
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

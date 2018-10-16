@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>isFactor — isFactor • projectEuler</title>
+<title>Returns the sum of all of the even Fibonacci number starting at given
+postion to its limits, saving in the total — recursiveEvenFibonacci • projectEuler</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -36,9 +37,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="isFactor — isFactor" />
+<meta property="og:title" content="Returns the sum of all of the even Fibonacci number starting at given
+postion to its limits, saving in the total — recursiveEvenFibonacci" />
 
-<meta property="og:description" content="Verifies whether or not a value is a factor of another one." />
+<meta property="og:description" content="Returns the sum of all of the even Fibonacci number starting at given
+postion to its limits, saving in the total" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -121,56 +124,45 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>isFactor</h1>
-    <small class="dont-index">Source: <a href='https://github.com/Fazendaaa/project-euler/blob/master/R/projectEuler.R'><code>R/projectEuler.R</code></a></small>
-    <div class="hidden name"><code>isFactor.Rd</code></div>
+    <h1>Returns the sum of all of the even Fibonacci number starting at given
+postion to its limits, saving in the total</h1>
+    <small class="dont-index">Source: <a href='https://github.com/Fazendaaa/project-euler/blob/master/R/RcppExports.R'><code>R/RcppExports.R</code></a></small>
+    <div class="hidden name"><code>recursiveEvenFibonacci.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Verifies whether or not a value is a factor of another one.</p>
+    <p>Returns the sum of all of the even Fibonacci number starting at given
+postion to its limits, saving in the total</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>isFactor</span>(<span class='no'>acc</span>, <span class='no'>cur</span>, <span class='no'>given</span>)</pre>
+    <pre class="usage"><span class='fu'>recursiveEvenFibonacci</span>(<span class='no'>position</span>, <span class='no'>limit</span>, <span class='no'>total</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>acc</th>
-      <td><p>Vector with accumulated values so far</p></td>
+      <th>position</th>
+      <td><p>The current position</p></td>
     </tr>
     <tr>
-      <th>cur</th>
-      <td><p>Number to be checked</p></td>
+      <th>limit</th>
+      <td><p>The wanted position</p></td>
     </tr>
     <tr>
-      <th>given</th>
-      <td><p>Number that value is or not its factor</p></td>
+      <th>total</th>
+      <td><p>The accumulated value</p></td>
     </tr>
     </table>
     
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A vector of numbers that are factors or an empty vector</p>
-    
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>isFactor</span>(<span class='fu'>c</span>(), <span class='fl'>2</span>, <span class='fl'>10</span>)
-<span class='fu'>isFactor</span>(<span class='fu'>c</span>(<span class='fl'>2</span>), <span class='fl'>5</span>, <span class='fl'>10</span>)
-<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+                </ul>
 
   </div>
 </div>

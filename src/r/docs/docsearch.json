@@ -1,5 +1,5 @@
 {
-  "index_name": "INDEX_NAME",
+  "index_name": "project_euler",
   "start_urls": [
     {
       "url": "/index.html",
