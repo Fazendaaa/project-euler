@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • projectEuler</title>
+<title>Smallest Multiple — smallestMultiple • projectEuler</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -36,7 +36,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Smallest Multiple — smallestMultiple" />
+
+<meta property="og:description" content="Performs a calculus to imply the smallest multiple" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -52,7 +55,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -116,91 +119,46 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Smallest Multiple</h1>
+    <small class="dont-index">Source: <a href='https://github.com/Fazendaaa/project-euler/blob/master/R/problem-5.R'><code>R/problem-5.R</code></a></small>
+    <div class="hidden name"><code>smallestMultiple.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>Performs a calculus to imply the smallest multiple</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
-
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="erastosthenesSieve.html">erastosthenesSieve()</a></code> </p>
-        </td>
-        <td><p>Erastosthenes Sieve</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="factors.html">factors()</a></code> </p>
-        </td>
-        <td><p>Factors</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="isPrime.html">isPrime()</a></code> </p>
-        </td>
-        <td><p>isPrime</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="maxPalindrome.html">maxPalindrome()</a></code> </p>
-        </td>
-        <td><p>Max PalindromeWhether or not is a palindrome</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="problem2.html">problem2()</a></code> </p>
-        </td>
-        <td><p>Sum of even Fibonacci numbers</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="problem3.html">problem3()</a></code> </p>
-        </td>
-        <td><p>Largest prime factor</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="problem4.html">problem4()</a></code> </p>
-        </td>
-        <td><p>Largest Palindrome Product</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="problem5.html">problem5()</a></code> </p>
-        </td>
-        <td><p>Problem 5</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="recursiveEvenFibonacci.html">recursiveEvenFibonacci()</a></code> </p>
-        </td>
-        <td><p>Returns the sum of all of the even Fibonacci number starting at given
-postion to its limits, saving in the total</p></td>
-      </tr>
-    </tbody>
+    <pre class="usage"><span class='fu'>smallestMultiple</span>(<span class='no'>limit</span>, <span class='no'>acc</span>, <span class='no'>cur</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>limit</th>
+      <td><p>Up to tis number to be verified</p></td>
+    </tr>
+    <tr>
+      <th>acc</th>
+      <td><p>The current calculus</p></td>
+    </tr>
+    <tr>
+      <th>cur</th>
+      <td><p>Current value to be calculated</p></td>
+    </tr>
     </table>
-  </div>
+    
 
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
-    </ul>
+      <li><a href="#arguments">Arguments</a></li>
+                </ul>
+
   </div>
 </div>
 

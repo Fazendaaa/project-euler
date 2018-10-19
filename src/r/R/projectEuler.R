@@ -66,20 +66,3 @@ isPrime <- function(value) {
 
     return (!any(0 == value %% (2:limit)))
 }
-
-#' Erastosthenes Sieve
-#'
-#' Calculates the all prime numbers up till given limit
-#' 
-#' @seeAlso \url{https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes} for more
-#' info about how it works
-#' @param limit Calculation limit
-#' @return A list containing all prime numbers 
-#' @examples
-#' erastosthenesSieve(100)
-#' erastosthenesSieve(200)
-#' erastosthenesSieve(300)
-#' @export
-erastosthenesSieve <- function(limit) {
-    sieveLimit <- ceiling(sqrt(limit))
-}

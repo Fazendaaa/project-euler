@@ -32,12 +32,12 @@ BEGIN_RCPP
 END_RCPP
 }
 // erastosthenesSieve
-List erastosthenesSieve(double limit);
+NumericVector erastosthenesSieve(const double limit);
 RcppExport SEXP _projectEuler_erastosthenesSieve(SEXP limitSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< double >::type limit(limitSEXP);
+    Rcpp::traits::input_parameter< const double >::type limit(limitSEXP);
     rcpp_result_gen = Rcpp::wrap(erastosthenesSieve(limit));
     return rcpp_result_gen;
 END_RCPP

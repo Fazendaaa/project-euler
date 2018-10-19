@@ -19,6 +19,7 @@ RUN R -e "install.packages(c(\"DT\",\
                              \"lintr\",\
                              \"magick\",\
                              \"pkgdown\",\
+                             \"formatR\",\
                              \"devtools\",\
                              \"roxygen2\",\
                              \"assertthat\",\
