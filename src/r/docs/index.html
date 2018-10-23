@@ -84,8 +84,88 @@
       
       </header><div class="row">
   <div class="contents col-md-9">
-    This package is a implementation with testing of Project Euler
-    problems.
+    <div id="project-euler" class="section level1">
+<div class="page-header"><h1 class="hasAnchor">
+<a href="#project-euler" class="anchor"></a>Project Euler</h1></div>
+<blockquote>
+<p>R implementations</p>
+</blockquote>
+<p>R implementations of <a href="projecteuler.net">Project Euler</a> exercises</p>
+<div id="dependencies" class="section level2">
+<h2 class="hasAnchor">
+<a href="#dependencies" class="anchor"></a>Dependencies</h2>
+<p>This package uses the following dependencies:</p>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/DT/index.html">DT</a></li>
+<li><a href="https://cran.r-project.org/web/packages/rcpp/index.html">Rcpp</a></li>
+<li><a href="https://cran.r-project.org/web/packages/covr/index.html">covr</a></li>
+<li><a href="https://cran.r-project.org/web/packages/shiny/index.html">shiny</a></li>
+<li><a href="https://cran.r-project.org/web/packages/lintr/index.html">lintr</a></li>
+<li><a href="https://cran.r-project.org/web/packages/magick/index.html">magick</a></li>
+<li><a href="https://cran.r-project.org/web/packages/pkgdown/index.html">pkgdown</a></li>
+<li><a href="https://cran.r-project.org/web/packages/formatR/index.html">formatR</a></li>
+<li><a href="https://cran.r-project.org/web/packages/devtools/index.html">devtools</a></li>
+<li><a href="https://cran.r-project.org/web/packages/roxygen2/index.html">roxygen2</a></li>
+<li><a href="https://cran.r-project.org/web/packages/assertthat/index.html">assertthat</a></li>
+<li><a href="https://cran.r-project.org/web/packages/goodpractice/index.html">goodpractice</a></li>
+<li><a href="https://cran.r-project.org/web/packages/hunspell/index.html">hunspell</a></li>
+</ul>
+<p>If you decide to run all of the pipe integration, a Docker image containing all dependencies are presented in <a href="https://hub.docker.com/r/fazenda/r-testing/">r-testing</a> docker hub.</p>
+</div>
+<div id="api" class="section level2">
+<h2 class="hasAnchor">
+<a href="#api" class="anchor"></a>API</h2>
+<p>This package has a website presenting all the APIs configurations and usage, followed by some examples, to build it just:</p>
+<pre class="shell"><code>R -e "pkgdown::build_site()"</code></pre>
+</div>
+<div id="tests" class="section level2">
+<h2 class="hasAnchor">
+<a href="#tests" class="anchor"></a>Tests</h2>
+<p>To run all the <a href="./tests">tests</a> just run trough:</p>
+<pre class="shell"><code>R -e "devtools::document();devtools::test()"</code></pre>
+<p>You need to to run <code><a href="http://www.rdocumentation.org/packages/devtools/topics/document">devtools::document()</a></code> because of the Rcpp implementations presented in <a href="./src">src</a></p>
+<p>The site configurations are presented in the <a href="./_pkgdown.yml">_pkgdown.yml</a> file. As the keys to the <a href="https://community.algolia.com/docsearch/">docsearch</a> to run the indexing presented in the search bar.</p>
+</div>
+<div id="code" class="section level2">
+<h2 class="hasAnchor">
+<a href="#code" class="anchor"></a>Code</h2>
+<p>Code following the standards in presented in the <a href="./.lintr">.lintr</a> file.</p>
+</div>
+<div id="ci" class="section level2">
+<h2 class="hasAnchor">
+<a href="#ci" class="anchor"></a>CI</h2>
+<p>The Continuos Integration (CI) used in this project is supported by the following services:</p>
+<ul>
+<li><a href="https://www.appveyor.com/">AppVeyor</a></li>
+<li><a href="https://circleci.com/">CircleCI</a></li>
+<li><a href="https://travis-ci.org/">Travis</a></li>
+</ul>
+<p>Through docker environment, running the following “pipe” commands:</p>
+<pre class="shell"><code>R -e "devtools::document()"
+R -e "devtools::check()"
+R -e "covr::package_coverage()"
+R -e "options(warn=-1);goodpractice::gp('projectEuler')"
+R -e "pkgdown::build_site()"</code></pre>
+</div>
+<div id="authors" class="section level2">
+<h2 class="hasAnchor">
+<a href="#authors" class="anchor"></a>Authors</h2>
+<ul>
+<li>Only <a href="https://github.com/Fazendaaa">me</a>
+</li>
+</ul>
+</div>
+<div id="contributors" class="section level2">
+<h2 class="hasAnchor">
+<a href="#contributors" class="anchor"></a>Contributors</h2>
+<p>You can see this in the <a href="./DESCRIPTION">DESCRIPTION</a> file.</p>
+</div>
+<div id="license" class="section level2">
+<h2 class="hasAnchor">
+<a href="#license" class="anchor"></a>License</h2>
+<p>MIT license presented in the <a href="./LICENSE">LICENSE</a> file.</p>
+</div>
+</div>
   </div>
 
   <div class="col-md-3" id="sidebar">
