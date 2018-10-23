@@ -6,6 +6,9 @@
 # Find the largest palindrome made from the product of two 3-digit numbers.
 #
 #                             Answer: 906609
+#' @useDynLib projectEuler
+#' @importFrom Rcpp sourceCpp
+NULL
 
 #' Largest Palindrome Product
 #'

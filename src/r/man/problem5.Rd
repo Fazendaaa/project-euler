@@ -15,3 +15,6 @@ The smallest number
 \description{
 Problem 5
 }
+\seealso{
+\url{https://projecteuler.net/problem=5} for more info about it
+}

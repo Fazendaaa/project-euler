@@ -8,6 +8,9 @@
 #
 #                          Answer: 232792560
 #
+#' @useDynLib projectEuler
+#' @importFrom Rcpp sourceCpp
+NULL
 
 #' Smallest Multiple
 #'
@@ -27,6 +30,7 @@ smallestMultiple <- function(limit, acc, cur) {
 
 #' Problem 5
 #'
+#' @seealso \url{https://projecteuler.net/problem=5} for more info about it
 #' @param limit Number to be checking delimiter
 #' @example
 #' problem5(5)
