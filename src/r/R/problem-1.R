@@ -10,17 +10,24 @@
 
 #' Multiples of 3 or 5
 #'
+#' @description
 #' \code{multiples} fetch \strong{all} numbers of multiples of \emph{3} or
 #' \emph{5} up until given limit.
 #'
+#' @author Fazendaaa
+#'
 #' @seealso \url{https://projecteuler.net/problem=1} for more info about it.
+#'
 #' @param limit A positive integer.
+#'
 #' @return A vector.
+#'
 #' @examples
 #' \dontrun{
 #' multiples(10)
 #' multiples(1000)
 #' }
+#'
 #' @keywords internal
 multiples <- function (limit) {
     values <- (1:(limit - 1))
@@ -30,16 +37,33 @@ multiples <- function (limit) {
 
 #' Sum of multiples of 3 or 5
 #' 
-#' @describeIn multiples \code{problem1} just sum the values.
+#' @description
+#' \code{problem1} Sum all multiples of \emph{3} or \emph{5} up to given limit
+#' 
+#' \enumerate{
+#'    \item Verifies whether or not the parameter given is compliant
+#'    \item Do the calculations
+#' }
+#' 
 #' @section Waning:
 #' This is a unneeded function, it's only purpose is to make code easier to
 #' learn how to test and document it.
-#' @inheritParams multiples
+#'
+#' @author Fazendaaa
+#'
+#' @seealso \url{https://projecteuler.net/problem=1} for more info about it.
+#'
+#' @param limit A positive integer.
+#'
 #' @importFrom assertthat is.count
+#'
 #' @return The total of the sum.
+#'
 #' @examples
 #' problem1(10)
+#' problem1(100)
 #' problem1(1000)
+#'
 #' @export
 problem1 <- function (limit) {
     if (TRUE == is.finite(limit) && TRUE == is.count(limit)) {

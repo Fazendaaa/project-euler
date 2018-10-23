@@ -8,17 +8,24 @@
 #                              Answer: 104743
 #
 
-#' Problem 7
+#' Nth prime
 #'
-#' Finds the nth prime
+#' @description
+#' \code{problem7} finds the nth prime
+#'
+#' @author Fazendaaa
 #'
 #' @seealso \url{https://projecteuler.net/problem=7} for more info about it
+#'
 #' @param limit Limit to run the interval
+#'
 #' @return The expected value
+#'
 #' @examples
 #' problem7(13)
 #' problem7(50)
 #' problem7(100)
+#'
 #' @export
 problem7 <- function(limit) {
     prime <- 0

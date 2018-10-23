@@ -15,15 +15,29 @@ NULL
 
 #' Sum of even Fibonacci numbers
 #'
-#' Just filter the even numbers in the Fibonacci sequence then sum it.
+#' @description
+#' \code{problem2} filter the \emph{even} numbers in the \strong{Fibonacci}
+#' sequence then sum them.
+#'
+#' @author Fazendaaa
+#'
+#' @section Waning:
+#' This is a unneeded function, it's only purpose is to make code easier to
+#' learn how to test and document it.
 #'
 #' @seealso \url{https://projecteuler.net/problem=2} for more info about it.
+#'
 #' @param limit Fibonacci value limit
+#'
 #' @importFrom assertthat is.count
+#'
 #' @return A total of the sum.
+#'
 #' @examples 
 #' problem2(1)
 #' problem2(10)
+#' problem2(100)
+#'
 #' @export
 problem2 <- function(limit) {
     if (FALSE == is.finite(limit) || FALSE == is.count(limit)) {

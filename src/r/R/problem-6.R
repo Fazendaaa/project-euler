@@ -17,18 +17,25 @@
 #                          Answer: 25164150
 #
 
-#' Problem 6
+#' Sum square difference
 #'
-#' Finds the difference between the sum fo the squares and the square of the sum
-#' of a interval
+#' @description
+#' \code{problem6} finds the difference between the sum of the squares of the
+#' first 'n' natural numbers and the square of the sum.
+#'
+#' @author Fazendaaa
 #'
 #' @seealso \url{https://projecteuler.net/problem=6} for more info about it
+#'
 #' @param limit Limit to run the interval
+#'
 #' @return The expected value
+#'
 #' @examples
 #' problem6(10)
 #' problem6(20)
 #' problem6(50)
+#'
 #' @export
 problem6 <- function(limit) {
     interval <- (1:limit)

@@ -2,7 +2,7 @@
 % Please edit documentation in R/projectEuler.R
 \name{isPrime}
 \alias{isPrime}
-\title{isPrime}
+\title{Is Prime?}
 \usage{
 isPrime(value)
 }
@@ -13,9 +13,14 @@ isPrime(value)
 Boolean.
 }
 \description{
-Checks whether or not a number is prime.
+\code{isPrimes} checks whether or not a number is \emph{prime}
 }
 \examples{
 isPrime(2)
 isPrime(4)
+isPrime(13)
+
+}
+\author{
+Fazendaaa
 }

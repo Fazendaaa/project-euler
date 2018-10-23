@@ -2,7 +2,7 @@
 % Please edit documentation in R/projectEuler.R
 \name{isFactor}
 \alias{isFactor}
-\title{isFactor}
+\title{Is Factor?}
 \usage{
 isFactor(acc, cur, given)
 }
@@ -17,12 +17,17 @@ isFactor(acc, cur, given)
 A vector of numbers that are factors or an empty vector
 }
 \description{
-Verifies whether or not a value is a factor of another one.
+\code{isFactor} verifies whether or not a value is a factor of another one
 }
 \examples{
 \dontrun{
 isFactor(c(), 2, 10)
 isFactor(c(2), 5, 10)
+isFactor(c(2), 3, 25600)
 }
+
+}
+\author{
+Fazendaaa
 }
 \keyword{internal}

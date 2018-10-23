@@ -2,7 +2,7 @@
 % Please edit documentation in R/problem-6.R
 \name{problem6}
 \alias{problem6}
-\title{Problem 6}
+\title{Sum square difference}
 \usage{
 problem6(limit)
 }
@@ -13,14 +13,18 @@ problem6(limit)
 The expected value
 }
 \description{
-Finds the difference between the sum fo the squares and the square of the sum
-of a interval
+\code{problem6} finds the difference between the sum of the squares of the
+first 'n' natural numbers and the square of the sum.
 }
 \examples{
 problem6(10)
 problem6(20)
 problem6(50)
+
 }
 \seealso{
 \url{https://projecteuler.net/problem=6} for more info about it
+}
+\author{
+Fazendaaa
 }

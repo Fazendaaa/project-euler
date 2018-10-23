@@ -14,13 +14,20 @@ NULL
 
 #' Smallest Multiple
 #'
+#' @description
 #' Performs a calculus to imply the smallest multiple
+#'
+#' @author Fazendaaa
 #'
 #' @seeAlso \url{http://www.mathblog.dk/project-euler-problem-5/} helped me out
 #' understand what's really going on
+#'
 #' @param limit Up to tis number to be verified
 #' @param acc The current calculus
 #' @param cur Current value to be calculated
+#'
+#' @return The smallest number
+#'
 #' @keywords internal
 smallestMultiple <- function(limit, acc, cur) {
     upTo <- floor(log10(limit) / log10(cur))
@@ -30,13 +37,23 @@ smallestMultiple <- function(limit, acc, cur) {
 
 #' Problem 5
 #'
+#' @description
+#' \code{problem5} finds the smallest positive number that is evenly divisible
+#' by all of the numbers from 1 up to given limit
+#'
+#' @author Fazendaaa
+#'
 #' @seealso \url{https://projecteuler.net/problem=5} for more info about it
+#'
 #' @param limit Number to be checking delimiter
-#' @example
+#'
+#' @return The smallest number
+#'
+#' @examples
 #' problem5(5)
 #' problem5(10)
 #' problem5(20)
-#' @return The smallest number
+#'
 #' @export
 problem5 <- function(limit) {
     primes <- c(1, erastosthenesSieve(limit))

@@ -13,12 +13,24 @@ problem2(limit)
 A total of the sum.
 }
 \description{
-Just filter the even numbers in the Fibonacci sequence then sum it.
+\code{problem2} filter the \emph{even} numbers in the \strong{Fibonacci}
+sequence then sum them.
 }
+\section{Waning}{
+
+This is a unneeded function, it's only purpose is to make code easier to
+learn how to test and document it.
+}
+
 \examples{
 problem2(1)
 problem2(10)
+problem2(100)
+
 }
 \seealso{
 \url{https://projecteuler.net/problem=2} for more info about it.
+}
+\author{
+Fazendaaa
 }

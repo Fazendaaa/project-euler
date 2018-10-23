@@ -13,8 +13,12 @@ problem5(limit)
 The smallest number
 }
 \description{
-Problem 5
+\code{problem5} finds the smallest positive number that is evenly divisible
+by all of the numbers from 1 up to given limit
 }
 \seealso{
 \url{https://projecteuler.net/problem=5} for more info about it
+}
+\author{
+Fazendaaa
 }

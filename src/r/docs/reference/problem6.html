@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Multiples of 3 or 5 — multiples • projectEuler</title>
+<title>Sum square difference — problem6 • projectEuler</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -36,10 +36,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="Multiples of 3 or 5 — multiples" />
+<meta property="og:title" content="Sum square difference — problem6" />
 
-<meta property="og:description" content="multiples fetch all numbers of multiples of 3 or
-5 up until given limit." />
+<meta property="og:description" content="problem6 finds the difference between the sum of the squares of the
+first 'n' natural numbers and the square of the sum." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -122,43 +122,40 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Multiples of 3 or 5</h1>
-    <small class="dont-index">Source: <a href='https://github.com/Fazendaaa/project-euler/blob/master/R/problem-1.R'><code>R/problem-1.R</code></a></small>
-    <div class="hidden name"><code>multiples.Rd</code></div>
+    <h1>Sum square difference</h1>
+    <small class="dont-index">Source: <a href='https://github.com/Fazendaaa/project-euler/blob/master/R/problem-6.R'><code>R/problem-6.R</code></a></small>
+    <div class="hidden name"><code>problem6.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p><code>multiples</code> fetch <strong>all</strong> numbers of multiples of <em>3</em> or
-<em>5</em> up until given limit.</p>
+    <p><code>problem6</code> finds the difference between the sum of the squares of the
+first 'n' natural numbers and the square of the sum.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>multiples</span>(<span class='no'>limit</span>)</pre>
+    <pre class="usage"><span class='fu'>problem6</span>(<span class='no'>limit</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>limit</th>
-      <td><p>A positive integer.</p></td>
+      <td><p>Limit to run the interval</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A vector.</p>
+    <p>The expected value</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='https://projecteuler.net/problem=1'>https://projecteuler.net/problem=1</a> for more info about it.</p></div>
+    <div class='dont-index'><p><a href='https://projecteuler.net/problem=6'>https://projecteuler.net/problem=6</a> for more info about it</p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>multiples</span>(<span class='fl'>10</span>)
-<span class='fu'>multiples</span>(<span class='fl'>1000</span>)
-<span class='co'># }</span><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>problem6</span>(<span class='fl'>10</span>)</div><div class='output co'>#&gt; [1] 2640</div><div class='input'><span class='fu'>problem6</span>(<span class='fl'>20</span>)</div><div class='output co'>#&gt; [1] 41230</div><div class='input'><span class='fu'>problem6</span>(<span class='fl'>50</span>)</div><div class='output co'>#&gt; [1] 1582700</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

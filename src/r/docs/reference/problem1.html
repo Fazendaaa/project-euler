@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Multiples of 3 or 5 — multiples • projectEuler</title>
+<title>Sum of multiples of 3 or 5 — problem1 • projectEuler</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -36,10 +36,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="Multiples of 3 or 5 — multiples" />
+<meta property="og:title" content="Sum of multiples of 3 or 5 — problem1" />
 
-<meta property="og:description" content="multiples fetch all numbers of multiples of 3 or
-5 up until given limit." />
+<meta property="og:description" content="problem1 Sum all multiples of 3 or 5 up to given limit
+
+Verifies whether or not the parameter given is compliant
+Do the calculations
+" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -122,19 +125,22 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Multiples of 3 or 5</h1>
+    <h1>Sum of multiples of 3 or 5</h1>
     <small class="dont-index">Source: <a href='https://github.com/Fazendaaa/project-euler/blob/master/R/problem-1.R'><code>R/problem-1.R</code></a></small>
-    <div class="hidden name"><code>multiples.Rd</code></div>
+    <div class="hidden name"><code>problem1.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p><code>multiples</code> fetch <strong>all</strong> numbers of multiples of <em>3</em> or
-<em>5</em> up until given limit.</p>
+    <p><code>problem1</code> Sum all multiples of <em>3</em> or <em>5</em> up to given limit</p>
+<ol>
+<li><p>Verifies whether or not the parameter given is compliant</p></li>
+<li><p>Do the calculations</p></li>
+</ol>
     
     </div>
 
-    <pre class="usage"><span class='fu'>multiples</span>(<span class='no'>limit</span>)</pre>
+    <pre class="usage"><span class='fu'>problem1</span>(<span class='no'>limit</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -147,7 +153,13 @@
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A vector.</p>
+    <p>The total of the sum.</p>
+    
+    <h2 class="hasAnchor" id="waning"><a class="anchor" href="#waning"></a>Waning</h2>
+
+    
+    <p>This is a unneeded function, it's only purpose is to make code easier to
+learn how to test and document it.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
@@ -155,10 +167,7 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>multiples</span>(<span class='fl'>10</span>)
-<span class='fu'>multiples</span>(<span class='fl'>1000</span>)
-<span class='co'># }</span><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>problem1</span>(<span class='fl'>10</span>)</div><div class='output co'>#&gt; [1] 23</div><div class='input'><span class='fu'>problem1</span>(<span class='fl'>100</span>)</div><div class='output co'>#&gt; [1] 2318</div><div class='input'><span class='fu'>problem1</span>(<span class='fl'>1000</span>)</div><div class='output co'>#&gt; [1] 233168</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -167,6 +176,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#waning">Waning</a></li>
 
       <li><a href="#see-also">See also</a></li>
       

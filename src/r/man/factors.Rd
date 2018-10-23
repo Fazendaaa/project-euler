@@ -13,10 +13,14 @@ factors(given)
 A vector of numbers.
 }
 \description{
-Takes a number and then returns all of its factors.
-of
+\code{factors} takes a number and then returns \strong{all} of its factors
 }
 \examples{
 factors(1)
 factors(123)
+factors(456)
+
+}
+\author{
+Fazendaaa
 }

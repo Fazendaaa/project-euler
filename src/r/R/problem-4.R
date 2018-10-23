@@ -6,21 +6,30 @@
 # Find the largest palindrome made from the product of two 3-digit numbers.
 #
 #                             Answer: 906609
+#
 #' @useDynLib projectEuler
 #' @importFrom Rcpp sourceCpp
 NULL
 
 #' Largest Palindrome Product
 #'
-#' Calculates the largest palindrome from
+#' @description
+#' \code{problem4} calculates the largest palindrome from the product of two 
+#' n-digit numbers, being 'n' the giving number of digits
+#'
+#' @author Fazendaaa
 #'
 #' @seealso \url{https://projecteuler.net/problem=4} for more info about it
+#'
 #' @param digits Number of max digits to run comparison
+#'
 #' @return The result number
+#'
 #' @examples
 #' problem4(1)
 #' problem4(2)
 #' problem4(3)
+#'
 #' @export
 problem4 <- function(digits) {
     lower <- 10 ** (digits - 1)

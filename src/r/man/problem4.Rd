@@ -13,13 +13,18 @@ problem4(digits)
 The result number
 }
 \description{
-Calculates the largest palindrome from
+\code{problem4} calculates the largest palindrome from the product of two 
+n-digit numbers, being 'n' the giving number of digits
 }
 \examples{
 problem4(1)
 problem4(2)
 problem4(3)
+
 }
 \seealso{
 \url{https://projecteuler.net/problem=4} for more info about it
+}
+\author{
+Fazendaaa
 }

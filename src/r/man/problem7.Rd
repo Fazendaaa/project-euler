@@ -2,7 +2,7 @@
 % Please edit documentation in R/problem-7.R
 \name{problem7}
 \alias{problem7}
-\title{Problem 7}
+\title{Nth prime}
 \usage{
 problem7(limit)
 }
@@ -13,13 +13,17 @@ problem7(limit)
 The expected value
 }
 \description{
-Finds the nth prime
+\code{problem7} finds the nth prime
 }
 \examples{
 problem7(13)
 problem7(50)
 problem7(100)
+
 }
 \seealso{
 \url{https://projecteuler.net/problem=7} for more info about it
+}
+\author{
+Fazendaaa
 }

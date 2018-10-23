@@ -13,7 +13,13 @@ smallestMultiple(limit, acc, cur)
 
 \item{cur}{Current value to be calculated}
 }
+\value{
+The smallest number
+}
 \description{
 Performs a calculus to imply the smallest multiple
+}
+\author{
+Fazendaaa
 }
 \keyword{internal}

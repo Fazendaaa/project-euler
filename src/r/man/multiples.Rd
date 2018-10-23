@@ -2,45 +2,31 @@
 % Please edit documentation in R/problem-1.R
 \name{multiples}
 \alias{multiples}
-\alias{problem1}
 \title{Multiples of 3 or 5}
 \usage{
 multiples(limit)
-
-problem1(limit)
 }
 \arguments{
 \item{limit}{A positive integer.}
 }
 \value{
 A vector.
-
-The total of the sum.
 }
 \description{
 \code{multiples} fetch \strong{all} numbers of multiples of \emph{3} or
 \emph{5} up until given limit.
 }
-\section{Functions}{
-\itemize{
-\item \code{problem1}: \code{problem1} just sum the values.
-}}
-
-\section{Waning}{
-
-This is a unneeded function, it's only purpose is to make code easier to
-learn how to test and document it.
-}
-
 \examples{
 \dontrun{
 multiples(10)
 multiples(1000)
 }
-problem1(10)
-problem1(1000)
+
 }
 \seealso{
 \url{https://projecteuler.net/problem=1} for more info about it.
+}
+\author{
+Fazendaaa
 }
 \keyword{internal}
