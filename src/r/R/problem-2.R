@@ -29,14 +29,14 @@ NULL
 #'
 #' @param limit Fibonacci value limit
 #'
-#' @importFrom assertthat is.count
-#'
 #' @return A total of the sum.
 #'
 #' @examples 
 #' problem2(1)
 #' problem2(10)
 #' problem2(100)
+#'
+#' @importFrom assertthat is.count
 #'
 #' @export
 problem2 <- function(limit) {

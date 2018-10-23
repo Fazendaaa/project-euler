@@ -30,6 +30,48 @@ maxPalindrome <- function(old, from, limit) {
     .Call('_projectEuler_maxPalindrome', PACKAGE = 'projectEuler', old, from, limit)
 }
 
+#' Multiply Range
+#'
+#' @description
+#' \code{multiplyRange} finds the max number of digits multiplication given due
+#' range
+#'
+#' @author Fazendaaa
+#'
+#' @param numbers Digits to iterate over
+#' @param start Begin point
+#' @param end Finish point
+#'
+#' @return The expected value
+#'
+#' @examples
+#' problem8(c(1, 2, 3, 4, 5), -1, 2)
+#' problem8((1:10), 0, 4)
+#' problem8((1:100), 5, 13)
+#'
+NULL
+
+#' Greatest
+#'
+#' @description
+#' \code{greatest} finds the max number of digits multiplication
+#'
+#' @author Fazendaaa
+#'
+#' @param numbers Digits to iterate over
+#' @param digits Max number of digits to compute
+#'
+#' @return The expected value
+#'
+#' @examples
+#' problem8(c(1, 2, 3, 4, 5), 2)
+#' problem8((1:10), 4)
+#' problem8((1:100), 13)
+#'
+greatestProduct <- function(numbers, digits) {
+    .Call('_projectEuler_greatestProduct', PACKAGE = 'projectEuler', numbers, digits)
+}
+
 #' Erastosthenes Sieve
 #'
 #' Calculates the all prime numbers up till given limit

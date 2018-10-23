@@ -31,6 +31,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// greatestProduct
+double greatestProduct(NumericVector numbers, const double digits);
+RcppExport SEXP _projectEuler_greatestProduct(SEXP numbersSEXP, SEXP digitsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type numbers(numbersSEXP);
+    Rcpp::traits::input_parameter< const double >::type digits(digitsSEXP);
+    rcpp_result_gen = Rcpp::wrap(greatestProduct(numbers, digits));
+    return rcpp_result_gen;
+END_RCPP
+}
 // erastosthenesSieve
 NumericVector erastosthenesSieve(const double limit);
 RcppExport SEXP _projectEuler_erastosthenesSieve(SEXP limitSEXP) {
@@ -46,6 +58,7 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_projectEuler_recursiveEvenFibonacci", (DL_FUNC) &_projectEuler_recursiveEvenFibonacci, 3},
     {"_projectEuler_maxPalindrome", (DL_FUNC) &_projectEuler_maxPalindrome, 3},
+    {"_projectEuler_greatestProduct", (DL_FUNC) &_projectEuler_greatestProduct, 2},
     {"_projectEuler_erastosthenesSieve", (DL_FUNC) &_projectEuler_erastosthenesSieve, 1},
     {NULL, NULL, 0}
 };

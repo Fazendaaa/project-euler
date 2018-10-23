@@ -4,6 +4,7 @@ Version: 0.0.0
 Encoding: UTF-8
 Imports:
     assertthat,
+    readr,
     Rcpp
 Suggests:
     testthat,

@@ -55,14 +55,14 @@ multiples <- function (limit) {
 #'
 #' @param limit A positive integer.
 #'
-#' @importFrom assertthat is.count
-#'
 #' @return The total of the sum.
 #'
 #' @examples
 #' problem1(10)
 #' problem1(100)
 #' problem1(1000)
+#'
+#' @importFrom assertthat is.count
 #'
 #' @export
 problem1 <- function (limit) {
