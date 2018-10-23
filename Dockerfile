@@ -14,6 +14,7 @@ RUN apt-get update  \
     && rm -rf /var/lib/apt/lists/*
 
 RUN R -e "install.packages(c(\"DT\",\
+                             \"Rcpp\",\
                              \"covr\",\
                              \"shiny\",\
                              \"lintr\",\

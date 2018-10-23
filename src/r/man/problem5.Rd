@@ -16,6 +16,12 @@ The smallest number
 \code{problem5} finds the smallest positive number that is evenly divisible
 by all of the numbers from 1 up to given limit
 }
+\examples{
+problem5(5)
+problem5(10)
+problem5(20)
+
+}
 \seealso{
 \url{https://projecteuler.net/problem=5} for more info about it
 }
