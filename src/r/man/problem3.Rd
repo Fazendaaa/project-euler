@@ -15,10 +15,9 @@ A number
 \description{
 \code{problem3} finds the \strong{largest} prime factor of given number
 }
-\section{Waning}{
+\section{Complexity}{
 
-This is a unneeded function, it's only purpose is to make code easier to
-learn how to test and document it.
+This function has the following complexity \textrm{O}($n^{\frac(5/2)}$)
 }
 
 \examples{

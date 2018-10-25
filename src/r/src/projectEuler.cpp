@@ -4,16 +4,27 @@ using namespace Rcpp;
 
 //' Erastosthenes Sieve
 //'
-//' Calculates the all prime numbers up till given limit
-//' 
+//' @description
+//' \code{erastosthenesSieve} calculates the all prime numbers up till given
+//' limit
+//'
+//' @section Complexity:
+//' This function has the following complexity \textrm{O}(\frac(\sqrt(n), 2))
+//'
+//' @author Fazendaaa
+//'
 //' @seeAlso \url{https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes} for more
 //' info about how it works
+//'
 //' @param limit Calculation limit
+//'
 //' @return A list containing all prime numbers 
+//'
 //' @examples
 //' erastosthenesSieve(100)
 //' erastosthenesSieve(200)
 //' erastosthenesSieve(300)
+//'
 // [[Rcpp::export]]
 NumericVector erastosthenesSieve (const double limit) {
     const int sieveLimit = std::ceil(sqrt(limit));

@@ -23,10 +23,9 @@
 #' @return A vector.
 #'
 #' @examples
-#' \dontrun{
 #' multiples(10)
+#' multiples(100)
 #' multiples(1000)
-#' }
 #'
 #' @keywords internal
 multiples <- function (limit) {
@@ -45,9 +44,8 @@ multiples <- function (limit) {
 #'    \item Do the calculations
 #' }
 #' 
-#' @section Waning:
-#' This is a unneeded function, it's only purpose is to make code easier to
-#' learn how to test and document it.
+#' @section Complexity:
+#' This function has the following complexity \textrm{O}(n)
 #'
 #' @author Fazendaaa
 #'

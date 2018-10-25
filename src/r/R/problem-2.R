@@ -19,11 +19,10 @@ NULL
 #' \code{problem2} filter the \emph{even} numbers in the \strong{Fibonacci}
 #' sequence then sum them.
 #'
-#' @author Fazendaaa
+#' @section Complexity:
+#' This function has the following complexity \textrm{O}($n^{2}$)
 #'
-#' @section Waning:
-#' This is a unneeded function, it's only purpose is to make code easier to
-#' learn how to test and document it.
+#' @author Fazendaaa
 #'
 #' @seealso \url{https://projecteuler.net/problem=2} for more info about it.
 #'
@@ -44,5 +43,5 @@ problem2 <- function(limit) {
         stop("value must be a positive integer")
     }
 
-    return (recursiveEvenFibonacci(1, limit, 0))
+    return (evenFibonacci(1, limit, 0))
 }

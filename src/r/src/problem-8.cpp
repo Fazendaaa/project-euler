@@ -1,25 +1,28 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-//' Multiply Range
-//'
-//' @description
-//' \code{multiplyRange} finds the max number of digits multiplication given due
-//' range
-//'
-//' @author Fazendaaa
-//'
-//' @param numbers Digits to iterate over
-//' @param start Begin point
-//' @param end Finish point
-//'
-//' @return The expected value
-//'
-//' @examples
-//' problem8(c(1, 2, 3, 4, 5), -1, 2)
-//' problem8((1:10), 0, 4)
-//' problem8((1:100), 5, 13)
-//'
+// Multiply Range
+//
+// @description
+// \code{multiplyRange} finds the max number of digits multiplication given due
+// range
+//
+// @section Complexity:
+// This function has the following complexity \textrm{O}(n)
+//
+// @author Fazendaaa
+//
+// @param numbers Digits to iterate over
+// @param start Begin point
+// @param end Finish point
+//
+// @return The expected value
+//
+// @examples
+// problem8(c(1, 2, 3, 4, 5), -1, 2)
+// problem8((1:10), 0, 4)
+// problem8((1:100), 5, 13)
+//
 double multiplyRange (NumericVector numbers, const double start, const double end) {
     unsigned int iterator = (start >= 0) ? start : 0;
     double total = 1;
@@ -35,6 +38,9 @@ double multiplyRange (NumericVector numbers, const double start, const double en
 //'
 //' @description
 //' \code{greatest} finds the max number of digits multiplication
+//'
+//' @section Complexity:
+//' This function has the following complexity \textrm{O}($n^2$)
 //'
 //' @author Fazendaaa
 //'

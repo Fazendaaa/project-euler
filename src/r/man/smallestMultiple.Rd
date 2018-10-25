@@ -19,6 +19,11 @@ The smallest number
 \description{
 Performs a calculus to imply the smallest multiple
 }
+\section{Complexity}{
+
+This function has the following complexity \textrm{O}(1)
+}
+
 \author{
 Fazendaaa
 }

@@ -16,6 +16,12 @@ The smallest number
 \code{problem5} finds the smallest positive number that is evenly divisible
 by all of the numbers from 1 up to given limit
 }
+\section{Complexity}{
+
+This function has the following complexity
+\textrm{O}(\frac($n^\frac(5, 2)$, 2))
+}
+
 \examples{
 problem5(5)
 problem5(10)

@@ -16,6 +16,11 @@ The result number
 \code{problem4} calculates the largest palindrome from the product of two 
 n-digit numbers, being 'n' the giving number of digits
 }
+\section{Complexity}{
+
+This function has the following complexity \textrm{O}(n)
+}
+
 \examples{
 problem4(1)
 problem4(2)

@@ -5,6 +5,9 @@
 #' @description
 #' \code{isFactor} verifies whether or not a value is a factor of another one
 #' 
+#' @section Complexity:
+#' This function has the following complexity \textrm{O}(n)
+#'
 #' @author Fazendaaa
 #' 
 #' @param acc Vector with accumulated values so far
@@ -14,22 +17,18 @@
 #' @return A vector of numbers that are factors or an empty vector
 #'
 #' @examples
-#' \dontrun{
 #' isFactor(c(), 2, 10)
 #' isFactor(c(2), 5, 10)
 #' isFactor(c(2), 3, 25600)
-#' }
 #'
 #' @keywords internal
 isFactor <- function(acc, cur, given) {
     if (0 == given %% cur) {
         dividend <- given / cur
 
-        if (dividend != cur) {
-            return (append(acc, cur, dividend))
-        }
-
-        return (append(acc, cur))
+        return (if (dividend != cur)
+                append(acc, cur, dividend) else
+                append(acc, cur))
     }
 
     return (c(acc))
@@ -39,6 +38,9 @@ isFactor <- function(acc, cur, given) {
 #'
 #' @description
 #' \code{factors} takes a number and then returns \strong{all} of its factors
+#'
+#' @section Complexity:
+#' This function has the following complexity \textrm{O}($n^{2}$)
 #'
 #' @author Fazendaaa
 #'
@@ -65,6 +67,9 @@ factors <- function(given) {
 #'
 #' @seeAlso \url{https://rosettacode.org/wiki/Primality_by_trial_division} to
 #' read more in how this algorithm works
+#'
+#' @section Complexity:
+#' This function has the following complexity \textrm{O}(\sqrt(n))
 #'
 #' @author Fazendaaa
 #'

@@ -21,7 +21,7 @@ test_that("Passing a character", {
     expect_error(problem1(input), output)
 })
 
-test_that("Passing a list", {
+test_that("Passing a vector", {
     input <- c("a")
     output <- "value must be a positive integer"
 

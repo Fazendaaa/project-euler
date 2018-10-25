@@ -16,10 +16,9 @@ A total of the sum.
 \code{problem2} filter the \emph{even} numbers in the \strong{Fibonacci}
 sequence then sum them.
 }
-\section{Waning}{
+\section{Complexity}{
 
-This is a unneeded function, it's only purpose is to make code easier to
-learn how to test and document it.
+This function has the following complexity \textrm{O}($n^{2}$)
 }
 
 \examples{

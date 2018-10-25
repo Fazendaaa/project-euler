@@ -1,3 +1,4 @@
 ^docs$
 ^_pkgdown\.yml$
 .lintr
+.gitignore

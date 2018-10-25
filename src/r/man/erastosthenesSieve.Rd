@@ -13,10 +13,20 @@ erastosthenesSieve(limit)
 A list containing all prime numbers
 }
 \description{
-Calculates the all prime numbers up till given limit
+\code{erastosthenesSieve} calculates the all prime numbers up till given
+limit
 }
+\section{Complexity}{
+
+This function has the following complexity \textrm{O}(\frac(\sqrt(n), 2))
+}
+
 \examples{
 erastosthenesSieve(100)
 erastosthenesSieve(200)
 erastosthenesSieve(300)
+
+}
+\author{
+Fazendaaa
 }

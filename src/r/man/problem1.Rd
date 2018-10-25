@@ -20,10 +20,9 @@ The total of the sum.
    \item Do the calculations
 }
 }
-\section{Waning}{
+\section{Complexity}{
 
-This is a unneeded function, it's only purpose is to make code easier to
-learn how to test and document it.
+This function has the following complexity \textrm{O}(n)
 }
 
 \examples{

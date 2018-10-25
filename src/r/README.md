@@ -69,5 +69,8 @@ R -e "pkgdown::build_site()"
 ## Contributors
 You can see this in the [DESCRIPTION](./DESCRIPTION) file.
 
+## References
+* [Automatic Tools](https://masalmon.eu/2017/06/17/automatictools/)
+
 ## License
 MIT license presented in the [LICENSE](./LICENSE) file.

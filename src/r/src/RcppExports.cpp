@@ -5,16 +5,16 @@
 
 using namespace Rcpp;
 
-// recursiveEvenFibonacci
-double recursiveEvenFibonacci(double position, double limit, double total);
-RcppExport SEXP _projectEuler_recursiveEvenFibonacci(SEXP positionSEXP, SEXP limitSEXP, SEXP totalSEXP) {
+// evenFibonacci
+double evenFibonacci(double position, double limit, double total);
+RcppExport SEXP _projectEuler_evenFibonacci(SEXP positionSEXP, SEXP limitSEXP, SEXP totalSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< double >::type position(positionSEXP);
     Rcpp::traits::input_parameter< double >::type limit(limitSEXP);
     Rcpp::traits::input_parameter< double >::type total(totalSEXP);
-    rcpp_result_gen = Rcpp::wrap(recursiveEvenFibonacci(position, limit, total));
+    rcpp_result_gen = Rcpp::wrap(evenFibonacci(position, limit, total));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -56,7 +56,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_projectEuler_recursiveEvenFibonacci", (DL_FUNC) &_projectEuler_recursiveEvenFibonacci, 3},
+    {"_projectEuler_evenFibonacci", (DL_FUNC) &_projectEuler_evenFibonacci, 3},
     {"_projectEuler_maxPalindrome", (DL_FUNC) &_projectEuler_maxPalindrome, 3},
     {"_projectEuler_greatestProduct", (DL_FUNC) &_projectEuler_greatestProduct, 2},
     {"_projectEuler_erastosthenesSieve", (DL_FUNC) &_projectEuler_erastosthenesSieve, 1},

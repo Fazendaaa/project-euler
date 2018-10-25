@@ -36,12 +36,15 @@
 #' \code{problem8} finds the 'n' adjacent digits in the 1000-digit number that
 #' have the greatest product
 #'
+#' @section Complexity:
+#' This function has the following complexity \textrm{O}($n^2$)
+#'
 #' @author Fazendaaa
 #'
 #' @seealso \url{https://projecteuler.net/problem=8} for more info about it
 #'
 #' @param digits Max number of digits to compute
-#' @param fielpath Optional filepath to the entry file
+#' @param filepath Optional filepath to the entry file
 #'
 #' @return The expected value
 #'

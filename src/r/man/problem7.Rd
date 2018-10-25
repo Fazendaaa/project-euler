@@ -15,6 +15,11 @@ The expected value
 \description{
 \code{problem7} finds the nth prime
 }
+\section{Complexity}{
+
+This function has the following complexity \textrm{O}(n$^\frac(3, 2)$)
+}
+
 \examples{
 problem7(13)
 problem7(50)

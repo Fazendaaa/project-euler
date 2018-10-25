@@ -13,6 +13,9 @@
 #' @description
 #' \code{problem7} finds the nth prime
 #'
+#' @section Complexity:
+#' This function has the following complexity \textrm{O}(n$^\frac(3, 2)$)
+#'
 #' @author Fazendaaa
 #'
 #' @seealso \url{https://projecteuler.net/problem=7} for more info about it

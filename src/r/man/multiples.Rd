@@ -17,10 +17,9 @@ A vector.
 \emph{5} up until given limit.
 }
 \examples{
-\dontrun{
 multiples(10)
+multiples(100)
 multiples(1000)
-}
 
 }
 \seealso{

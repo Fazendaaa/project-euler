@@ -11,11 +11,10 @@
 #' @description
 #' \code{problem3} finds the \strong{largest} prime factor of given number
 #'
-#' @author Fazendaaa
+#' @section Complexity:
+#' This function has the following complexity \textrm{O}($n^{\frac(5/2)}$)
 #'
-#' @section Waning:
-#' This is a unneeded function, it's only purpose is to make code easier to
-#' learn how to test and document it.
+#' @author Fazendaaa
 #'
 #' @seealso \url{https://projecteuler.net/problem=3} for more info about it. 
 #'

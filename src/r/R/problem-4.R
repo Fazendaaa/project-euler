@@ -17,6 +17,9 @@ NULL
 #' \code{problem4} calculates the largest palindrome from the product of two 
 #' n-digit numbers, being 'n' the giving number of digits
 #'
+#' @section Complexity:
+#' This function has the following complexity \textrm{O}(n)
+#'
 #' @author Fazendaaa
 #'
 #' @seealso \url{https://projecteuler.net/problem=4} for more info about it

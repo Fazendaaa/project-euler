@@ -23,6 +23,9 @@
 #' \code{problem6} finds the difference between the sum of the squares of the
 #' first 'n' natural numbers and the square of the sum.
 #'
+#' @section Complexity:
+#' This function has the following complexity \textrm{O}($n^2$)
+#'
 #' @author Fazendaaa
 #'
 #' @seealso \url{https://projecteuler.net/problem=6} for more info about it

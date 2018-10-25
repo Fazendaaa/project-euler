@@ -15,6 +15,11 @@ Boolean.
 \description{
 \code{isPrimes} checks whether or not a number is \emph{prime}
 }
+\section{Complexity}{
+
+This function has the following complexity \textrm{O}(\sqrt(n))
+}
+
 \examples{
 isPrime(2)
 isPrime(4)

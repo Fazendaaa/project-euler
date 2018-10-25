@@ -19,12 +19,15 @@ A vector of numbers that are factors or an empty vector
 \description{
 \code{isFactor} verifies whether or not a value is a factor of another one
 }
+\section{Complexity}{
+
+This function has the following complexity \textrm{O}(n)
+}
+
 \examples{
-\dontrun{
 isFactor(c(), 2, 10)
 isFactor(c(2), 5, 10)
 isFactor(c(2), 3, 25600)
-}
 
 }
 \author{

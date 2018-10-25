@@ -17,6 +17,11 @@ The expected value
 \description{
 \code{greatest} finds the max number of digits multiplication
 }
+\section{Complexity}{
+
+This function has the following complexity \textrm{O}($n^2$)
+}
+
 \examples{
 problem8(c(1, 2, 3, 4, 5), 2)
 problem8((1:10), 4)

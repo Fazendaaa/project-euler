@@ -9,7 +9,7 @@ problem8(digits, filepath = "../data/problem_8.txt")
 \arguments{
 \item{digits}{Max number of digits to compute}
 
-\item{fielpath}{Optional filepath to the entry file}
+\item{filepath}{Optional filepath to the entry file}
 }
 \value{
 The expected value
@@ -18,6 +18,11 @@ The expected value
 \code{problem8} finds the 'n' adjacent digits in the 1000-digit number that
 have the greatest product
 }
+\section{Complexity}{
+
+This function has the following complexity \textrm{O}($n^2$)
+}
+
 \examples{
 problem8(2)
 problem8(4)

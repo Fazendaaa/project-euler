@@ -17,6 +17,9 @@ NULL
 #' @description
 #' Performs a calculus to imply the smallest multiple
 #'
+#' @section Complexity:
+#' This function has the following complexity \textrm{O}(1)
+#'
 #' @author Fazendaaa
 #'
 #' @seeAlso \url{http://www.mathblog.dk/project-euler-problem-5/} helped me out
@@ -40,6 +43,10 @@ smallestMultiple <- function(limit, acc, cur) {
 #' @description
 #' \code{problem5} finds the smallest positive number that is evenly divisible
 #' by all of the numbers from 1 up to given limit
+#'
+#' @section Complexity:
+#' This function has the following complexity
+#' \textrm{O}(\frac($n^\frac(5, 2)$, 2))
 #'
 #' @author Fazendaaa
 #'

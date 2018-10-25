@@ -15,6 +15,11 @@ A vector of numbers.
 \description{
 \code{factors} takes a number and then returns \strong{all} of its factors
 }
+\section{Complexity}{
+
+This function has the following complexity \textrm{O}($n^{2}$)
+}
+
 \examples{
 factors(1)
 factors(123)
