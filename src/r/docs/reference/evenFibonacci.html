@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Smallest Multiple — smallestMultiple • projectEuler</title>
+<title>Even Fibonnacci — evenFibonacci • projectEuler</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -36,9 +36,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="Smallest Multiple — smallestMultiple" />
+<meta property="og:title" content="Even Fibonnacci — evenFibonacci" />
 
-<meta property="og:description" content="Performs a calculus to imply the smallest multiple" />
+<meta property="og:description" content="evenFibonnacci sums of all of the even Fibonacci number starting at
+given postion to its limits, saving in the total" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -121,46 +122,50 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Smallest Multiple</h1>
-    <small class="dont-index">Source: <a href='https://github.com/Fazendaaa/project-euler/blob/master/R/problem-5.R'><code>R/problem-5.R</code></a></small>
-    <div class="hidden name"><code>smallestMultiple.Rd</code></div>
+    <h1>Even Fibonnacci</h1>
+    <small class="dont-index">Source: <a href='https://github.com/Fazendaaa/project-euler/blob/master/R/RcppExports.R'><code>R/RcppExports.R</code></a></small>
+    <div class="hidden name"><code>evenFibonacci.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Performs a calculus to imply the smallest multiple</p>
+    <p><code>evenFibonnacci</code> sums of all of the even Fibonacci number starting at
+given postion to its limits, saving in the total</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>smallestMultiple</span>(<span class='no'>limit</span>, <span class='no'>acc</span>, <span class='no'>cur</span>)</pre>
+    <pre class="usage"><span class='fu'>evenFibonacci</span>(<span class='no'>position</span>, <span class='no'>limit</span>, <span class='no'>total</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>position</th>
+      <td><p>The current position</p></td>
+    </tr>
+    <tr>
       <th>limit</th>
-      <td><p>Up to tis number to be verified</p></td>
+      <td><p>The wanted position</p></td>
     </tr>
     <tr>
-      <th>acc</th>
-      <td><p>The current calculus</p></td>
-    </tr>
-    <tr>
-      <th>cur</th>
-      <td><p>Current value to be calculated</p></td>
+      <th>total</th>
+      <td><p>The accumulated value</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The smallest number</p>
+    <p>The calculated result</p>
     
     <h2 class="hasAnchor" id="complexity"><a class="anchor" href="#complexity"></a>Complexity</h2>
 
     
-    <p>This function has the following complexity O(1)</p>
+    <p>This function has the following complexity O($n^2$)</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>evenFibonacci</span>(<span class='fl'>0</span>, <span class='fl'>10</span>, <span class='fl'>10</span>)</div><div class='output co'>#&gt; [1] 20</div><div class='input'><span class='fu'>evenFibonacci</span>(<span class='fl'>5</span>, <span class='fl'>50</span>, <span class='fl'>50</span>)</div><div class='output co'>#&gt; [1] 92</div><div class='input'><span class='fu'>evenFibonacci</span>(<span class='fl'>50</span>, <span class='fl'>1000</span>, <span class='fl'>870</span>)</div><div class='output co'>#&gt; [1] 870</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -170,7 +175,9 @@
       <li><a href="#value">Value</a></li>
 
       <li><a href="#complexity">Complexity</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
     <h2>Author</h2>
     

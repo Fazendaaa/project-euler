@@ -4,12 +4,10 @@
 \alias{problem8}
 \title{Largest product in a series}
 \usage{
-problem8(digits, filepath = "../data/problem_8.txt")
+problem8(digits)
 }
 \arguments{
 \item{digits}{Max number of digits to compute}
-
-\item{filepath}{Optional filepath to the entry file}
 }
 \value{
 The expected value

@@ -44,7 +44,6 @@
 #' @seealso \url{https://projecteuler.net/problem=8} for more info about it
 #'
 #' @param digits Max number of digits to compute
-#' @param filepath Optional filepath to the entry file
 #'
 #' @return The expected value
 #'
@@ -56,8 +55,8 @@
 #' @importFrom readr read_file
 #'
 #' @export
-problem8 <- function(digits, filepath = '../data/problem_8.txt') {
-    file <- read_file(file.path(filepath))
+problem8 <- function(digits) {
+    file <- read_file(file.path('../data/problem_8.txt'))
     line <- gsub("[\r\n]", "", file)
     numbers <- as.integer(unlist(strsplit(line, "")))
 
