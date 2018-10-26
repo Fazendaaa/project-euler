@@ -71,6 +71,32 @@ You can see this in the [DESCRIPTION](./DESCRIPTION) file.
 
 ## References
 * [Automatic Tools](https://masalmon.eu/2017/06/17/automatictools/)
+* [Package Must Have](http://r-addict.com/2016/09/08/Package-Must-Have.html)
+
+## Notes
+### MCV
+[MCV](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) is a kind of [Separation of Concerns](https://en.wikipedia.org/wiki/Separation_of_concerns), that's it in a R environment we could translate as a "package scoping", limiting what and how this package should behave with the connections that it make. 
+
+In this case, all of the [R](./R/) source file are in the `Model` scope due to only handling only processing of the data. If someone wishes to connect to some application, like an Microsoft Excel usage, one must first link to it through a `Controller` first, making it the binding process of the caller to it. And last, but not least, the `Viewer` in this equation; the Excel must show and send all of the user requests to the others levels -- in other words, handle the I/O.
+
+Also, using this approach, you could benefit your application through the usage of tools like:
+* [Renjin](http://www.renjin.org/)
+* [GraalVm](https://www.graalvm.org/docs/reference-manual/languages/r/)
+* [RPython](https://rpython.readthedocs.io/en/latest/getting-started.html)
+
+Making the most of each tool available, that's because some of them don't work 100% on the R code, but you can make them perform better where they can.
+
+### Docker
+The usage of Docker images can help you improve the "future proofing" of your package or application, creating a sandbox that is agnostic of OS, self describing and highly performative.
+
+Besides all of this, you can make changes in a controlled development environment before pushing it to production, testing it first and making the fine tunning where is needed.
+
+More about it [here](http://r-addict.com/2016/05/13/Docker-Motivation.html).
+
+### Observations
+Plotting must be done in the `Viewer` level any time that is available, I would advice to limit to the `Controller` at max. That's is because packages like [ggplot2](https://ggplot2.tidyverse.org/) could affect the performance, not saying that is **BAD AND YOU WILL DIE FOR USING THEM**; but think that you are interacting with R through another application that could provide to you a belt of utilities and these tools are there to assist you.
+
+And, another thing, testing a plot is more difficult than testing only numbers, data frames or even a database transaction.
 
 ## License
 MIT license presented in the [LICENSE](./LICENSE) file.
