@@ -17,7 +17,7 @@ The expected value
 }
 \section{Complexity}{
 
-This function has the following complexity \textrm{O}(n$^\frac(3, 2)$)
+This function has the following complexity \textrm{O}(n$^\frac{ 3 }{ 2 }$)
 }
 
 \examples{

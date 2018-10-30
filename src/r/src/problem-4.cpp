@@ -11,7 +11,7 @@ using namespace Rcpp;
 // \code{isPalindrome} Checks whether or not is a palindrome
 //
 // @section Complexity:
-// This function has the following complexity \textrm{O}(\frac{n, 2})
+// This function has the following complexity \textrm{O}(\frac{n }{ 2 })
 //
 // @author Fazendaaa
 //
@@ -48,7 +48,7 @@ static bool isPalindrome (const int value) {
 // so returns it, otherwise returns the old max
 //
 // @section Complexity:
-// This function has the following complexity \textrm{O}(\frac{n, 2})
+// This function has the following complexity \textrm{O}(\frac{ n }{ 2 })
 //
 // @author Fazendaaa
 //
@@ -76,7 +76,7 @@ static double sequencePalindrome (const double acc, const double x, const double
 //' given palindrome and a sequence to be verified
 //'
 //' @section Complexity:
-// This function has the following complexity \textrm{O}(\frac{$n^{2}$, 2})
+// This function has the following complexity \textrm{O}(\frac{ $n^{2}$ }{ 2 })
 //'
 //' @author Fazendaaa
 //'

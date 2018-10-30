@@ -12,7 +12,7 @@
 #' \code{problem3} finds the \strong{largest} prime factor of given number
 #'
 #' @section Complexity:
-#' This function has the following complexity \textrm{O}($n^{\frac(5/2)}$)
+#' This function has the following complexity \textrm{O}($n^{\frac{5}{2}$)
 #'
 #' @author Fazendaaa
 #'

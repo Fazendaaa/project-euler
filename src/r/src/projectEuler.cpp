@@ -9,7 +9,7 @@ using namespace Rcpp;
 //' limit
 //'
 //' @section Complexity:
-//' This function has the following complexity \textrm{O}(\frac(\sqrt(n), 2))
+//' This function has the following complexity \textrm{O}(\frac{ \sqrt(n) }{ 2 })
 //'
 //' @author Fazendaaa
 //'

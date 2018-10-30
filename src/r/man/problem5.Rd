@@ -19,7 +19,7 @@ by all of the numbers from 1 up to given limit
 \section{Complexity}{
 
 This function has the following complexity
-\textrm{O}(\frac($n^\frac(5, 2)$, 2))
+\textrm{O}(\frac{ $n^\frac{ 5 }{ 2 }$ }{ 2 })
 }
 
 \examples{

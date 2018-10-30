@@ -46,7 +46,7 @@ smallestMultiple <- function(limit, acc, cur) {
 #'
 #' @section Complexity:
 #' This function has the following complexity
-#' \textrm{O}(\frac($n^\frac(5, 2)$, 2))
+#' \textrm{O}(\frac{ $n^\frac{ 5 }{ 2 }$ }{ 2 })
 #'
 #' @author Fazendaaa
 #'

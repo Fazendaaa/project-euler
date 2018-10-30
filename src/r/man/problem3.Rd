@@ -15,11 +15,6 @@ A number
 \description{
 \code{problem3} finds the \strong{largest} prime factor of given number
 }
-\section{Complexity}{
-
-This function has the following complexity \textrm{O}($n^{\frac(5/2)}$)
-}
-
 \examples{
 problem3(1)
 problem3(100)
