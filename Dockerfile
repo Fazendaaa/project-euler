@@ -16,6 +16,7 @@ RUN apt-get update  \
 RUN R -e "install.packages(c(\"DT\",\
                              \"Rcpp\",\
                              \"covr\",\
+                             \"dplyr\",\
                              \"readr\",\
                              \"shiny\",\
                              \"lintr\",\
