@@ -39,10 +39,10 @@ RUN R -e "install.packages('pkgdown', dependencies=TRUE)"
 RUN R -e "install.packages('formatR', dependencies=TRUE)"
 RUN R -e "install.packages('devtools', dependencies=TRUE)"
 RUN R -e "install.packages('roxygen2', dependencies=TRUE)"
-RUN R -e "install.packages('assertthat', dependencies=TRUE)"
 RUN R -e "install.packages('goodpractice', dependencies=TRUE)"
 RUN R -e "install.packages('hunspell', dependencies=TRUE)"
 RUN R -e "devtools::install_github('hadley/assertthat')"
+RUN R -e "devtools::install_github('MangoTheCat/visualTest')"
 
 RUN adduser docker sudo
 
