@@ -26,6 +26,10 @@ RUN apt-get update \
                        libtesseract-dev \
                        libleptonica-dev -y
 
+# rJava or xlsx
+RUN apt-get update \
+    && apt-get install tesseract-ocr-eng
+
 # install packages
 RUN R -e "install.packages('DT', dependencies=TRUE)"
 RUN R -e "install.packages('Rcpp', dependencies=TRUE)"
