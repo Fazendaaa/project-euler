@@ -29,6 +29,8 @@ RUN apt-get update \
 # install packages
 RUN R -e "install.packages('DT', dependencies=TRUE)"
 RUN R -e "install.packages('Rcpp', dependencies=TRUE)"
+RUN R -e "install.packages('rJava', dependencies=TRUE)"
+RUN R -e "install.packages('xlsx', dependencies=TRUE)"
 RUN R -e "install.packages('covr', dependencies=TRUE)"
 RUN R -e "install.packages('dplyr', dependencies=TRUE)"
 RUN R -e "install.packages('readr', dependencies=TRUE)"
