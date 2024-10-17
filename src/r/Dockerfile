@@ -3,7 +3,12 @@ LABEL author="fazenda"
 LABEL project="project-euler-r"
 
 RUN [ "apk", "add", "--no-cache", \
+  "g++", \
   "gcc", \
+  "gfortran", \
+  "musl-dev", \
+  "curl-dev", \
+  "linux-headers", \
   "libxml2-dev", \
   "openssl-dev" \
   ]
