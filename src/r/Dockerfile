@@ -3,11 +3,14 @@ LABEL author="fazenda"
 LABEL project="project-euler-r"
 
 RUN [ "apt", "update" ]
-RUN [ "apt", "install", "--yes", "libcurl4-openssl-dev" ]
+RUN [ "apt", "install", "--yes", \
+  "libxml2-dev", \
+  "libcurl4-openssl-dev" \
+  ]
 
 WORKDIR /usr/src/
 
-RUN [ "R", "-e", "install.packages('renv')" ]
+RUN [ "R", "-e", "install.packages(c('renv', 'pak'))" ]
 
 COPY .Rbuildignore .
 COPY .lintr .
@@ -15,7 +18,7 @@ COPY NAMESPACE .
 COPY DESCRIPTION .
 COPY renv.lock .
 
-RUN [ "R", "-e", "renv::install(prompt = FALSE)" ]
+RUN [ "R", "-e", "options(renv.config.pak.enabled = TRUE); renv::restore(prompt = FALSE)" ]
 
 COPY data/ data/
 COPY docs/ docs/
