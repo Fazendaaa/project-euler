@@ -1,16 +1,16 @@
-FROM r-base:4.4.1
+FROM rhub/r-minimal:4.5.0
 LABEL author="fazenda"
 LABEL project="project-euler-r"
 
-RUN [ "apt", "update" ]
-RUN [ "apt", "install", "--yes", \
+RUN [ "apk", "add", "--no-cache", \
+  "gcc", \
   "libxml2-dev", \
-  "libcurl4-openssl-dev" \
+  "openssl-dev" \
   ]
 
 WORKDIR /usr/src/
 
-RUN [ "R", "-e", "install.packages('renv')" ]
+RUN [ "R", "-e", "install.packages(c('renv', 'pak'), repos = 'https://cloud.r-project.org/')" ]
 
 COPY .Rbuildignore .
 COPY .lintr .
@@ -18,7 +18,7 @@ COPY NAMESPACE .
 COPY DESCRIPTION .
 COPY renv.lock .
 
-RUN [ "R", "-e", "renv::restore(prompt = FALSE)" ]
+RUN [ "R", "-e", "options(renv.config.pak.enabled = TRUE); renv::restore(prompt = FALSE)" ]
 
 COPY data/ data/
 COPY docs/ docs/
