@@ -10,7 +10,7 @@ RUN [ "apt", "install", "--yes", \
 
 WORKDIR /usr/src/
 
-RUN [ "R", "-e", "install.packages(c('renv', 'pak'))" ]
+RUN [ "R", "-e", "install.packages('renv')" ]
 
 COPY .Rbuildignore .
 COPY .lintr .
@@ -18,7 +18,7 @@ COPY NAMESPACE .
 COPY DESCRIPTION .
 COPY renv.lock .
 
-RUN [ "R", "-e", "options(renv.config.pak.enabled = TRUE); renv::restore(prompt = FALSE)" ]
+RUN [ "R", "-e", "renv::restore(prompt = FALSE)" ]
 
 COPY data/ data/
 COPY docs/ docs/
