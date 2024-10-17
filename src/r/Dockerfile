@@ -3,14 +3,22 @@ LABEL author="fazenda"
 LABEL project="project-euler-r"
 
 RUN [ "apk", "add", "--no-cache", \
+  "curl-dev", \
+  "fontconfig-dev", \
+  "fribidi-dev", \
+  "freetype-dev", \
   "g++", \
   "gcc", \
   "gfortran", \
+  "harfbuzz-dev", \
+  "jpeg-dev", \
   "musl-dev", \
-  "curl-dev", \
+  "libpng-dev", \
+  "libgit2-dev", \
   "linux-headers", \
   "libxml2-dev", \
-  "openssl-dev" \
+  "openssl-dev", \
+  "tiff-dev" \
   ]
 
 WORKDIR /usr/src/
