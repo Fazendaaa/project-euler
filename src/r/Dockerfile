@@ -39,3 +39,6 @@ COPY man/ man/
 COPY tests/ tests/
 COPY src/ src/
 COPY R/ R/
+
+RUN [ "R", "-e", "devtools::document()" ]
+RUN [ "R", "-e", "renv::install('.')" ]
