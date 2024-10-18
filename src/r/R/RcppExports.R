@@ -5,7 +5,7 @@
 #'
 #' @description
 #' \code{evenFibonnacci} sums of all of the even Fibonacci number starting at
-#' given postion to its limits, saving in the total 
+#' given postion to its limits, saving in the total
 #'
 #' @section Complexity:
 #' This function has the following complexity \textrm{O}($n^{2}$)
@@ -25,6 +25,10 @@
 #'
 evenFibonacci <- function(position, limit, total) {
     .Call('_projectEuler_evenFibonacci', PACKAGE = 'projectEuler', position, limit, total)
+}
+
+largestFactorial <- function(element) {
+    .Call('_projectEuler_largestFactorial', PACKAGE = 'projectEuler', element)
 }
 
 #' Max Palindrome

@@ -16,18 +16,20 @@ using namespace Rcpp;
 // @return The value of the Fibonacci position
 //
 // @examples
-// fibonacci(10) 
-// fibonacci(100) 
-// fibonacci(1000) 
+// fibonacci(10)
+// fibonacci(100)
+// fibonacci(1000)
 //
-double fibonacci(double position) {
+double fibonacci(double position)
+{
     double first = 1, second = 1, third = 0;
 
-    for (int i = 0; i < position; i++) {
+    for (int i = 0; i < position; i++)
+    {
         first = second;
         second = third;
 
-        third = first + second; 
+        third = first + second;
     }
 
     return third;
@@ -37,7 +39,7 @@ double fibonacci(double position) {
 //'
 //' @description
 //' \code{evenFibonnacci} sums of all of the even Fibonacci number starting at
-//' given postion to its limits, saving in the total 
+//' given postion to its limits, saving in the total
 //'
 //' @section Complexity:
 //' This function has the following complexity \textrm{O}($n^{2}$)
@@ -56,9 +58,10 @@ double fibonacci(double position) {
 //' evenFibonacci(50, 1000, 870)
 //'
 // [[Rcpp::export]]
-double evenFibonacci(double position, double limit, double total) {
+double evenFibonacci(double position, double limit, double total)
+{
     double value = fibonacci(position);
-    double newTotal = (0 == ((int) value) % 2) ? total + value : total;
+    double newTotal = (0 == ((int)value) % 2) ? total + value : total;
 
-    return (value <= limit) ? evenFibonacci(position+1, limit, newTotal) : total;
+    return (value <= limit) ? evenFibonacci(position + 1, limit, newTotal) : total;
 }
