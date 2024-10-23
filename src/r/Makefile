@@ -10,10 +10,8 @@ interact:
 	@docker run \
 		--rm \
 		-it \
-		--workdir /usr/src/ \
-		--volume $(shell pwd):/usr/src/ \
 		${REGISTRY_OWNER}/project-euler-r:${PROJECT_TAG} \
-		/bin/bash
+		R
 
 test:
 	@docker run ${REGISTRY_OWNER}/project-euler-r:${PROJECT_TAG} 'R -e "devtools::test()"'
