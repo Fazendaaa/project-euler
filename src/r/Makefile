@@ -9,6 +9,8 @@ build:
 interact:
 	@docker run \
 		--rm \
+		--workdir /usr/src \
+		--volume $(shell pwd):/usr/src \
 		-it \
 		${REGISTRY_OWNER}/project-euler-r:${PROJECT_TAG} \
 		R
