@@ -16,4 +16,7 @@ interact:
 		R
 
 test:
-	@docker run ${REGISTRY_OWNER}/project-euler-r:${PROJECT_TAG} 'R -e "devtools::test()"'
+	@docker run \
+		--rm \
+		${REGISTRY_OWNER}/project-euler-r:${PROJECT_TAG} \
+		R -e "devtools::test()"
