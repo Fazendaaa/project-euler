@@ -35,7 +35,6 @@ COPY renv.lock .
 
 RUN [ "R", "-e", "options(renv.config.pak.enabled = TRUE); renv::restore(prompt = FALSE)" ]
 
-COPY data/ data/
 COPY docs/ docs/
 COPY man/ man/
 COPY tests/ tests/
