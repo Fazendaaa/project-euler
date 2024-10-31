@@ -1,2 +1,5 @@
 src/*.o
 src/*.so
+inst/*_files
+inst/*.csv
+inst/*.html

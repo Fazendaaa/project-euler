@@ -7,6 +7,7 @@ RUN [ "apk", "add", "--no-cache", \
   "fontconfig-dev", \
   "fribidi-dev", \
   "freetype-dev", \
+  "font-liberation", \
   "g++", \
   "gcc", \
   "gfortran", \
