@@ -18,6 +18,7 @@ RUN [ "apk", "add", "--no-cache", \
   "linux-headers", \
   "libxml2-dev", \
   "openssl-dev", \
+  "pandoc-cli", \
   "tiff-dev" \
   ]
 

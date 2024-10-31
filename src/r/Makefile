@@ -1,12 +1,21 @@
 REGISTRY_OWNER:=fazenda
 PROJECT_TAG:=latest
 
-all: build interact
+all: interact
 
 build:
 	@docker buildx build --load --tag ${REGISTRY_OWNER}/project-euler-r:${PROJECT_TAG} .
 
-interact:
+shell: build
+	@docker run \
+		--rm \
+		--workdir /usr/src \
+		--volume $(shell pwd):/usr/src \
+		-it \
+		${REGISTRY_OWNER}/project-euler-r:${PROJECT_TAG} \
+		/bin/sh
+
+interact: build
 	@docker run \
 		--rm \
 		--workdir /usr/src \

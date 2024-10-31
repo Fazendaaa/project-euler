@@ -1,3 +1,4 @@
+# devtools::test_active_file(file = 'tests/testthat/test.problem-5.R')
 context("Testing problem 5")
 
 test_that("Given example", {
