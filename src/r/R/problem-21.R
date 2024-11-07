@@ -31,7 +31,12 @@ allDivisors <- function(element) {
   return (divisors)
 }
 
+#' @export
 problem21 <- function(limit) {
+  if (limit < 283) {
+    return (0)
+  }
+
   library(doParallel)
 
   nCores <- detectCores() / 2

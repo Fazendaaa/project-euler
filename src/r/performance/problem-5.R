@@ -7,17 +7,17 @@ library(htmlwidgets)
 library(reshape2)
 
 example <- profvis::profvis({
-  input <- 10
-  output <- 2520
+  input <- 285
+  output <- 504
 
-  testthat::expect_equal(problem5(input), output)
+  testthat::expect_equal(projectEuler::problem21(input), output)
 })
 
 wanted <- profvis::profvis({
-  input <- 20
-  output <- 232792560
+  input <- 10000
+  output <- 31626
 
-  testthat::expect_equal(problem5(input), output)
+  testthat::expect_equal(projectEuler::problem21(input), output)
 })
 
 toMaintain <- c('time', 'memalloc')

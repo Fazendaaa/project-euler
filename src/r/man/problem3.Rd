@@ -15,6 +15,10 @@ A number
 \description{
 \code{problem3} finds the \strong{largest} prime factor of given number
 }
+\section{}{
+NA
+}
+
 \examples{
 problem3(1)
 problem3(100)
