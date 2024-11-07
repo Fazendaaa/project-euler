@@ -95,3 +95,25 @@ isPrime <- function(value) {
 
     return (!any(0 == value %% (2:limit)))
 }
+
+#' Zip
+#'
+#' @description
+#' https://stackoverflow.com/a/57564884/7092954
+#'
+#' @export
+#'
+zip <- function(...) {
+  mapply(list, ..., SIMPLIFY = FALSE)
+}
+
+#' Enumerate
+#'
+#' @description
+#' https://stackoverflow.com/a/57564884/7092954
+#'
+#' @export
+#'
+enumerate <- function(...) {
+  zip(index = seq_along(..1), ...)
+}
