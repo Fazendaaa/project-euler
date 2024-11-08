@@ -13,5 +13,5 @@ test_that("Wanted example", {
   input <- system.file('data', 'problem_22.txt', package = 'projectEuler')
   output <- 871198282
 
-  expect_equal(problem22(input), 871198282)
+  expect_equal(problem22(input), output)
 })

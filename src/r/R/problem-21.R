@@ -16,21 +16,6 @@
 #       *   https://en.wikipedia.org/wiki/Amicable_numbers
 #
 
-allDivisors <- function(element) {
-  index <- 2
-  divisors <- c(1)
-
-  while(index <= element) {
-    if (0 == element %% index) {
-      divisors <- c(divisors, index)
-    }
-
-    index <- index + 1
-  }
-
-  return (divisors)
-}
-
 #' @export
 problem21 <- function(limit) {
   if (limit < 283) {

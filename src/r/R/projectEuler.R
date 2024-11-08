@@ -4,12 +4,12 @@
 #'
 #' @description
 #' \code{isFactor} verifies whether or not a value is a factor of another one
-#' 
+#'
 #' @section Complexity:
 #' This function has the following complexity \textrm{O}(n)
 #'
 #' @author Fazendaaa
-#' 
+#'
 #' @param acc Vector with accumulated values so far
 #' @param cur Number to be checked
 #' @param given Number that value is or not its factor
@@ -23,15 +23,15 @@
 #'
 #' @keywords internal
 isFactor <- function(acc, cur, given) {
-    if (0 == given %% cur) {
-        dividend <- given / cur
+  if (0 == given %% cur) {
+    dividend <- given / cur
 
-        return (if (dividend != cur)
-                append(acc, cur, dividend) else
-                append(acc, cur))
-    }
+    return (if (dividend != cur)
+            append(acc, cur, dividend) else
+            append(acc, cur))
+  }
 
-    return (c(acc))
+  return (c(acc))
 }
 
 #' Factors
@@ -55,9 +55,9 @@ isFactor <- function(acc, cur, given) {
 #'
 #' @export
 factors <- function(given) {
-    reduced <- Reduce(function (acc, cur) isFactor(acc, cur, given), (1:given))
+  reduced <- Reduce(function (acc, cur) isFactor(acc, cur, given), (1:given))
 
-    return (sort(reduced))
+  return (sort(reduced))
 }
 
 #' Is Prime?
@@ -84,16 +84,16 @@ factors <- function(given) {
 #'
 #' @export
 isPrime <- function(value) {
-    limit <- ceiling(sqrt(value))
+  limit <- ceiling(sqrt(value))
 
-    if (2 == value) {
-        return (TRUE)
-    }
-    if (2 > value || 0 == value %% 2) {
-        return (FALSE)
-    }
+  if (2 == value) {
+    return (TRUE)
+  }
+  if (2 > value || 0 == value %% 2) {
+    return (FALSE)
+  }
 
-    return (!any(0 == value %% (2:limit)))
+  return (!any(0 == value %% (2:limit)))
 }
 
 #' Zip
@@ -116,4 +116,66 @@ zip <- function(...) {
 #'
 enumerate <- function(...) {
   zip(index = seq_along(..1), ...)
+}
+
+#'
+#' @export
+#'
+allDivisors <- function(element) {
+  index <- 2
+  divisors <- c(1)
+
+  while(index <= element) {
+    if (0 == element %% index) {
+      divisors <- c(divisors, index)
+    }
+
+    index <- index + 1
+  }
+
+  return (divisors)
+}
+
+#'
+#' @export
+#'
+parallelize <- function(limit, toParallel) {
+  library(doParallel)
+
+  nCores <- detectCores() / 2
+  cluster <- makeCluster(nCores)
+  load <- floor(limit / nCores)
+
+  results <- list()
+
+  registerDoParallel(cluster)
+
+  results <- foreach(index = 1:nCores, .export = ls(globalenv())) %dopar% {
+    start <- ((index - 1) * load) + 1
+    end <- index * load
+    item <- start
+
+    while (item <= end) {
+      results[[as.character(item)]] <- toParallel(item)
+      item <- item + 1
+    }
+
+    return (results)
+  }
+
+  stopCluster(cl = cluster)
+
+  lastOne <- nCores * load
+
+  # Handle the remaining load
+  if (lastOne < limit) {
+    index <- lastOne
+
+    while (index <= limit) {
+      results[[as.character(index)]] <- toParallel(index)
+      index <- index + 1
+    }
+  }
+
+  return(results)
 }
