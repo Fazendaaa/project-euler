@@ -22,60 +22,28 @@
 
 sumDivisors <- function(number) sum(head(allDivisors(number), n = -1))
 
-sumOfTwoNumbers <- function(numbers) {
-  library(doParallel)
-
-  nCores <- detectCores() / 2
-  cluster <- makeCluster(nCores)
-  load <- floor(limit / nCores)
-
-  results <- list()
-
-  registerDoParallel(cluster)
-
-  results <- foreach(index = 1:nCores, .export = ls(globalenv())) %dopar% {
-    start <- ((index - 1) * load) + 1
-    end <- index * load
-    item <- start
-
-    while (item <= end) {
-      while (inner <=)
-      results[[as.character(item)]] <- toParallel(item)
-      item <- item + 1
-    }
-
-    return (results)
-  }
-
-  stopCluster(cl = cluster)
-
-  lastOne <- nCores * load
-
-  # Handle the remaining load
-  if (lastOne < limit) {
-    index <- lastOne
-
-    while (index <= limit) {
-      results[[as.character(index)]] <- toParallel(index)
-      index <- index + 1
-    }
-  }
-
-}
-
-#'
-#' @export
-#'
-problem23 <- function(limit) {
+getAllAbundant <- function(limit) {
   toParallel <- function(item) {
     sumDivisors <- sumDivisors
 
     return (function (item) if(sumDivisors(item) > item) item else 0)
   }
-  allAbundant <- Filter(function(item) 0 != item, unlist(parallelize(limit, toParallel())))
-  results <- sumOfTwoNumbers(allAbundant)
 
-  print(head(results, n = 5))
-
-  return (allAbundant)
+  return (unname(Filter(function(item) 0 != item, unlist(parallelizeLimit(limit, toParallel())))))
 }
+
+sumOfTwoNumbers <- function(numbers) {
+  howManyTimesItAppears <- length(numbers) + 1
+  toParallel <- function(item) {
+    howManyTimesItAppears <- howManyTimesItAppears
+
+    return (function(item) item * howManyTimesItAppears)
+  }
+
+  return (Reduce(function(acc, cur) acc + cur, unlist(parallelizeData(numbers, toParallel())), 0))
+}
+
+#'
+#' @export
+#'
+problem23 <- function(limit) sumOfTwoNumbers(getAllAbundant(limit))

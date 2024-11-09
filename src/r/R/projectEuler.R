@@ -124,22 +124,38 @@ enumerate <- function(...) {
 allDivisors <- function(element) {
   index <- 2
   divisors <- c(1)
+  limit <- element / 2
+  increment <- if (0 == element %% 2) 1 else 2
 
-  while(index <= element) {
+  while(index <= limit) {
     if (0 == element %% index) {
       divisors <- c(divisors, index)
     }
 
-    index <- index + 1
+    index <- index + increment
   }
 
+  divisors <- c(divisors, element)
+
   return (divisors)
+}
+
+toRunLimit__ <- function(start, end, toParallel) {
+  item <- start
+  results <- list()
+
+  while (item <= end) {
+    results[[as.character(item)]] <- toParallel(item)
+    item <- item + 1
+  }
+
+  return (results)
 }
 
 #'
 #' @export
 #'
-parallelize <- function(limit, toParallel) {
+parallelizeLimit <- function(limit, toParallel) {
   library(doParallel)
 
   nCores <- detectCores() / 2
@@ -150,17 +166,14 @@ parallelize <- function(limit, toParallel) {
 
   registerDoParallel(cluster)
 
+  toRunLimit__ <- toRunLimit__
+  toParallel <- toParallel
+
   results <- foreach(index = 1:nCores, .export = ls(globalenv())) %dopar% {
     start <- ((index - 1) * load) + 1
     end <- index * load
-    item <- start
 
-    while (item <= end) {
-      results[[as.character(item)]] <- toParallel(item)
-      item <- item + 1
-    }
-
-    return (results)
+    return (toRunLimit__(start, end, toParallel))
   }
 
   stopCluster(cl = cluster)
@@ -169,12 +182,57 @@ parallelize <- function(limit, toParallel) {
 
   # Handle the remaining load
   if (lastOne < limit) {
-    index <- lastOne
+    results <- c(results, toRunLimit__(lastOne + 1, limit, toParallel))
+  }
 
-    while (index <= limit) {
-      results[[as.character(index)]] <- toParallel(index)
-      index <- index + 1
-    }
+  return(results)
+}
+
+toRunData__ <- function(data, start, end, toParallel) {
+  item <- start
+  results <- list()
+
+  while (item <= end) {
+    curr <- data[item]
+    results[[as.character(item)]] <- toParallel(curr)
+    item <- item + 1
+  }
+
+  return (results)
+}
+
+#'
+#' @export
+#'
+parallelizeData <- function(data, toParallel) {
+  library(doParallel)
+
+  nCores <- detectCores() / 2
+  cluster <- makeCluster(nCores)
+  limit <- length(data)
+  load <- floor(limit / nCores)
+
+  results <- list()
+
+  registerDoParallel(cluster)
+
+  toRunData__ <- toRunData__
+  toParallel <- toParallel
+
+  results <- foreach(index = 1:nCores, .export = ls(globalenv())) %dopar% {
+    start <- ((index - 1) * load) + 1
+    end <- index * load
+
+    return (toRunData__(data, start, end, toParallel))
+  }
+
+  stopCluster(cl = cluster)
+
+  lastOne <- nCores * load
+
+  # Handle the remaining load
+  if (lastOne < limit) {
+    results <- c(results, toRunData__(data, lastOne + 1, limit, toParallel))
   }
 
   return(results)
