@@ -26,10 +26,10 @@ getAllAbundant <- function(limit) {
   toParallel <- function(item) {
     sumDivisors <- sumDivisors
 
-    return (function (item) if(sumDivisors(item) > item) item else 0)
+    return (function (item) if(sumDivisors(item) > item) item else NULL)
   }
 
-  return (unname(Filter(function(item) 0 != item, unlist(parallelizeLimit(limit, toParallel())))))
+  return (unname(unlist(parallelizeLimit(limit, toParallel()))))
 }
 
 sumOfTwoNumbers <- function(numbers) {
