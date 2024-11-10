@@ -40,10 +40,73 @@ sumOfTwoNumbers <- function(numbers) {
     return (function(item) item * howManyTimesItAppears)
   }
 
-  return (Reduce(function(acc, cur) acc + cur, unlist(parallelizeData(numbers, toParallel())), 0))
+  return (unname(unlist(parallelizeData(numbers, toParallel()))))
+}
+
+problem23_nonOptimized <- function(limit) {
+  abundant <- c()
+  index <- 1
+
+  while (index < limit) {
+    sum <- sumDivisors(index)
+
+    if (sum > index) {
+      abundant <- c(abundant, index)
+    }
+
+    index <- index + 1
+  }
+
+  howManyTimesItAppears <- length(abundant) + 1
+  sumOfTwoAbundant <- Reduce(function(acc, cur) acc + (howManyTimesItAppears * cur), abundant, 0)
+
+  return (0)
 }
 
 #'
 #' @export
 #'
-problem23 <- function(limit) sumOfTwoNumbers(getAllAbundant(limit))
+problem23 <- function() {
+  limit <- 28123
+  abundant <- getAllAbundant(limit)
+  total <- length(abundant)
+  outerIndex <- 1
+  twoNumbers <- list()
+  result <- list()
+
+  while (outerIndex < total) {
+    current <- abundant[outerIndex]
+    #sequence <- c()
+    #sequence <- c(current + current, Map(function(item) current + item, tail(abundant, n = -index)))
+    #twoNumbers <- c(twoNumbers, Filter(function(item) item < limit, sequence))
+
+    innerIndex <- outerIndex
+
+    while (innerIndex < total) {
+      sumOfTwo <- current + abundant[innerIndex]
+
+      if (sumOfTwo < limit) {
+        twoNumbers[sumOfTwo] <- sumOfTwo
+      } else {
+        break
+      }
+
+      innerIndex <- innerIndex + 1
+    }
+
+    outerIndex <- outerIndex + 1
+  }
+
+  for (item in 1:limit) {
+    if (is.null(unlist(twoNumbers[item]))) {
+      result[item] <- item
+    }
+  }
+
+  print('filter done')
+  result <- unlist(result)
+  print('result')
+  print(head(result, n = 30))
+  return (sum(result))
+  #return (parallelReduce(lessThanLimit, function(acc, cur) acc + cur, 0))
+}
