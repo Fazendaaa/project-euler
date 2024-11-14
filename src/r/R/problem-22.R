@@ -30,5 +30,5 @@ problem22 <- function(filepath) {
   quotedNames <- strsplit(data, ',')[[1]]
   upperNames <- sort(gsub('\"', '', quotedNames))
 
-  return (Reduce(function(acc, cur) acc + nameWeight(cur), enumerate(upperNames)))
+  return (Reduce(function(acc, cur) acc + nameWeight(cur), enumerate(upperNames), 0))
 }
