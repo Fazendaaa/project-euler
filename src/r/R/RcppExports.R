@@ -31,6 +31,10 @@ largestFactorial <- function(element) {
     .Call('_projectEuler_largestFactorial', PACKAGE = 'projectEuler', element)
 }
 
+problem23Cpp <- function() {
+    .Call('_projectEuler_problem23Cpp', PACKAGE = 'projectEuler')
+}
+
 #' Max Palindrome
 #'
 #' @description

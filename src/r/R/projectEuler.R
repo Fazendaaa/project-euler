@@ -123,21 +123,22 @@ enumerate <- function(...) {
 #'
 allDivisors <- function(element) {
   index <- 2
-  divisors <- c(1)
-  limit <- element / 2
+  divisors <- list()
+  limit <- floor(element / 2)
   increment <- if (0 == element %% 2) 1 else 2
+
+  divisors[1] <- 1
+  divisors[element] <- element
 
   while(index <= limit) {
     if (0 == element %% index) {
-      divisors <- c(divisors, index)
+      divisors[index] <- index
     }
 
     index <- index + increment
   }
 
-  divisors <- c(divisors, element)
-
-  return (divisors)
+  return (unlist(Filter(Negate(is.null), divisors)))
 }
 
 #'

@@ -34,6 +34,16 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// problem23Cpp
+double problem23Cpp();
+RcppExport SEXP _projectEuler_problem23Cpp() {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    rcpp_result_gen = Rcpp::wrap(problem23Cpp());
+    return rcpp_result_gen;
+END_RCPP
+}
 // maxPalindrome
 double maxPalindrome(const double old, const double from, const double limit);
 RcppExport SEXP _projectEuler_maxPalindrome(SEXP oldSEXP, SEXP fromSEXP, SEXP limitSEXP) {
@@ -74,6 +84,7 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_projectEuler_evenFibonacci", (DL_FUNC) &_projectEuler_evenFibonacci, 3},
     {"_projectEuler_largestFactorial", (DL_FUNC) &_projectEuler_largestFactorial, 1},
+    {"_projectEuler_problem23Cpp", (DL_FUNC) &_projectEuler_problem23Cpp, 0},
     {"_projectEuler_maxPalindrome", (DL_FUNC) &_projectEuler_maxPalindrome, 3},
     {"_projectEuler_greatestProduct", (DL_FUNC) &_projectEuler_greatestProduct, 2},
     {"_projectEuler_erastosthenesSieve", (DL_FUNC) &_projectEuler_erastosthenesSieve, 1},

@@ -65,10 +65,20 @@ context('Testing problem 23')
 #
 #  expect_equal(problem23(input), output)
 #})
+#
+#test_that('Wanted example', {
+#  output <- 4179871
+#  result <- problem23()
+#
+#  print('result')
+#  print(result)
+#
+#  expect_equal(result, output)
+#})
 
 test_that('Wanted example', {
   output <- 4179871
-  result <- problem23()
+  result <- problem23Cpp()
 
   print('result')
   print(result)

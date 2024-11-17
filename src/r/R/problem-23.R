@@ -73,8 +73,9 @@ problem23 <- function() {
   outerIndex <- 1
   twoNumbers <- list()
   result <- list()
+  sumOfResults <- 0
 
-  while (outerIndex < total) {
+  while (outerIndex <= total) {
     current <- abundant[outerIndex]
     #sequence <- c()
     #sequence <- c(current + current, Map(function(item) current + item, tail(abundant, n = -index)))
@@ -82,14 +83,14 @@ problem23 <- function() {
 
     innerIndex <- outerIndex
 
-    while (innerIndex < total) {
+    while (innerIndex <= total) {
       sumOfTwo <- current + abundant[innerIndex]
 
-      if (sumOfTwo < limit) {
-        twoNumbers[sumOfTwo] <- sumOfTwo
-      } else {
+      if (sumOfTwo > limit) {
         break
       }
+
+      twoNumbers[sumOfTwo] <- sumOfTwo
 
       innerIndex <- innerIndex + 1
     }
@@ -100,13 +101,20 @@ problem23 <- function() {
   for (item in 1:limit) {
     if (is.null(unlist(twoNumbers[item]))) {
       result[item] <- item
+      sumOfResults <- sumOfResults + item
     }
   }
 
   print('filter done')
+  print('two numbers')
+  twoNumbers <- unlist(Filter(Negate(is.null), twoNumbers))
+  print(head(twoNumbers, n = 30))
+  print(tail(twoNumbers, n = 30))
   result <- unlist(result)
   print('result')
   print(head(result, n = 30))
-  return (sum(result))
+  print(tail(result, n = 30))
+
+  return (sumOfResults)
   #return (parallelReduce(lessThanLimit, function(acc, cur) acc + cur, 0))
 }
