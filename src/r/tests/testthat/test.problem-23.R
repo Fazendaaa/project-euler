@@ -80,8 +80,5 @@ test_that('Wanted CPP example', {
   output <- 4179871
   result <- problem23Cpp()
 
-  print('result')
-  print(result)
-
   expect_equal(result, output)
 })

@@ -3,34 +3,36 @@
 using namespace Rcpp;
 
 const std::list<int> getDivisors(int number) {
-  int limit = floor(sqrt(number)), tmp;
+  int limit = floor(sqrt(number)), tmp = 0;
   std::list<int> divisors = {1};
 
-  if (1 == number) {
-    return divisors;
-  }
+  if (1 != number) {
+    for (int index = 2; index <= limit; index += 1) {
+      if (0 == number % index) {
+        divisors.push_back(index);
 
-  for (int index = 2; index < limit; index += 1) {
-    if (0 == number % index) {
-      divisors.push_back(index);
+        tmp = number / index;
 
-      tmp = floor(number / index);
-
-      if (tmp != index) {
-        divisors.push_back(tmp);
+        if (tmp != index) {
+          divisors.push_back(tmp);
+        }
       }
     }
-  }
 
-  divisors.sort();
+    divisors.sort();
+    divisors.push_back(number);
+  }
 
   return divisors;
 }
 
 const bool isAbundant(int number) {
   int sum = 0;
+  std::list<int> divisors = getDivisors(number);
 
-  for (auto i : getDivisors(number)) {
+  divisors.pop_back();
+
+  for (auto i: divisors) {
     sum += i;
   }
 
@@ -51,13 +53,13 @@ const std::list<int> getAbundantNumbers(int limit) {
 
 // [[Rcpp::export]]
 double problem23Cpp() {
-  int limit = 28123, sum, total;
+  int limit = 28123, sum = 0, total = 0;
   std::list<int> allAbundant = getAbundantNumbers(limit);
   std::vector<bool> sumOfTwo;
 
   sumOfTwo.reserve(limit);
 
-  for (int index = 0; index <= limit; index++) {
+  for (int index = 0; index <= limit; index+= 1) {
     sumOfTwo.push_back(false);
   }
 
@@ -73,7 +75,7 @@ double problem23Cpp() {
     }
   }
 
-  for (int index = 1; index <= limit; index++) {
+  for (int index = 1; index <= limit; index+= 1) {
     if (false == sumOfTwo.at(index)) {
       total += index;
     }
