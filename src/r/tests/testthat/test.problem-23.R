@@ -76,7 +76,7 @@ context('Testing problem 23')
 #  expect_equal(result, output)
 #})
 
-test_that('Wanted example', {
+test_that('Wanted CPP example', {
   output <- 4179871
   result <- problem23Cpp()
 

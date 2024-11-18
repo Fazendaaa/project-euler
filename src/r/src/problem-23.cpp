@@ -1,5 +1,4 @@
 #include <Rcpp.h>
-#include <algorithm>
 
 using namespace Rcpp;
 
@@ -30,9 +29,8 @@ const std::list<int> getDivisors(int number) {
 
 const bool isAbundant(int number) {
   int sum = 0;
-  std::list<int> elements = getDivisors(number);
 
-  for (auto i : elements) {
+  for (auto i : getDivisors(number)) {
     sum += i;
   }
 
@@ -53,12 +51,14 @@ const std::list<int> getAbundantNumbers(int limit) {
 
 // [[Rcpp::export]]
 double problem23Cpp() {
-  int limit = 28123, sum, total, start = 1;
+  int limit = 28123, sum, total;
   std::list<int> allAbundant = getAbundantNumbers(limit);
-  std::list<int> sumOfTwo = {};
+  std::vector<bool> sumOfTwo;
 
-  for (auto i: getDivisors(100)) {
-    Rcout << i << ' ';
+  sumOfTwo.reserve(limit);
+
+  for (int index = 0; index <= limit; index++) {
+    sumOfTwo.push_back(false);
   }
 
   for (auto outer: allAbundant) {
@@ -69,15 +69,12 @@ double problem23Cpp() {
         break;
       }
 
-      sumOfTwo.push_back(sum);
+      sumOfTwo.at(sum) = true;
     }
   }
 
-  sumOfTwo.sort();
-  sumOfTwo.unique();
-
   for (int index = 1; index <= limit; index++) {
-    if (std::find(sumOfTwo.begin(), sumOfTwo.end(), index) == sumOfTwo.end()) {
+    if (false == sumOfTwo.at(index)) {
       total += index;
     }
   }
