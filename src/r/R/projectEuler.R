@@ -122,23 +122,30 @@ enumerate <- function(...) {
 #' @export
 #'
 allDivisors <- function(element) {
+  limit <- floor(sqrt(element))
   index <- 2
   divisors <- list()
-  limit <- floor(element / 2)
-  increment <- if (0 == element %% 2) 1 else 2
-
   divisors[1] <- 1
-  divisors[element] <- element
 
-  while(index <= limit) {
-    if (0 == element %% index) {
-      divisors[index] <- index
+  if (1 != element) {
+    while(index <= limit) {
+      if (0 == element %% index) {
+        divisors[index] <- index
+
+        tmp <- floor(element / index)
+
+        if (tmp != index) {
+          divisors[tmp] <- tmp
+        }
+      }
+
+      index <- index + 1
     }
 
-    index <- index + increment
+    divisors[element] <- element
   }
 
-  return (unlist(Filter(Negate(is.null), divisors)))
+  return (sort(unlist(divisors)))
 }
 
 #'

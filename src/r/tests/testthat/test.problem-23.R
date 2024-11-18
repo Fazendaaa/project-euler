@@ -66,19 +66,19 @@ context('Testing problem 23')
 #  expect_equal(problem23(input), output)
 #})
 #
-#test_that('Wanted example', {
-#  output <- 4179871
-#  result <- problem23()
-#
-#  print('result')
-#  print(result)
-#
-#  expect_equal(result, output)
-#})
-
-test_that('Wanted CPP example', {
+test_that('Wanted example', {
   output <- 4179871
-  result <- problem23Cpp()
+  result <- problem23()
+
+  print('result')
+  print(result)
 
   expect_equal(result, output)
 })
+#
+#test_that('Wanted CPP example', {
+#  output <- 4179871
+#  result <- problem23Cpp()
+#
+#  expect_equal(result, output)
+#})
