@@ -30,12 +30,26 @@ test_that('Basic "getAllAbundant" per Wikipeda', {
   expect_equal(getAllAbundant(input), output)
 })
 
-test_that('Wanted example', {
+test_that('Wanted brute force example', {
+  output <- 4179871
+  result <- problem23_bruteForce()
+
+  expect_equal(result, output)
+})
+
+test_that('Wanted Non Optimized example', {
   output <- 4179871
   result <- problem23_nonOptimized()
 
   expect_equal(result, output)
 })
+
+#test_that('Wanted optimized example', {
+#  output <- 4179871
+#  result <- problem23()
+#
+#  expect_equal(result, output)
+#})
 
 test_that('Wanted CPP example', {
   output <- 4179871

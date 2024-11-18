@@ -43,56 +43,60 @@ sumOfTwoNumbers <- function(numbers) {
   return (unname(unlist(parallelizeData(numbers, toParallel()))))
 }
 
-problem23 <- function(limit) {
-  abundant <- c()
+problem23_bruteForce <- function() {
+  limit <- 28123
+  twoNumbers <- list()
+  abundant <- list()
+  outerIndex <- 1
+  innerIndex <- 1
   index <- 1
+  sumOfResults <- 0
+  total <- 0
 
   while (index < limit) {
     sum <- sumDivisors(index)
 
     if (sum > index) {
-      abundant <- c(abundant, index)
+      abundant <- append(abundant, index)
     }
 
     index <- index + 1
   }
 
-  howManyTimesItAppears <- length(abundant) + 1
-  sumOfTwoAbundant <- Reduce(function(acc, cur) acc + (howManyTimesItAppears * cur), abundant, 0)
-  sumOfTwoNumbers <- function(abundant) {
-    toParallel <- function(abundant) {
-      return (function(item) {
-        total <- length(abundant)
-        twoNumbers <- list()
-        innerIndex <- 1
+  abundant <- unlist(abundant)
+  total <- length(abundant)
 
-        while (innerIndex <= total) {
-          sumOfTwo <- item + abundant[outerIndex]
+  while (outerIndex <= total) {
+    innerIndex <- 1
 
-          if (sumOfTwo > limit) {
-            break
-          }
+    while (innerIndex <= total) {
+      sumOfTwo <- abundant[innerIndex] + abundant[outerIndex]
 
-          twoNumbers[sumOfTwo] <- sumOfTwo
+      if (sumOfTwo > limit) {
+        break
+      }
 
-          innerIndex <- innerIndex + 1
-        }
+      twoNumbers[sumOfTwo] <- sumOfTwo
 
-        return (twoNumbers)
-      })
+      innerIndex <- innerIndex + 1
     }
 
-    return (unname(unlist(parallelizeData(abundant, toParallel(abundant)))))
+    outerIndex <- outerIndex + 1
   }
 
-  twoNumbers <- sumOfTwoNumbers(abundant)
+  index <- 1
 
-  return (0)
+  while (index <= limit) {
+    if (is.null(unlist(twoNumbers[index]))) {
+      sumOfResults <- sumOfResults + index
+    }
+
+    index <- index + 1
+  }
+
+  return (sumOfResults)
 }
 
-#'
-#' @export
-#'
 problem23_nonOptimized <- function() {
   limit <- 28123
   abundant <- getAllAbundant(limit)
@@ -127,6 +131,78 @@ problem23_nonOptimized <- function() {
 
     index <- index + 1
   }
+
+  return (sumOfResults)
+}
+
+#'
+#' @export
+#'
+problem23 <- function() {
+  limit <- 28123
+  abundant <- getAllAbundant(limit)
+  total <- length(abundant)
+  index <- 0
+  outerIndex <- 1
+  twoNumbers <- list()
+  sumOfResults <- 0
+
+  while (outerIndex <= total) {
+    innerIndex <- 1
+
+    while (innerIndex <= total) {
+      sumOfTwo <- abundant[innerIndex] + abundant[outerIndex]
+
+      if (sumOfTwo > limit) {
+        break
+      }
+
+      twoNumbers[sumOfTwo] <- sumOfTwo
+
+      innerIndex <- innerIndex + 1
+    }
+
+    outerIndex <- outerIndex + 1
+  }
+
+  while (index <= limit) {
+    if (is.null(unlist(twoNumbers[index]))) {
+      sumOfResults <- sumOfResults + index
+    }
+
+    index <- index + 1
+  }
+
+
+  howManyTimesItAppears <- length(abundant) + 1
+  sumOfTwoAbundant <- Reduce(function(acc, cur) acc + (howManyTimesItAppears * cur), abundant, 0)
+  sumOfTwoNumbers <- function(abundant) {
+    toParallel <- function(abundant) {
+      return (function(item) {
+        total <- length(abundant)
+        twoNumbers <- list()
+        innerIndex <- 1
+
+        while (innerIndex <= total) {
+          sumOfTwo <- item + abundant[outerIndex]
+
+          if (sumOfTwo > limit) {
+            break
+          }
+
+          twoNumbers[sumOfTwo] <- sumOfTwo
+
+          innerIndex <- innerIndex + 1
+        }
+
+        return (twoNumbers)
+      })
+    }
+
+    return (unname(unlist(parallelizeData(abundant, toParallel(abundant)))))
+  }
+
+  twoNumbers <- sumOfTwoNumbers(abundant)
 
   return (sumOfResults)
 }
