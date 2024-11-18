@@ -43,7 +43,7 @@ sumOfTwoNumbers <- function(numbers) {
   return (unname(unlist(parallelizeData(numbers, toParallel()))))
 }
 
-problem23_nonOptimized <- function(limit) {
+problem23 <- function(limit) {
   abundant <- c()
   index <- 1
 
@@ -59,6 +59,33 @@ problem23_nonOptimized <- function(limit) {
 
   howManyTimesItAppears <- length(abundant) + 1
   sumOfTwoAbundant <- Reduce(function(acc, cur) acc + (howManyTimesItAppears * cur), abundant, 0)
+  sumOfTwoNumbers <- function(abundant) {
+    toParallel <- function(abundant) {
+      return (function(item) {
+        total <- length(abundant)
+        twoNumbers <- list()
+        innerIndex <- 1
+
+        while (innerIndex <= total) {
+          sumOfTwo <- item + abundant[outerIndex]
+
+          if (sumOfTwo > limit) {
+            break
+          }
+
+          twoNumbers[sumOfTwo] <- sumOfTwo
+
+          innerIndex <- innerIndex + 1
+        }
+
+        return (twoNumbers)
+      })
+    }
+
+    return (unname(unlist(parallelizeData(abundant, toParallel(abundant)))))
+  }
+
+  twoNumbers <- sumOfTwoNumbers(abundant)
 
   return (0)
 }
@@ -66,7 +93,7 @@ problem23_nonOptimized <- function(limit) {
 #'
 #' @export
 #'
-problem23 <- function() {
+problem23_nonOptimized <- function() {
   limit <- 28123
   abundant <- getAllAbundant(limit)
   total <- length(abundant)
@@ -75,13 +102,7 @@ problem23 <- function() {
   twoNumbers <- list()
   sumOfResults <- 0
 
-  print('abundant')
-
   while (outerIndex <= total) {
-    #sequence <- c()
-    #sequence <- c(current + current, Map(function(item) current + item, tail(abundant, n = -index)))
-    #twoNumbers <- c(twoNumbers, Filter(function(item) item < limit, sequence))
-
     innerIndex <- 1
 
     while (innerIndex <= total) {
@@ -99,8 +120,6 @@ problem23 <- function() {
     outerIndex <- outerIndex + 1
   }
 
-  print('twoNumbers')
-
   while (index <= limit) {
     if (is.null(unlist(twoNumbers[index]))) {
       sumOfResults <- sumOfResults + index
@@ -110,5 +129,4 @@ problem23 <- function() {
   }
 
   return (sumOfResults)
-  #return (parallelReduce(lessThanLimit, function(acc, cur) acc + cur, 0))
 }
