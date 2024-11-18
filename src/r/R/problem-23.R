@@ -105,6 +105,8 @@ problem23 <- function() {
     if (is.null(unlist(twoNumbers[index]))) {
       sumOfResults <- sumOfResults + index
     }
+
+    index <- index + 1
   }
 
   return (sumOfResults)
