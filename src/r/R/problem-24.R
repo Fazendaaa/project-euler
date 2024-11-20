@@ -12,7 +12,29 @@
 #
 #	                						Answer: 2783915460
 
+injection <- function(first, remaining) {
+  combinations <- list()
+
+  for (i in remaining)  {
+    combinations <- list(combinations, list(first, i), list(i, remaining))
+  }
+
+  return (combinations)
+}
+
+permutations <- function(interval) {
+  if (1 == length(interval)) {
+    return (interval)
+  }
+
+  return (c(injection(interval[1], permutations(interval[-1]))))
+}
+
 #'
 #' @export
 #'
-problem24 <- function() combn(0:9, 10)[11e6]
+problem24 <- function(interval) {
+  permutations <- permutations(interval)
+
+  return (unlist(Map(function(x) paste(as.character(x), collapse=''), permutations)))
+}
