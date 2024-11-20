@@ -12,23 +12,57 @@
 #
 #	                						Answer: 2783915460
 
-injection <- function(first, remaining) {
-  combinations <- list()
-
-  for (i in remaining)  {
-    combinations <- list(combinations, list(first, i), list(i, remaining))
-  }
-
-  return (combinations)
-}
-
 permutations <- function(interval) {
   if (1 == length(interval)) {
-    return (interval)
+    return (matrix(interval))
   }
 
-  return (c(injection(interval[1], permutations(interval[-1]))))
+  pivot <- interval[1]
+  result <- permutations(interval[-1])
+  newMatrix <- matrix(nrow = (nrow(result) - 1) + 2, ncol = ncol(result) + 1)
+  totalLines <- nrow(newMatrix)
+  totalColumns <- ncol(newMatrix)
+  middlePoint <- ceiling(totalLines / 2)
+  line <- 0
+  divisionPoint <- 0
+  firstPart <- c()
+  secondPart <- c()
+
+  print('0/2')
+  print(middlePoint)
+
+  while (line < middlePoint) {
+    line <- line + 1
+    divisionPoint <- line - 1
+    print('divisionPoint')
+    print(divisionPoint)
+    firstPart <- if(0 < divisionPoint) result[ line, 1 : divisionPoint ] else c()
+    print('firstPart')
+    print(firstPart)
+    secondPart <- result[ line, divisionPoint + 1 : ncol(result) ]
+    print('secondPart')
+    print(secondPart)
+    newMatrix[line, ] <- c(firstPart, pivot, secondPart)
+  }
+
+  print('1/2')
+  print(newMatrix)
+
+  while (line < totalLines) {
+    divisionPoint <- totalColumns - line
+    firstPart <- result[ line, 1 : divisionPoint ]
+    secondPart <- if(1 < divisionPoint) result[ line, divisionPoint : ncol(result) ] else c()
+    line <- line + 1
+    newMatrix[line, ] <- c(firstPart, pivot, secondPart)
+  }
+
+  print('2/2')
+  print(newMatrix)
+
+  return (newMatrix)
 }
+
+permutations(0:2)
 
 #'
 #' @export
