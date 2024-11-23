@@ -39,9 +39,13 @@ permutations <- function(interval) {
     firstPart <- if(0 < divisionPoint) result[ line, 1 : divisionPoint ] else c()
     print('firstPart')
     print(firstPart)
+    print('result[ line, ]')
+    print(result[ line, ])
     secondPart <- result[ line, divisionPoint + 1 : ncol(result) ]
     print('secondPart')
     print(secondPart)
+    print('c(firstPart, pivot, secondPart)')
+    print(c(firstPart, pivot, secondPart))
     newMatrix[line, ] <- c(firstPart, pivot, secondPart)
   }
 
@@ -62,13 +66,22 @@ permutations <- function(interval) {
   return (newMatrix)
 }
 
-permutations(0:2)
-
+#'
+#' @importFrom combinat permn
 #'
 #' @export
 #'
 problem24 <- function(interval) {
-  permutations <- permutations(interval)
+  #permutations <- permutations(interval)
+  #return (unlist(Map(function(x) paste(as.character(x), collapse=''), permutations)))
+  permutations <- permn(interval)
+  all <- vector(length = length(permutations))
+  index <- 1
 
-  return (unlist(Map(function(x) paste(as.character(x), collapse=''), permutations)))
+  for (option in permutations) {
+    all[index] <- as.integer(paste(as.character(option), collapse=''))
+    index <- index + 1
+  }
+
+  return (sort(all))
 }
