@@ -805,6 +805,18 @@
       ],
       "Hash": "de949855009e2d4d0e52a844e30617ae"
     },
+    "gtools": {
+      "Package": "gtools",
+      "Version": "3.9.5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "methods",
+        "stats",
+        "utils"
+      ],
+      "Hash": "588d091c35389f1f4a9d533c8d709b35"
+    },
     "highr": {
       "Package": "highr",
       "Version": "0.11",

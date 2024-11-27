@@ -12,76 +12,18 @@
 #
 #	                						Answer: 2783915460
 
-permutations <- function(interval) {
-  if (1 == length(interval)) {
-    return (matrix(interval))
-  }
-
-  pivot <- interval[1]
-  result <- permutations(interval[-1])
-  newMatrix <- matrix(nrow = (nrow(result) - 1) + 2, ncol = ncol(result) + 1)
-  totalLines <- nrow(newMatrix)
-  totalColumns <- ncol(newMatrix)
-  middlePoint <- ceiling(totalLines / 2)
-  line <- 0
-  divisionPoint <- 0
-  firstPart <- c()
-  secondPart <- c()
-
-  print('0/2')
-  print(middlePoint)
-
-  while (line < middlePoint) {
-    line <- line + 1
-    divisionPoint <- line - 1
-    print('divisionPoint')
-    print(divisionPoint)
-    firstPart <- if(0 < divisionPoint) result[ line, 1 : divisionPoint ] else c()
-    print('firstPart')
-    print(firstPart)
-    print('result[ line, ]')
-    print(result[ line, ])
-    secondPart <- result[ line, divisionPoint + 1 : ncol(result) ]
-    print('secondPart')
-    print(secondPart)
-    print('c(firstPart, pivot, secondPart)')
-    print(c(firstPart, pivot, secondPart))
-    newMatrix[line, ] <- c(firstPart, pivot, secondPart)
-  }
-
-  print('1/2')
-  print(newMatrix)
-
-  while (line < totalLines) {
-    divisionPoint <- totalColumns - line
-    firstPart <- result[ line, 1 : divisionPoint ]
-    secondPart <- if(1 < divisionPoint) result[ line, divisionPoint : ncol(result) ] else c()
-    line <- line + 1
-    newMatrix[line, ] <- c(firstPart, pivot, secondPart)
-  }
-
-  print('2/2')
-  print(newMatrix)
-
-  return (newMatrix)
+#'
+#' @importFrom gtools permutations
+#'
+generateLexicographicPermutations <- function(interval) {
+  return (permutations(n = length(interval), r = length(interval), v = interval))
 }
 
 #'
-#' @importFrom combinat permn
-#'
 #' @export
 #'
-problem24 <- function(interval) {
-  #permutations <- permutations(interval)
-  #return (unlist(Map(function(x) paste(as.character(x), collapse=''), permutations)))
-  permutations <- permn(interval)
-  all <- vector(length = length(permutations))
-  index <- 1
+problem24 <- function(interval, index) {
+  result <- generateLexicographicPermutations(interval)
 
-  for (option in permutations) {
-    all[index] <- as.integer(paste(as.character(option), collapse=''))
-    index <- index + 1
-  }
-
-  return (sort(all))
+  return (paste(result[index, ], collapse = ""))
 }
