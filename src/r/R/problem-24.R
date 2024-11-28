@@ -11,6 +11,11 @@
 #   5, 6, 7, 8 and 9?
 #
 #	                						Answer: 2783915460
+#
+#   References:
+#
+#     * https://web.archive.org/web/20170617093226/http://www.mathblog.dk/project-euler-24-millionth-lexicographic-permutation/
+#
 
 #'
 #' @importFrom gtools permutations
@@ -19,11 +24,52 @@ generateLexicographicPermutations <- function(interval) {
   return (permutations(n = length(interval), r = length(interval), v = interval))
 }
 
+problem24Pkg <- function(interval, index) {
+  result <- generateLexicographicPermutations(interval)
+
+  return (paste(result[index, ], collapse = ""))
+}
+
+factor <- function(number) {
+  product <- 1
+  index <- 1
+
+  if (number < 0) {
+    return (0);
+  }
+
+  while (index <= number) {
+    product <- product * index
+    index <- index + 1
+  }
+
+  return (product)
+}
+
 #'
 #' @export
 #'
 problem24 <- function(interval, index) {
-  result <- generateLexicographicPermutations(interval)
+  size <- length(interval)
+  permutationNumber <- ''
+  remain <- index - 1
+  numbers <- seq(0, size - 1)
 
-  return (paste(result[index, ], collapse = ""))
+  for (i in size:1) {
+    j <- remain %/% factor(i - 1)
+    remain <- remain %% factor(i - 1)
+
+    permutationNumber <- paste0(permutationNumber, numbers[j + 1])
+    numbers <- numbers[-(j + 1)]
+
+    if (0 == remain) {
+      break
+    }
+  }
+
+  for (i in 0:length(numbers) - 1) {
+    permutationNumber <- paste0(permutationNumber, numbers[i + 1])
+  }
+
+  return (permutationNumber)
 }
