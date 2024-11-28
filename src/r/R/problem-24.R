@@ -54,21 +54,30 @@ problem24 <- function(interval, index) {
   permutationNumber <- ''
   remain <- index - 1
   numbers <- seq(0, size - 1)
+  sizeNumbers <- length(numbers)
+  outerIndex <- size
 
-  for (i in size:1) {
-    j <- remain %/% factor(i - 1)
-    remain <- remain %% factor(i - 1)
+  while (outerIndex >= 1) {
+    innerIndex <- remain %/% factor(outerIndex - 1)
+    remain <- remain %% factor(outerIndex - 1)
 
-    permutationNumber <- paste0(permutationNumber, numbers[j + 1])
-    numbers <- numbers[-(j + 1)]
+    permutationNumber <- paste0(permutationNumber, numbers[innerIndex + 1])
+    numbers <- numbers[-(innerIndex + 1)]
 
     if (0 == remain) {
       break
     }
+
+    outerIndex <- outerIndex - 1
   }
 
-  for (i in 0:length(numbers) - 1) {
-    permutationNumber <- paste0(permutationNumber, numbers[i + 1])
+  outerIndex <- 0
+  sizeNumbers <- length(numbers)
+  limit <- sizeNumbers - 1
+
+  while (outerIndex <= limit) {
+    permutationNumber <- paste0(permutationNumber, numbers[outerIndex + 1])
+    outerIndex <- outerIndex + 1
   }
 
   return (permutationNumber)
