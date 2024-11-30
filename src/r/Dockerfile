@@ -3,6 +3,7 @@ LABEL author="fazenda"
 LABEL project="project-euler-r"
 
 RUN [ "apk", "add", "--no-cache", \
+  "cmake", \
   "curl-dev", \
   "fontconfig-dev", \
   "fribidi-dev", \
@@ -40,7 +41,6 @@ COPY inst/ inst/
 
 WORKDIR /usr/src/inst/include/BigInt/
 
-RUN [ "apk", "add", "cmake" ]
 RUN [ "make", "test" ]
 
 WORKDIR /usr/src/
