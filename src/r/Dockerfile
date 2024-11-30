@@ -35,6 +35,16 @@ COPY .Rbuildignore .
 COPY .lintr .
 COPY NAMESPACE .
 COPY DESCRIPTION .
+
+COPY inst/ inst/
+
+WORKDIR /usr/src/inst/include/BigInt/
+
+RUN [ "apk", "add", "cmake" ]
+RUN [ "make", "test" ]
+
+WORKDIR /usr/src/
+
 COPY docs/ docs/
 COPY man/ man/
 COPY tests/ tests/

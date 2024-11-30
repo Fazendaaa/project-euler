@@ -1,0 +1,3 @@
+[submodule "src/r/inst/include/BigInt"]
+	path = src/r/inst/include/BigInt
+	url = https://github.com/faheel/BigInt/

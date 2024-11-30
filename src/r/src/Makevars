@@ -5,6 +5,9 @@ CXX=/usr/bin/g++
 FC=/usr/bin/gfortran
 F77=/usr/bin/gfortran
 
+BIG_INT = -I'../inst/include/BigInt/include/' -L'../inst/include/BigInt/bin/'
 PKG_LIBS = -fopenmp -lgomp
-PKG_CFLAGS= -O3 -Wall -pipe -pedantic -std=gnu99 -fopenmp
+PKG_CFLAGS= $(BIG_INT) -O3 -Wall -pipe -pedantic -std=gnu99 -fopenmp
+PKG_CPPFLAGS= $(BIG_INT) -O3 -Wall -pipe -pedantic -fopenmp
 CFLAGS= -O3 -Wall -pipe -pedantic -std=gnu99 -fopenmp
+CPPFLAGS= -O3 -Wall -pipe -pedantic -fopenmp

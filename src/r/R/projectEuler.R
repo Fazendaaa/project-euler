@@ -264,3 +264,7 @@ parallelReduce <- function(items, reducer, init) {
 
   return (Reduce(reducer, parallelizeData(items, toParallel), init))
 }
+
+fibonacci <- memoise::memoise(Fibonacci__)
+
+digits <- function(number) length(unlist(strsplit(number, '')))

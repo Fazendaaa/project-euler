@@ -26,45 +26,13 @@
 #
 #                            Answer: 4782
 
-fibonacci__ <- function(n) {
-  if (1 == n) {
-    return(1)
-  }
-  if (2 == n) {
-    return(1)
-  }
-
-  return(fibonacci(n - 1) + fibonacci(n - 2))
-}
-
-fibonacci <- memoise::memoise(fibonacci__)
-
-digits <- function(number) length(unlist(strsplit(as.character(number), '')))
-
-problem25memoise <- function(limit) {
-  index <- 3
-
-  while (digits(fibonacci(index)) < limit) {
-    index <- index + 1
-  }
-
-  return (index)
-}
-
 #'
 #' @export
 #'
-problem25 <- function(limit) {
+problem25R <- function(limit) {
   index <- 3
-  n_1 <- 1
-  n_2 <- 1
-  n <- 2
 
-  while (digits(n) < limit) {
-    n_2 <- n_1
-    n_1 <- n
-    n <- n_1 + n_2
-
+  while (digits(fibonacci(index)) < limit) {
     index <- index + 1
   }
 

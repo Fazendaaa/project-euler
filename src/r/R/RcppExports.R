@@ -35,6 +35,14 @@ problem23Cpp <- function() {
     .Call('_projectEuler_problem23Cpp', PACKAGE = 'projectEuler')
 }
 
+Fibonacci__ <- function(limit) {
+    .Call('_projectEuler_Fibonacci__', PACKAGE = 'projectEuler', limit)
+}
+
+problem25CPP <- function(limit) {
+    .Call('_projectEuler_problem25CPP', PACKAGE = 'projectEuler', limit)
+}
+
 #' Max Palindrome
 #'
 #' @description
@@ -102,7 +110,7 @@ greatestProduct <- function(numbers, digits) {
 #'
 #' @param limit Calculation limit
 #'
-#' @return A list containing all prime numbers 
+#' @return A list containing all prime numbers
 #'
 #' @examples
 #' erastosthenesSieve(100)

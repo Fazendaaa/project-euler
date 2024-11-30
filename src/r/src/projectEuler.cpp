@@ -18,7 +18,7 @@ using namespace Rcpp;
 //'
 //' @param limit Calculation limit
 //'
-//' @return A list containing all prime numbers 
+//' @return A list containing all prime numbers
 //'
 //' @examples
 //' erastosthenesSieve(100)
@@ -27,7 +27,7 @@ using namespace Rcpp;
 //'
 // [[Rcpp::export]]
 NumericVector erastosthenesSieve (const double limit) {
-    const int sieveLimit = std::ceil(sqrt(limit));
+    const unsigned int sieveLimit = std::ceil(sqrt(limit));
     NumericVector multiples, primes;
 
     for (unsigned int i = 2; i < sieveLimit; i += 1) {

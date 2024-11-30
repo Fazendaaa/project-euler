@@ -26,8 +26,8 @@ using namespace Rcpp;
 //
 static bool isPalindrome (const int value) {
     std::string converted = std::to_string(value);
-    const int limit = converted.length() - 1;
-    const int middle = std::floor(limit / 2);
+    const unsigned int limit = converted.length() - 1;
+    const unsigned int middle = std::floor(limit / 2);
 
     for (unsigned int first = 0; first <= middle; first += 1) {
         const int last = limit - first;

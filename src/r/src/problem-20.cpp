@@ -1,5 +1,5 @@
 #include <Rcpp.h>
-#include "BigInt.hpp"
+#include <BigInt.hpp>
 
 using namespace Rcpp;
 
