@@ -10,7 +10,6 @@
 #
 #								Answer: 4613732
 #' @useDynLib projectEuler
-#' @importFrom Rcpp sourceCpp
 NULL
 
 #' Sum of even Fibonacci numbers

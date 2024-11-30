@@ -19,6 +19,9 @@
 # of two abundant numbers.
 #
 #                             Answer: 4179871
+#
+#' @useDynLib projectEuler
+NULL
 
 sumDivisors <- function(number) sum(head(allDivisors(number), n = -1))
 

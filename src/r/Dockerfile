@@ -41,7 +41,9 @@ COPY inst/ inst/
 
 WORKDIR /usr/src/inst/include/BigInt/
 
-RUN [ "make", "test" ]
+RUN [ "echo", "rcpp", "|", "make", "release" ]
+RUN [ "mkdir", "lib" ]
+RUN [ "g++", "-shared", "-fpic", "-x", "c++", "release/BigInt.hpp", "-o", "lib/BigInt.so" ]
 
 WORKDIR /usr/src/
 
@@ -52,4 +54,4 @@ COPY src/ src/
 COPY R/ R/
 
 RUN [ "R", "-e", "devtools::document()" ]
-RUN [ "R", "-e", "renv::install('.')" ]
+#RUN [ "R", "-e", "renv::install('.')" ]

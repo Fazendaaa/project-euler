@@ -8,7 +8,6 @@
 #                             Answer: 906609
 #
 #' @useDynLib projectEuler
-#' @importFrom Rcpp sourceCpp
 NULL
 
 #' Largest Palindrome Product

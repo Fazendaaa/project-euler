@@ -29,6 +29,8 @@
 #
 #                          Answer: 23514624000
 #
+#' @useDynLib projectEuler
+NULL
 
 #' Largest product in a series
 #'

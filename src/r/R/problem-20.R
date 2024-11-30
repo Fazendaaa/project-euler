@@ -8,6 +8,9 @@
 #    Find the sum of the digits in the number 100!
 #
 #                            Answer: 648
+#
+#' @useDynLib projectEuler
+NULL
 
 problem20 <- function(element) {
   stringFactorial <- largestFactorial(element)

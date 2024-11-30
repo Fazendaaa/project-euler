@@ -25,6 +25,9 @@
 #   1000 digits?
 #
 #                            Answer: 4782
+#
+#' @useDynLib projectEuler
+NULL
 
 #'
 #' @export

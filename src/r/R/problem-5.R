@@ -9,7 +9,6 @@
 #                          Answer: 232792560
 #
 #' @useDynLib projectEuler
-#' @importFrom Rcpp sourceCpp
 NULL
 
 #' Smallest Multiple
