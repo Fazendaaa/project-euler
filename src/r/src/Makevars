@@ -6,11 +6,11 @@ FC=/usr/bin/gfortran
 F77=/usr/bin/gfortran
 
 BIG_INT_INCLUDE = -I'../inst/include/BigInt/include/'
-BIG_INT_LIB = -L'../inst/include/BigInt/lib/' -Wl,-rpath,'../inst/include/BigInt/lib/'
+BIG_INT_LIB = -L'../inst/include/BigInt/lib/BigInt.so'
 PKG_LIBS = $(BIG_INT_LIB) -fopenmp -lgomp
 
-CFLAGS= -O3 -Wall -pipe -pedantic -std=gnu99 -fopenmp
-CPPFLAGS= -O3 -Wall -pipe -pedantic -fopenmp
+CFLAGS = -O3 -Wall -pipe -pedantic -std=gnu99 -fopenmp
+CPPFLAGS = -O3 -Wall -pipe -pedantic -fopenmp
 
-PKG_CFLAGS= $(CFLAGS)
-PKG_CPPFLAGS= $(CPPFLAGS) $(BIG_INT_INCLUDE)
+#PKG_CFLAGS =
+PKG_CPPFLAGS = $(BIG_INT_INCLUDE)

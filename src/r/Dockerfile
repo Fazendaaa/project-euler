@@ -41,7 +41,7 @@ COPY inst/ inst/
 
 WORKDIR /usr/src/inst/include/BigInt/
 
-RUN [ "echo", "rcpp", "|", "make", "release" ]
+RUN sh -c "echo rcpp | make release"
 RUN [ "mkdir", "lib" ]
 RUN [ "g++", "-shared", "-fpic", "-x", "c++", "release/BigInt.hpp", "-o", "lib/BigInt.so" ]
 
