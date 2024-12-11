@@ -11,6 +11,7 @@ RUN [ "apk", "add", "--no-cache", \
   "font-liberation", \
   "g++", \
   "gcc", \
+  "gmp-dev", \
   "gfortran", \
   "harfbuzz-dev", \
   "jpeg-dev", \

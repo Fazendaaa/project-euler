@@ -764,6 +764,17 @@
       ],
       "Hash": "5899f1eaa825580172bb56c08266f37c"
     },
+    "gmp": {
+      "Package": "gmp",
+      "Version": "0.7-5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "methods"
+      ],
+      "Hash": "47b774de7ee40f6134cfdeab3fc85df9"
+    },
     "goodpractice": {
       "Package": "goodpractice",
       "Version": "1.0.5",

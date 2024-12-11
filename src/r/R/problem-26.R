@@ -26,11 +26,15 @@
 #     *   http://stackoverflow.com/a/8927009/7092954
 #     *   https://zach.se/project-euler-solutions/26/
 
-recurringCycle <- function(number, digits) {
+
+#'
+#' @importFrom gmp pow.bigz
+#'
+recurringCycle <- function(digits) {
   index <- 1
 
   while (index < digits) {
-    if (1 == 10**index %% digits) {
+    if (1 == pow.bigz(10, index) %% digits) {
       return (index)
     }
 
@@ -49,7 +53,7 @@ problem26 <- function(limit) {
   index <- 2
 
   while (index <= limit) {
-    match <- recurringCycle(1, index)
+    match <- recurringCycle(index)
 
     if (match > maxMatch) {
       maxMatch <- match
