@@ -11,7 +11,7 @@
 #        1/7	    = 	0.(142857)
 #        1/8	    = 	0.125
 #        1/9	    = 	0.(1)
-#        1/10	= 	0.1
+#        1/10	    = 	0.1
 #
 #   Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be
 #   seen that 1/7 has a 6-digit recurring cycle.
@@ -26,7 +26,38 @@
 #     *   http://stackoverflow.com/a/8927009/7092954
 #     *   https://zach.se/project-euler-solutions/26/
 
+recurringCycle <- function(number, digits) {
+  index <- 1
+
+  while (index < digits) {
+    if (1 == 10**index %% digits) {
+      return (index)
+    }
+
+    index <- index + 1
+  }
+
+
+  return (0)
+}
+
 #'
 #' @export
 #'
-problem26 <- function() {}
+problem26 <- function(limit) {
+  maxMatch <- 0
+  index <- 2
+
+  while (index <= limit) {
+    match <- recurringCycle(1, index)
+
+    if (match > maxMatch) {
+      maxMatch <- match
+      maxIndex <- index
+    }
+
+    index <- index + 1
+  }
+
+  return (maxIndex)
+}

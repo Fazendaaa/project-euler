@@ -56,7 +56,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // problem25CPP
-const int problem25CPP(long unsigned int limit);
+const String problem25CPP(long unsigned int limit);
 RcppExport SEXP _projectEuler_problem25CPP(SEXP limitSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;

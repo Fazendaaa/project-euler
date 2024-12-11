@@ -53,5 +53,6 @@ COPY tests/ tests/
 COPY src/ src/
 COPY R/ R/
 
-RUN [ "R", "-e", "devtools::document()" ]
-#RUN [ "R", "-e", "renv::install('.')" ]
+# Note(Fazendaaa): until CPP's compiling issues are solved, this remains commented
+# RUN [ "R", "-e", "devtools::document()" ]
+# RUN [ "R", "-e", "renv::install('.')" ]
