@@ -26,21 +26,19 @@
 #     *   http://stackoverflow.com/a/8927009/7092954
 #     *   https://zach.se/project-euler-solutions/26/
 
-
 #'
 #' @importFrom gmp pow.bigz
 #'
 recurringCycle <- function(digits) {
-  index <- 1
+  counter <- 1
 
-  while (index < digits) {
-    if (1 == pow.bigz(10, index) %% digits) {
-      return (index)
+  while (counter < digits) {
+    if (1 == pow.bigz(10, counter) %% digits) {
+      return (counter)
     }
 
-    index <- index + 1
+    counter <- counter + 1
   }
-
 
   return (0)
 }
