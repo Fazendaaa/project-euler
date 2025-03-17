@@ -25,9 +25,11 @@
 """
 
 import sys
-sys.path.append('../')
+
+sys.path.append("../")
 # pylint: disable=wrong-import-position,import-error
-import project_euler as pe
+import python.project_euler.project_euler as pe
+
 
 def highly_divisible_triangular(lower_bound):
     """Returns it the triangular number that has at least over lower bound divisors"""
@@ -36,8 +38,9 @@ def highly_divisible_triangular(lower_bound):
 
     while len(pe.all_divisors(triangular_numbers[-1])) < lower_bound:
         add += 1
-        triangular_numbers.append(triangular_numbers[-1]+add)
+        triangular_numbers.append(triangular_numbers[-1] + add)
 
     return triangular_numbers[-1]
+
 
 print(highly_divisible_triangular(500))

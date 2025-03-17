@@ -7,14 +7,18 @@
 
                             Answer: 6857
 """
+
 import sys
-sys.path.append('../')
+
+sys.path.append("../")
 # pylint: disable=wrong-import-position,import-error
-import project_euler as pe
+import python.project_euler.project_euler as pe
+
 
 # pylint: disable=redefined-builtin
 def largest_prime(max):
     """Given max this function returns the largest prime factor"""
     return pe.prime_factors(max)[-1]
+
 
 print(largest_prime(600851475143))

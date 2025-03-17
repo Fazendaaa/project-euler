@@ -28,12 +28,27 @@
                                 Answer: -59231
 """
 
+import math
 from functools import reduce
 from operator import mul
-import sys
-sys.path.append('../')
-# pylint: disable=wrong-import-position,import-error
-from project_euler import all_divisors
+
+
+def all_divisors(n):
+    divisors = []
+
+    if 0 > n:
+        divisors.append(0)
+    elif 1 == n:
+        divisors.append(1)
+    else:
+        for i in range(1, int(math.sqrt(n)) + 1):
+            if 0 == n % i:
+                divisors.append(i)
+                if int(n / i) != i:
+                    divisors.append(int(n / i))
+
+    return divisors
+
 
 # pylint: disable=invalid-name
 def quadratic_primes(a, b):
@@ -46,11 +61,13 @@ def quadratic_primes(a, b):
         for j in range(-mod_b, mod_b):
             n = 0
             # pylint: disable=misplaced-comparison-constant
-            while 2 == len(all_divisors(n**2 + i*n + j)):
+            while 2 == len(all_divisors(n**2 + i * n + j)):
                 n += 1
             if n > max_coef:
                 max_coef, max_a, max_b = n, i, j
 
+    print(max_coef)
     return max_a, max_b
+
 
 print(reduce(mul, quadratic_primes(1000, 1000)))

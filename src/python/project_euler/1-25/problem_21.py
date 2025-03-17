@@ -18,9 +18,11 @@
 """
 
 import sys
-sys.path.append('../')
+
+sys.path.append("../")
 # pylint: disable=wrong-import-position,import-error
-import project_euler as pe
+import python.project_euler.project_euler as pe
+
 
 def amicable_numbers(limit):
     """Calculates all Amicable numbers under given limit"""
@@ -29,11 +31,12 @@ def amicable_numbers(limit):
     #   The first pair of Amicable Numbers are 220 and 284
     # pylint: disable=misplaced-comparison-constant
     if 220 <= limit:
-        for i in range(220, limit+1):
+        for i in range(220, limit + 1):
             other = sum(sorted(pe.all_divisors(i))[:-1])
             if i != other and sum(sorted(pe.all_divisors(other))[:-1]) == i:
                 amicable.append(i)
 
     return amicable
+
 
 print(sum(amicable_numbers(10000)))

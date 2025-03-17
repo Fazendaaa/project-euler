@@ -121,31 +121,38 @@ enumerate <- function(...) {
 #'
 #' @export
 #'
-allDivisors <- function(element) {
-  limit <- floor(sqrt(element))
+allDivisors <- function(element, toBeSorted = TRUE) {
+  limit <- floor(sqrt(element)) + 1
   index <- 2
   divisors <- list()
   divisors[1] <- 1
 
-  if (1 != element) {
-    while(index <= limit) {
-      if (0 == element %% index) {
-        divisors[index] <- index
-
-        tmp <- floor(element / index)
-
-        if (tmp != index) {
-          divisors[tmp] <- tmp
-        }
-      }
-
-      index <- index + 1
-    }
-
-    divisors[element] <- element
+  if (0 > element) {
+    return (c(0))
   }
 
-  return (sort(unlist(divisors)))
+  if (1 == element) {
+    return (divisors)
+  }
+
+  while(index <= limit) {
+    if (0 == element %% index) {
+      divisors[index] <- index
+
+      tmp <- floor(element / index)
+
+      if (tmp != index) {
+        divisors[tmp] <- tmp
+      }
+    }
+
+    index <- index + 1
+  }
+
+  divisors[element] <- element
+  result <- unlist(divisors)
+
+  return (if(toBeSorted) sort(result) else result)
 }
 
 #'

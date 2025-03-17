@@ -23,22 +23,24 @@
 """
 
 import sys
-sys.path.append('../')
+
+sys.path.append("../")
 # pylint: disable=wrong-import-position,import-error
-import project_euler as pe
+import python.project_euler.project_euler as pe
+
 
 def non_abundant_number(limit):
     """Calculates all non abundant numbers"""
     abundant = []
     result = []
 
-    for i in range(1, limit+1):
+    for i in range(1, limit + 1):
         if i < sum(sorted(pe.all_divisors(i))[:-1]):
             abundant.append(i)
 
     for i in abundant:
         for j in abundant:
-            add = i+j
+            add = i + j
             if add > limit:
                 break
             result.append(add)
@@ -49,6 +51,7 @@ def non_abundant_number(limit):
     #   without set:
     #       python problem_23.py  1434.43s user 4.71s system 99% cpu 24:04.28 total
     result = set(result)
-    return [x for x in range(1, limit+1) if x not in result]
+    return [x for x in range(1, limit + 1) if x not in result]
+
 
 print(sum(non_abundant_number(28123)))

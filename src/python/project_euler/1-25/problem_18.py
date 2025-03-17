@@ -45,9 +45,11 @@
 
 import copy
 import sys
-sys.path.append('../')
+
+sys.path.append("../")
 # pylint: disable=wrong-import-position,import-error
-import project_euler as pe
+import python.project_euler.project_euler as pe
+
 
 def maximum_path_sum(tri):
     """Iterate over triangle seeking for the longest path"""
@@ -60,10 +62,13 @@ def maximum_path_sum(tri):
         maximum = []
         for cons in pe.each_cons(path[i], 2):
             maximum.append(max(cons))
-        path[i-1] = [greater+number for greater, number in zip(maximum, path[i-1])]
+        path[i - 1] = [
+            greater + number for greater, number in zip(maximum, path[i - 1])
+        ]
 
     return path[0][0]
 
-with open('./input/problem_18.txt', 'r') as file:
+
+with open("./input/problem_18.txt", "r") as file:
     TRIANGLE = [list(map(int, line.split())) for line in file]
     print(maximum_path_sum(TRIANGLE))

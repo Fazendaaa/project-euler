@@ -1,37 +1,24 @@
-FROM rhub/r-minimal:4.5.0
+FROM r-base:4.4.3
 LABEL author="fazenda"
 LABEL project="project-euler-r"
 
-RUN [ "apk", "add", "--no-cache", \
-  "cmake", \
-  "curl-dev", \
-  "fontconfig-dev", \
-  "fribidi-dev", \
-  "freetype-dev", \
-  "font-liberation", \
-  "g++", \
-  "gcc", \
-  "gmp-dev", \
-  "gfortran", \
-  "harfbuzz-dev", \
-  "jpeg-dev", \
-  "musl-dev", \
-  "libpng-dev", \
-  "libgit2-dev", \
-  "linux-headers", \
-  "libxml2-dev", \
-  "openssl-dev", \
-  "pandoc-cli", \
-  "tiff-dev" \
-  ]
-
 WORKDIR /usr/src/
+
+RUN [ "apt", "update" ]
+RUN [ "apt", "install", "--yes", \
+  "libcurl4-openssl-dev", \
+  "libgmp3-dev", \
+  "libxml2-dev" \
+]
 
 RUN [ "R", "-e", "install.packages(c('renv', 'pak'), repos = 'https://cloud.r-project.org/')" ]
 
+ENV RENV_CONFIG_PAK_ENABLED=TRUE
+ENV RENV_CONFIG_PPM_URL='https://cloud.r-project.org/'
+
 COPY renv.lock .
 
-RUN [ "R", "-e", "options(renv.config.pak.enabled = TRUE); renv::restore(prompt = FALSE)" ]
+RUN [ "R", "-e", "renv::restore(prompt = FALSE)" ]
 
 COPY .Rbuildignore .
 COPY .lintr .

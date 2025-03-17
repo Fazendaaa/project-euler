@@ -15,9 +15,11 @@
 
 import math
 import sys
-sys.path.append('../')
+
+sys.path.append("../")
 # pylint: disable=wrong-import-position,import-error
-import project_euler as pe
+import python.project_euler.project_euler as pe
+
 
 def smallest_multiple(limit):
     """Return  the  smallest  positive  number that is evenly divisible by given
@@ -27,8 +29,9 @@ def smallest_multiple(limit):
     result = 1
 
     for i in primes:
-        result *= pow(i, math.floor(limit_log/math.log10(i)))
+        result *= pow(i, math.floor(limit_log / math.log10(i)))
 
     return result
+
 
 print(smallest_multiple(20))

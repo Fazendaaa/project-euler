@@ -10,8 +10,9 @@
 
 import functools as ft
 import sys
-sys.path.append('../')
-# pylint: disable=wrong-import-position,import-error
-import project_euler as pe
 
-print(ft.reduce(lambda x, y: x+y, pe.erastosthenes_sieve(2000000)))
+sys.path.append("../")
+# pylint: disable=wrong-import-position,import-error
+import python.project_euler.project_euler as pe
+
+print(ft.reduce(lambda x, y: x + y, pe.erastosthenes_sieve(2000000)))

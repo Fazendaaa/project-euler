@@ -3,19 +3,22 @@ PROJECT_TAG:=latest
 
 all: interact
 
-build:
+clean:
+	@sudo rm src/*.o src/*.so
+
+build: clean
 	@docker buildx build --load --tag ${REGISTRY_OWNER}/project-euler-r:${PROJECT_TAG} .
 
-shell: build
+shell: clean build
 	@docker run \
 		--rm \
 		--workdir /usr/src \
 		--volume $(shell pwd):/usr/src \
 		-it \
 		${REGISTRY_OWNER}/project-euler-r:${PROJECT_TAG} \
-		/bin/sh
+		/bin/bash
 
-interact: build
+interact: clean build
 	@docker run \
 		--rm \
 		--workdir /usr/src \
@@ -24,7 +27,7 @@ interact: build
 		${REGISTRY_OWNER}/project-euler-r:${PROJECT_TAG} \
 		R
 
-test:
+test: clean
 	@docker run \
 		--rm \
 		${REGISTRY_OWNER}/project-euler-r:${PROJECT_TAG} \
