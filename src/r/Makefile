@@ -4,7 +4,7 @@ PROJECT_TAG:=latest
 all: interact
 
 clean:
-	@sudo rm src/*.o src/*.so
+	@sudo rm -rf src/*.o src/*.so
 
 build: clean
 	@docker buildx build --load --tag ${REGISTRY_OWNER}/project-euler-r:${PROJECT_TAG} .

@@ -5,10 +5,21 @@ LABEL project="project-euler-r"
 WORKDIR /usr/src/
 
 RUN [ "apt", "update" ]
-RUN [ "apt", "install", "--yes", \
+RUN [ "apt", "install", "--yes", "--allow-downgrades", \
+  "git", \
+  "pandoc", \
+  "libexpat1=2.6.4-1", \
+  "libexpat1-dev", \
   "libcurl4-openssl-dev", \
   "libgmp3-dev", \
-  "libxml2-dev" \
+  "libxml2-dev", \
+  "libfreetype6-dev", \
+  "libfribidi-dev", \
+  "libharfbuzz-dev", \
+  "libtiff-dev", \
+  "libx11-dev", \
+  "libgit2-dev", \
+  "libfontconfig1-dev" \
 ]
 
 RUN [ "R", "-e", "install.packages(c('renv', 'pak'), repos = 'https://cloud.r-project.org/')" ]

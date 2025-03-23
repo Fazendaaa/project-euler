@@ -70,7 +70,5 @@ quadratic_primes <- function(a, b) {
 problem27 <- function(limit) {
   result <- quadratic_primes(limit, limit)
 
-  print(result)
-
   return (result[['maxA']] * result[['maxB']])
 }

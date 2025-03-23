@@ -28,26 +28,8 @@
                                 Answer: -59231
 """
 
-import math
 from functools import reduce
 from operator import mul
-
-
-def all_divisors(n):
-    divisors = []
-
-    if 0 > n:
-        divisors.append(0)
-    elif 1 == n:
-        divisors.append(1)
-    else:
-        for i in range(1, int(math.sqrt(n)) + 1):
-            if 0 == n % i:
-                divisors.append(i)
-                if int(n / i) != i:
-                    divisors.append(int(n / i))
-
-    return divisors
 
 
 # pylint: disable=invalid-name
@@ -66,7 +48,6 @@ def quadratic_primes(a, b):
             if n > max_coef:
                 max_coef, max_a, max_b = n, i, j
 
-    print(max_coef)
     return max_a, max_b
 
 
