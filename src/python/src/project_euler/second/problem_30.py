@@ -22,20 +22,19 @@
                                     Answer: 443839
 """
 
-def digit_powers(power):
+
+def digit_powers(power: int) -> list[int]:
     """Find all the numbers that can be written as the sum of fifth powers of their digits"""
-    upper_bound = len(str(len(str(9**power))*9**power))*9**power
-    matches = []
+    upper_bound: int = len(str(len(str(9**power)) * 9**power)) * 9**power
+    matches: list[int] = []
 
     for number in range(2, upper_bound):
         accumulator = 0
 
         for digit in list(str(number)):
-            accumulator += int(digit)**power
+            accumulator += int(digit) ** power
 
         if number == accumulator:
             matches.append(number)
 
     return matches
-
-print(sum(digit_powers(5)))
