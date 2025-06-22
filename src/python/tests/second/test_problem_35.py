@@ -18,4 +18,4 @@ def test_circular_primes_example() -> None:
 
 
 def test_circular_primes_wanted() -> None:
-    assert 13 == circular_primes(1_000_000)
+    assert 55 == circular_primes(1_000_000)
