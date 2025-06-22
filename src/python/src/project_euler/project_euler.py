@@ -24,17 +24,24 @@ def prime_factors(n):
     return factors
 
 
-def erastosthenes_sieve(limit):
+def erastosthenes_sieve(limit: int) -> list[int]:
     """This function returns all the possible prime numbers of a given limit"""
-    numbers = [True for _ in range(0, limit)]
+    new_limit = limit + 1
+    numbers = [True for _ in range(0, new_limit)]
     numbers[0] = numbers[1] = False
 
-    for i in range(2, int(math.sqrt(limit)) + 1):
-        for j in range(pow(i, 2), limit, i):
+    for i in range(2, int(math.sqrt(new_limit)) + 1):
+        for j in range(pow(i, 2), new_limit, i):
             if numbers[i]:
                 numbers[j] = False
 
     return [x for x, y in enumerate(numbers) if y]
+
+
+def is_prime(number: int) -> bool:
+    """This function returns True if a number is prime, False otherwise"""
+
+    return number in erastosthenes_sieve(number)
 
 
 def all_divisors(n):
