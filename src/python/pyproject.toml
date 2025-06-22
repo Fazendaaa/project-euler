@@ -10,6 +10,13 @@ requires-python = ">=3.14"
 dependencies = [
 ]
 
+[tool.poetry.group.dev.dependencies]
+mypy = "1.15"
+pytest = "^8.3.5"
+radon = "5.1"
+pytest-profiling = "^1.8.1"
+pytest-cov = "^6.2.1"
+snakeviz = "^2.2.2"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -28,8 +35,3 @@ warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
 mypy_path = ["src"]
-[tool.poetry.group.dev.dependencies]
-mypy = "^1.15.0"
-pytest = "^8.3.5"
-radon = "5.1"
-pytest-profiling = "^1.8.1"

@@ -24,7 +24,7 @@ def prime_factors(n):
     return factors
 
 
-def erastosthenes_sieve(limit: int) -> list[int]:
+def erastosthenes_sieve(limit: int) -> set[int]:
     """This function returns all the possible prime numbers of a given limit"""
     new_limit = limit + 1
     numbers = [True for _ in range(0, new_limit)]
@@ -35,7 +35,7 @@ def erastosthenes_sieve(limit: int) -> list[int]:
             if numbers[i]:
                 numbers[j] = False
 
-    return [x for x, y in enumerate(numbers) if y]
+    return set([x for x, y in enumerate(numbers) if y])
 
 
 def is_prime(number: int) -> bool:
