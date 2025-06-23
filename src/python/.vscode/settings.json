@@ -1,5 +1,7 @@
 {
+  "editor.formatOnSave": true,
   "python.testing.pytestArgs": [
+    "-vv",
     "tests"
   ],
   "python.testing.unittestEnabled": false,
@@ -7,7 +9,35 @@
   "python.analysis.extraPaths": [
     "./src"
   ],
+  "python.analysis.indexing": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.importFormat": "absolute",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.typeCheckingMode": "strict",
   "python.defaultInterpreterPath": ".venv/bin/python",
   "python.radon.enable": true,
   "python.radon.executable": ".venv/bin/radon",
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "isort.args": [
+    "--profile",
+    "black"
+  ],
+  "ruff.organizeImports": false,
+  "notebook.formatOnSave.enabled": true,
+  "notebook.codeActionsOnSave": {
+    "notebook.source.fixAll": "explicit",
+    "notebook.source.organizeImports": "explicit"
+  },
+  "mbake.formatOnSave": true,
+  "mbake.verbose": true,
+  "mbake.showDiff": true
 }
