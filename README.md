@@ -11,6 +11,7 @@
 [![English README](https://img.shields.io/badge/Language-EN-blue.svg?longCache=true&style=for-the-badge)](./README.md)
 [![Portuguese README](https://img.shields.io/badge/Linguagem-PT-green.svg?longCache=true&style=for-the-badge)](./docs/readme/README_PT.md)
 
+<img src="https://projecteuler.net/profile/farmzenda.png"/>
 </div>
 
 > **[Project Euler](https://projecteuler.net)** is a good website with challenging exercises for those who already have a solid computer science knowledge and are willing to take a step further.
