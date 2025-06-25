@@ -1,7 +1,7 @@
 #                             Circular Primes
 #
-# The number, $197$, is called a circular prime because all rotations of the
-# digits: $197$, $971$, and $719$, are themselves prime.
+# The number, 197, is called a circular prime because all rotations of the
+# digits: 197, 971, and 719, are themselves prime.
 #
 # There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71,
 # 73, 79, and 97.
@@ -36,7 +36,11 @@ def rotations(number: int) -> list[int]:
     """
     digits = list(str(number))
 
-    return [int("".join(current)) for current in [rotate(digits, index) for index, _ in enumerate(digits)]]
+    return [
+        int("".join(current))
+        for current in [rotate(digits, index) for index, _ in enumerate(digits)]
+    ]
+
 
 def is_circular_prime(number: int) -> bool:
     """Checks if a number is a circular prime
@@ -49,6 +53,7 @@ def is_circular_prime(number: int) -> bool:
     """
     return all([is_prime(current) for current in rotations(number)])
 
+
 def circular_primes(limit: int) -> int:
     """Returns the number of circular primes below a given limit
 
@@ -59,6 +64,7 @@ def circular_primes(limit: int) -> int:
         int: Number of circular primes below the limit
     """
     primes = erastosthenes_sieve(limit)
+
     def is_rotations_in_primes(number: int) -> bool:
         """Checks if all number rotations is in the list of primes
 
