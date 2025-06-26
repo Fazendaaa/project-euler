@@ -39,5 +39,8 @@
   },
   "mbake.formatOnSave": true,
   "mbake.verbose": true,
-  "mbake.showDiff": true
+  "mbake.showDiff": true,
+  "cSpell.words": [
+    "pandigital"
+  ]
 }
