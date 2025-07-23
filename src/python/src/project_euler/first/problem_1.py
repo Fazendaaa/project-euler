@@ -9,7 +9,6 @@
 #
 
 
-from functools import reduce
 from typing import Callable, Iterator
 
 
@@ -27,9 +26,9 @@ def multiples(
     Returns:
         Iterator yielding numbers that satisfy the condition
     """
-    for x in range(1, limit):
-        if condition(x):
-            yield x
+    for item in range(1, limit):
+        if condition(item):
+            yield item
 
 
 def sumMultiples(
@@ -44,7 +43,6 @@ def sumMultiples(
     Returns:
         Sum of all multiples of 3 or 5 below limit
     """
-    return reduce(
-        lambda acc, cur: acc + cur,
-        multiples(limit, lambda x: 0 == x % 3 or 0 == x % 5),
+    return sum(
+        multiples(limit, lambda item: 0 == item % 3 or 0 == item % 5),
     )

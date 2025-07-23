@@ -6,4 +6,4 @@ def test_example() -> None:
 
 
 def test_wanted() -> None:
-    assert 233168 == sumMultiples(1_000)
+    assert 233_168 == sumMultiples(1_000)
