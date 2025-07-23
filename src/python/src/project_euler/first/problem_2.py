@@ -18,7 +18,6 @@ def fibonacci_numbers(
     limit: int,
     condition: Callable[[int], bool] = lambda _: True,
 ) -> list[int]:
-    fibonacci: list[int] = []
     fib_a, fib_b, fib_c = 1, 2, 0
     fibonacci = [fib for fib in [fib_a, fib_b] if condition(fib)]
 
