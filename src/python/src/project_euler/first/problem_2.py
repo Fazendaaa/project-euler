@@ -18,6 +18,16 @@ def fibonacci_numbers(
     limit: int,
     condition: Callable[[int], bool] = lambda _: True,
 ) -> list[int]:
+    """
+    Generate Fibonacci numbers up to a limit that satisfy an optional condition.
+
+    Args:
+        limit (int): Upper bound for Fibonacci numbers to generate
+            True if it should be included. Defaults to including all numbers.
+
+    Returns:
+        list[int]: List of Fibonacci numbers up to limit that satisfy the condition
+    """
     fib_a, fib_b, fib_c = 1, 2, 0
     fibonacci = [fib for fib in [fib_a, fib_b] if condition(fib)]
 
@@ -33,6 +43,15 @@ def fibonacci_numbers(
 def sum_even_fibonacci_numbers(
     limit: int,
 ) -> int:
+    """
+    Calculate sum of even Fibonacci numbers up to a limit.
+
+    Args:
+        limit (int): Upper bound for Fibonacci numbers to consider
+
+    Returns:
+        int: Sum of even Fibonacci numbers below the limit
+    """
     return sum(
         fibonacci_numbers(
             limit,
