@@ -36,8 +36,20 @@ def prime_factors(limit: int) -> list[int]:
     return factors
 
 
-def erastosthenes_sieve(limit: int) -> set[int]:
-    """This function returns all the possible prime numbers of a given limit"""
+def eratosthenes_sieve(limit: int) -> set[int]:
+    """
+    Returns a set of prime numbers up to the given limit using the Sieve of Eratosthenes algorithm.
+
+    Args:
+        limit (int): The upper bound for finding prime numbers
+
+    Returns:
+        set[int]: Set containing all prime numbers up to the limit
+
+    Example:
+        >>> eratosthenes_sieve(10)
+        {2, 3, 5, 7}
+    """
     new_limit = limit + 1
     numbers = [True for _ in range(0, new_limit)]
     numbers[0] = numbers[1] = False
@@ -47,13 +59,13 @@ def erastosthenes_sieve(limit: int) -> set[int]:
             if numbers[i]:
                 numbers[j] = False
 
-    return set([x for x, y in enumerate(numbers) if y])
+    return {x for x, y in enumerate(numbers) if y}
 
 
 def is_prime(number: int) -> bool:
     """This function returns True if a number is prime, False otherwise"""
 
-    return number in erastosthenes_sieve(number)
+    return number in eratosthenes_sieve(number)
 
 
 def all_divisors(n):

@@ -13,7 +13,7 @@
 #
 
 
-from project_euler.project_euler import erastosthenes_sieve, is_prime
+from project_euler.project_euler import eratosthenes_sieve, is_prime
 
 
 def rotate[T](variables: list[T], position: int) -> list[T]:
@@ -63,7 +63,7 @@ def circular_primes(limit: int) -> int:
     Returns:
         int: Number of circular primes below the limit
     """
-    primes = erastosthenes_sieve(limit)
+    primes = eratosthenes_sieve(limit)
 
     def is_rotations_in_primes(number: int) -> bool:
         """Checks if all number rotations is in the list of primes
