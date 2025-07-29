@@ -1,25 +1,37 @@
 """
-    This is a library implement as helper to common used functions to solve
-    Project Euler most common directives
+This is a library implement as helper to common used functions to solve
+Project Euler most common directives
 """
 
 import math
 
 
-def prime_factors(n):
-    """This function returns all the prime numbers up to 'n'"""
-    i = 2
-    factors = []
+def prime_factors(limit: int) -> list[int]:
+    """
+    Returns a list of prime factors for a given number.
 
-    while i * i <= n:
-        if n % i:
-            i += 1
+    Args:
+        limit (int): The number to find prime factors for
+
+    Returns:
+        list[int]: List containing all prime factors of the input number
+
+    Example:
+        >>> prime_factors(84)
+        [2, 2, 3, 7]
+    """
+    item = 2
+    factors: list[int] = []
+
+    while item * item <= limit:
+        if limit % item:
+            item += 1
         else:
-            n //= i
-            factors.append(i)
+            limit //= item
+            factors.append(item)
 
-    if n > 1:
-        factors.append(n)
+    if limit > 1:
+        factors.append(limit)
 
     return factors
 

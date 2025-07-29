@@ -1,24 +1,28 @@
-"""
-                            Largest prime factor
+#
+#                            Largest prime factor
+#
+#    The prime factors of 13195 are 5, 7, 13 and 29.
+#
+#    What is the largest prime factor of the number 600851475143 ?
+#
+#                            Answer: 6857
+#
 
-    The prime factors of 13195 are 5, 7, 13 and 29.
-
-    What is the largest prime factor of the number 600851475143 ?
-
-                            Answer: 6857
-"""
-
-import sys
-
-sys.path.append("../")
-# pylint: disable=wrong-import-position,import-error
-import python.project_euler.project_euler as pe
+from project_euler.project_euler import prime_factors
 
 
-# pylint: disable=redefined-builtin
-def largest_prime(max):
-    """Given max this function returns the largest prime factor"""
-    return pe.prime_factors(max)[-1]
+def largest_prime(max: int) -> int:
+    """
+    Returns the largest prime factor of a given number.
 
+    Args:
+        max (int): The number to find the largest prime factor of
 
-print(largest_prime(600851475143))
+    Returns:
+        int: The largest prime factor of the input number
+
+    Example:
+        >>> largest_prime(13_195)
+        29
+    """
+    return prime_factors(max)[-1]
