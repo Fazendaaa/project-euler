@@ -54,17 +54,38 @@ def eratosthenes_sieve(limit: int) -> set[int]:
     numbers = [True for _ in range(0, new_limit)]
     numbers[0] = numbers[1] = False
 
-    for i in range(2, int(math.sqrt(new_limit)) + 1):
-        for j in range(pow(i, 2), new_limit, i):
-            if numbers[i]:
-                numbers[j] = False
+    for outerIndex in range(
+        2,
+        int(math.sqrt(new_limit)) + 1,
+    ):
+        for innerIndex in range(
+            pow(outerIndex, 2),
+            new_limit,
+            outerIndex,
+        ):
+            if numbers[outerIndex]:
+                numbers[innerIndex] = False
 
-    return {x for x, y in enumerate(numbers) if y}
+    return {index for index, item in enumerate(numbers) if item}
 
 
 def is_prime(number: int) -> bool:
-    """This function returns True if a number is prime, False otherwise"""
+    """
+    Determines if a given number is prime by checking if it exists in the set of prime numbers
+    up to that number using the Sieve of Eratosthenes algorithm.
 
+    Args:
+        number (int): The number to check for primality
+
+    Returns:
+        bool: True if the number is prime, False otherwise
+
+    Example:
+        >>> is_prime(7)
+        True
+        >>> is_prime(8)
+        False
+    """
     return number in eratosthenes_sieve(number)
 
 

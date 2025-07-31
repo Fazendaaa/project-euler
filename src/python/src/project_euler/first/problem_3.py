@@ -11,12 +11,12 @@
 from project_euler.project_euler import prime_factors
 
 
-def largest_prime(max: int) -> int:
+def largest_prime(limit: int) -> int:
     """
     Returns the largest prime factor of a given number.
 
     Args:
-        max (int): The number to find the largest prime factor of
+        limit (int): The number to find the largest prime factor of
 
     Returns:
         int: The largest prime factor of the input number
@@ -25,4 +25,4 @@ def largest_prime(max: int) -> int:
         >>> largest_prime(13_195)
         29
     """
-    return prime_factors(max)[-1]
+    return prime_factors(limit)[-1]
