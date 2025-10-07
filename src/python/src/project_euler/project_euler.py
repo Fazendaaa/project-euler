@@ -3,7 +3,7 @@ This is a library implement as helper to common used functions to solve
 Project Euler most common directives
 """
 
-import math
+from math import sqrt
 
 
 def prime_factors(limit: int) -> list[int]:
@@ -56,7 +56,7 @@ def eratosthenes_sieve(limit: int) -> set[int]:
 
     for outerIndex in range(
         2,
-        int(math.sqrt(new_limit)) + 1,
+        int(sqrt(new_limit)) + 1,
     ):
         for innerIndex in range(
             pow(outerIndex, 2),

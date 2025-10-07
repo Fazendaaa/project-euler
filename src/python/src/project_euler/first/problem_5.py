@@ -21,10 +21,9 @@ from project_euler.project_euler import eratosthenes_sieve
 
 def smallest_multiple(limit: int) -> Any | Literal[1]:
     limit_log = log10(limit)
-    primes = eratosthenes_sieve(limit)
     result = 1
 
-    for i in primes:
+    for i in eratosthenes_sieve(limit):
         result *= pow(i, floor(limit_log / log10(i)))
 
     return result

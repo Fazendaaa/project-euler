@@ -51,7 +51,7 @@ def is_circular_prime(number: int) -> bool:
     Returns:
         bool: True if the number is a circular prime, False otherwise
     """
-    return all([is_prime(current) for current in rotations(number)])
+    return all(is_prime(current) for current in rotations(number))
 
 
 def circular_primes(limit: int) -> int:
@@ -75,6 +75,6 @@ def circular_primes(limit: int) -> int:
             bool: Whether or not all the number rotations are in the list of primes
         """
 
-        return all([current in primes for current in rotations(number)])
+        return all(current in primes for current in rotations(number))
 
     return len([number for number in primes if is_rotations_in_primes(number)])

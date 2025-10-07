@@ -8,11 +8,23 @@ Find the sum of all the primes below two million.
                     Answer: 142913828922
 """
 
-import functools as ft
-import sys
+from project_euler.project_euler import eratosthenes_sieve
 
-sys.path.append("../")
-# pylint: disable=wrong-import-position,import-error
-import python.project_euler.project_euler as pe
 
-print(ft.reduce(lambda x, y: x + y, pe.eratosthenes_sieve(2000000)))
+def summationOfPrimes(value: int) -> int:
+    """
+    Calculates the sum of all prime numbers below a given value.
+
+    Args:
+        value (int): Upper limit below which to find prime numbers
+
+    Returns:
+        int: Sum of all prime numbers below the given value
+
+    Example:
+        >>> summationOfPrimes(10)
+        17
+        >>> summationOfPrimes(2000000)
+        142913828922
+    """
+    return sum(eratosthenes_sieve(value))
