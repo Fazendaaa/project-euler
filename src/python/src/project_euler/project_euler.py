@@ -51,12 +51,13 @@ def eratosthenes_sieve(limit: int) -> set[int]:
         {2, 3, 5, 7}
     """
     new_limit = limit + 1
-    numbers = [True for _ in range(0, new_limit)]
-    numbers[0] = numbers[1] = False
+    numbers = [i % 2 != 0 for i in range(new_limit)]
+    numbers[2] = True
 
     for outerIndex in range(
-        2,
+        1,
         int(sqrt(new_limit)) + 1,
+        2,
     ):
         for innerIndex in range(
             pow(outerIndex, 2),
