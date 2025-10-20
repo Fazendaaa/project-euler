@@ -1,3 +1,4 @@
+from os.path import join
 from re import findall
 
 from project_euler.first.problem_11 import greatest_product
@@ -6,7 +7,7 @@ from project_euler.first.problem_11 import greatest_product
 def test_wanted() -> None:
     matrix: list[list[int]] = []
 
-    with open("data/input/problem_11.txt", "r") as file:
+    with open(join("data", "input", "problem_11.txt"), "r") as file:
         for line in file:
             matrix.append([int(number) for number in findall(r"\d+", line)])
 

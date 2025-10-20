@@ -39,7 +39,10 @@ from operator import mul
 from numpy import array
 
 
-def each_cons(vector: list[int], limit: int) -> list[list[int]]:
+def each_cons(
+    vector: list[int],
+    limit: int,
+) -> list[list[int]]:
     """
     Returns a list of consecutive elements from the input vector.
 
@@ -53,7 +56,10 @@ def each_cons(vector: list[int], limit: int) -> list[list[int]]:
     return [vector[i : i + limit] for i in range(len(vector) - limit + 1)]
 
 
-def greatest_product_vector(vector: list[int], limit: int) -> int:
+def greatest_product_vector(
+    vector: list[int],
+    limit: int,
+) -> int:
     """
     Finds the greatest product of consecutive elements in a vector.
 
@@ -72,7 +78,10 @@ def greatest_product_vector(vector: list[int], limit: int) -> int:
     return max(results if [] != results else [0])
 
 
-def greatest_product_matrix(matrix: list[list[int]], limit: int) -> int:
+def greatest_product_matrix(
+    matrix: list[list[int]],
+    limit: int,
+) -> int:
     """
     Finds the greatest product of consecutive elements across all rows in a matrix.
 
@@ -91,7 +100,10 @@ def greatest_product_matrix(matrix: list[list[int]], limit: int) -> int:
     return max(results)
 
 
-def greatest_product_diagonals(matrix: list[list[int]], limit: int) -> int:
+def greatest_product_diagonals(
+    matrix: list[list[int]],
+    limit: int,
+) -> int:
     """
     Finds the greatest product of consecutive elements along all diagonals in a matrix.
 
@@ -115,7 +127,10 @@ def greatest_product_diagonals(matrix: list[list[int]], limit: int) -> int:
     return greatest_product_matrix(diags, limit)
 
 
-def greatest_product(matrix: list[list[int]], adjacent: int) -> int:
+def greatest_product(
+    matrix: list[list[int]],
+    adjacent: int,
+) -> int:
     """
     Finds the greatest product of adjacent numbers in a matrix looking at rows, columns and diagonals.
 
