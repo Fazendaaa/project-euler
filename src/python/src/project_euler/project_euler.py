@@ -90,19 +90,19 @@ def is_prime(number: int) -> bool:
     return number in eratosthenes_sieve(number)
 
 
-def all_divisors(n):
-    divisors = []
+def all_divisors(limit: int) -> list[int]:
+    divisors: list[int] = []
 
-    if 0 > n:
+    if 0 > limit:
         divisors.append(0)
-    elif 1 == n:
+    elif 1 == limit:
         divisors.append(1)
     else:
-        for i in range(1, int(math.sqrt(n)) + 1):
-            if 0 == n % i:
+        for i in range(1, int(sqrt(limit)) + 1):
+            if 0 == limit % i:
                 divisors.append(i)
-                if int(n / i) != i:
-                    divisors.append(int(n / i))
+                if int(limit / i) != i:
+                    divisors.append(int(limit / i))
 
     return divisors
 
