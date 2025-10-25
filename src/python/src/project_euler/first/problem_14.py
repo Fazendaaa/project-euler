@@ -53,9 +53,11 @@ def collatzSequence(
     if seed in MEMOIZATION:
         return MEMOIZATION[seed]
 
-    return sequence + collatzSequence(
+    MEMOIZATION[seed] = sequence + collatzSequence(
         3 * seed + 1 if seed % 2 else seed // 2,
     )
+
+    return MEMOIZATION[seed]
 
 
 def lenCollatzSequence(
