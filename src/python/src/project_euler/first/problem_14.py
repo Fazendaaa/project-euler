@@ -48,13 +48,10 @@ def memoize(
     def wrapper(
         seed: T,
     ) -> R:
-        if seed in cache:
-            return cache[seed]
+        if seed not in cache:
+            cache[seed] = func(seed)
 
-        result = func(seed)
-        cache[seed] = result
-
-        return result
+        return cache[seed]
 
     return wrapper
 
