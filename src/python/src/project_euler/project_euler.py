@@ -110,3 +110,33 @@ def all_divisors(limit: int) -> list[int]:
 def each_cons(array, limit):
     """Given array, returns it all sets of each cons elements"""
     return [array[i : i + limit] for i in range(len(array) - limit + 1)]
+
+
+def toNumber(value: str) -> int | float:
+    """
+    Converts a string value to either an integer or float number.
+
+    Args:
+        value (str): The string value to convert to a number
+
+    Returns:
+        int | float: The converted number as either an integer or float
+
+    Raises:
+        ValueError: If the string cannot be converted to a valid number
+
+    Example:
+        >>> toNumber("123")
+        123
+        >>> toNumber("12.34")
+        12.34
+        >>> toNumber("abc")
+        ValueError: 'abc' is not a valid number.
+    """
+    try:
+        return int(value)
+    except ValueError:
+        try:
+            return float(value)
+        except ValueError:
+            raise ValueError(f"'{value}' is not a valid number.") from None
