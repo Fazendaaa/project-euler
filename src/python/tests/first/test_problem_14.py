@@ -37,10 +37,10 @@ def test_longest_collatz() -> None:
     #   9      20
     #   10     7
     #
-    assert 9 == longestCollatzSequence(10), "Test logest Collatz didn't pass"
+    assert 9 == longestCollatzSequence(10), "Test longest Collatz didn't pass"
 
 
 def test_longest_collatz_wanted() -> None:
     assert 837_799 == longestCollatzSequence(
         1_000_000
-    ), "Test logest Collatz wanted didn't pass"
+    ), "Test longest Collatz wanted didn't pass"
