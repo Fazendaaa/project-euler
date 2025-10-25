@@ -3,7 +3,9 @@ This is a library implement as helper to common used functions to solve
 Project Euler most common directives
 """
 
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from math import sqrt
+from typing import Any, Callable, Iterable, Optional
 
 
 def prime_factors(limit: int) -> list[int]:
@@ -14,7 +16,7 @@ def prime_factors(limit: int) -> list[int]:
         limit (int): The number to find prime factors for
 
     Returns:
-        list[int]: List containing all prime factors of the input number
+        list[int]: list containing all prime factors of the input number
 
     Example:
         >>> prime_factors(84)
@@ -140,3 +142,38 @@ def toNumber(value: str) -> int | float:
             return float(value)
         except ValueError:
             raise ValueError(f"'{value}' is not a valid number.") from None
+
+
+def __parallelMax(key) -> Callable[..., Any]:
+    return lambda item: max(item, key=key)
+
+
+def parallelMax(
+    iterable: Iterable[Any],
+    key: Optional[Callable[[Any], Any]] = None,
+) -> Any:
+    """
+    Returns the maximum value from an iterable using parallel processing.
+
+    Args:
+        iterable (Iterable[Any]): The input iterable to find maximum value from
+        key (Optional[Callable[[Any], Any]], optional): A function to extract comparison key.
+            Defaults to None.
+
+    Returns:
+        Any: The maximum value from the iterable
+
+    Example:
+        >>> parallelMax([1, 5, 2, 8, 3])
+        8
+        >>> parallelMax(['cat', 'dog', 'elephant'], key=len)
+        'elephant'
+    """
+    with ThreadPoolExecutor() as executor:
+        maxFunction = __parallelMax(key)
+        futures = [executor.submit(maxFunction, item) for item in iterable]
+
+        return max(
+            [f.result() for f in as_completed(futures)],
+            key=key,
+        )

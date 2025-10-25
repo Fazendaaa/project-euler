@@ -23,10 +23,43 @@
 #
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from functools import wraps
+from typing import Callable, TypeVar
 
-MEMOIZATION: dict[int, list[int]] = {}
+T = TypeVar("T")
+R = TypeVar("R")
 
 
+def memoize(
+    func: Callable[[T], R],
+) -> Callable[[T], R]:
+    """
+    Decorator to memoize function results based on arguments.
+
+    Args:
+        func: The function to memoize
+
+    Returns:
+        The memoized version of the function
+    """
+    cache: dict[T, R] = {}
+
+    @wraps(func)
+    def wrapper(
+        seed: T,
+    ) -> R:
+        if seed in cache:
+            return cache[seed]
+
+        result = func(seed)
+        cache[seed] = result
+
+        return result
+
+    return wrapper
+
+
+@memoize
 def collatzSequence(
     seed: int,
 ) -> list[int]:
@@ -50,14 +83,9 @@ def collatzSequence(
     if 1 == seed:
         return sequence
 
-    if seed in MEMOIZATION:
-        return MEMOIZATION[seed]
+    sequence.extend(collatzSequence(3 * seed + 1 if seed % 2 else seed // 2))
 
-    MEMOIZATION[seed] = sequence + collatzSequence(
-        3 * seed + 1 if seed % 2 else seed // 2,
-    )
-
-    return MEMOIZATION[seed]
+    return sequence
 
 
 def lenCollatzSequence(
